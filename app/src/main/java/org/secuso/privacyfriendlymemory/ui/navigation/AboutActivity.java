@@ -1,10 +1,12 @@
-package org.secuso.privacyfriendlymemory.ui;
+package org.secuso.privacyfriendlymemory.ui.navigation;
 
 import android.content.SharedPreferences;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+
+import org.secuso.privacyfriendlymemory.ui.R;
 
 public class AboutActivity extends AppCompatActivity {
 

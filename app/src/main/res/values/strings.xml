@@ -13,6 +13,16 @@
     <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
     <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
 
+    <!-- main activity -->
+    <string name="new_game">New Game</string>
+
+    <string name="difficulty_easy">Easy</string>
+    <string name="difficulty_moderate">Moderate</string>
+    <string name="difficulty_hard">Hard</string>
+
+    <string name="type_single_player">Single Player</string>
+    <string name="type_duo_player">Duo player</string>
+
     <!-- about activity -->
     <string name="version_number" translatable="false">v1.0</string>
     <string name="about_author">Author:</string>

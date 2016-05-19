@@ -1,4 +1,4 @@
-package org.secuso.privacyfriendlymemory.ui;
+package org.secuso.privacyfriendlymemory.ui.navigation;
 
 
 import android.annotation.TargetApi;
@@ -13,6 +13,8 @@ import android.preference.PreferenceFragment;
 import android.view.MenuItem;
 
 
+import org.secuso.privacyfriendlymemory.ui.AppCompatPreferenceActivity;
+import org.secuso.privacyfriendlymemory.ui.R;
 
 import java.util.List;
 
