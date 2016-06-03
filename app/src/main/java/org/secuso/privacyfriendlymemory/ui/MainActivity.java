@@ -1,5 +1,9 @@
 package org.secuso.privacyfriendlymemory.ui;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -8,7 +12,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,10 +20,10 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 
-import org.secuso.privacyfriendlymemory.game.model.GameDifficulty;
-import org.secuso.privacyfriendlymemory.game.model.GameType;
-import org.secuso.privacyfriendlymemory.preference.PreferencesConstants;
-import org.secuso.privacyfriendlymemory.ui.dialog.WelcomeDialog;
+import org.secuso.privacyfriendlymemory.Constants;
+import org.secuso.privacyfriendlymemory.model.CardDesign;
+import org.secuso.privacyfriendlymemory.model.MemoryDifficulty;
+import org.secuso.privacyfriendlymemory.model.MemoryMode;
 
 
 public class MainActivity extends AppCompatDrawerActivity {
@@ -28,11 +31,13 @@ public class MainActivity extends AppCompatDrawerActivity {
     private SharedPreferences preferences   = null;
     private ViewPager viewPager             = null;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setupPreferences();
+
+        // TODO: to be deleted
+        preferences.edit().putInt(Constants.CARD_DESIGN, CardDesign.FIRST.getValue()).commit();
 
         if (isFirstAppStart()) {
             showWelcomeDialog();
@@ -40,7 +45,7 @@ public class MainActivity extends AppCompatDrawerActivity {
         }
         setContentView(R.layout.activity_main);
         setupViewPager();
-        setupDifficultybar();
+        setupDifficultyBar();
         super.setupNavigationView();
     }
 
@@ -75,7 +80,7 @@ public class MainActivity extends AppCompatDrawerActivity {
         });
     }
 
-    public void setupDifficultybar() {
+    public void setupDifficultyBar() {
         final TextView difficultyText = (TextView) findViewById(R.id.difficultyText);
         final RatingBar difficultyBar = (RatingBar) findViewById(R.id.difficultyBar);
         difficultyBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
@@ -85,7 +90,7 @@ public class MainActivity extends AppCompatDrawerActivity {
                 if(rating < 1){
                     ratingBar.setRating(1);
                 }
-                difficultyText.setText(getString(GameDifficulty.getValidDifficulties().get((int) ratingBar.getRating() - 1).getStringResID()));
+                difficultyText.setText(getString(MemoryDifficulty.getValidDifficulties().get((int) ratingBar.getRating() - 1).getStringResID()));
             }
         });
     }
@@ -99,16 +104,27 @@ public class MainActivity extends AppCompatDrawerActivity {
                 viewPager.arrowScroll(View.FOCUS_RIGHT);
                 break;
             case R.id.playButton:
-                Intent intent = new Intent(this, GameActivity.class);
+                // get select game type and difficulty
+                int modeIndex = viewPager.getCurrentItem();
+                MemoryMode memoryMode = MemoryMode.getValidTypes().get(modeIndex);
+                int difficultyIndex = ((RatingBar) findViewById(R.id.difficultyBar)).getProgress() - 1;
+                MemoryDifficulty memoryDifficulty = MemoryDifficulty.getValidDifficulties().get(difficultyIndex < 0 ? 0 : difficultyIndex);
+
+                // send game information to game activity
+                Intent intent = new Intent(this, MemoryActivity.class);
+                intent.putExtra(Constants.GAME_MODE, memoryMode);
+                intent.putExtra(Constants.GAME_DIFFICULTY, memoryDifficulty);
+                // preferences.getInt(Constants.SELECTED_CARD_DESIGN, 1) -> to Enum Type
+                intent.putExtra(Constants.CARD_DESIGN, CardDesign.FIRST);
                 startActivity(intent);
                 break;
             default:
-                Log.d(MainActivity.class.getSimpleName(), "View " + view.toString() + " clicked.");
+                break;
         }
     }
 
     private void setAppStarted() {
-        preferences.edit().putBoolean(PreferencesConstants.FIRST_APP_START, false).commit();
+        preferences.edit().putBoolean(Constants.FIRST_APP_START, false).commit();
     }
 
     private void showWelcomeDialog() {
@@ -120,7 +136,7 @@ public class MainActivity extends AppCompatDrawerActivity {
     }
 
     private boolean isFirstAppStart() {
-        return preferences.getBoolean(PreferencesConstants.FIRST_APP_START, true);
+        return preferences.getBoolean(Constants.FIRST_APP_START, true);
     }
 
 
@@ -149,7 +165,7 @@ public class MainActivity extends AppCompatDrawerActivity {
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return GameType.getValidTypes().size();
+            return MemoryMode.getValidTypes().size();
         }
 
     }
@@ -187,16 +203,40 @@ public class MainActivity extends AppCompatDrawerActivity {
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_type_main_content, container, false);
 
-            GameType gameType = GameType.getValidTypes().get(getArguments().getInt(ARG_SECTION_NUMBER));
+            MemoryMode memoryMode = MemoryMode.getValidTypes().get(getArguments().getInt(ARG_SECTION_NUMBER));
 
             ImageView imageView = (ImageView) rootView.findViewById(R.id.gameTypeImage);
 
-            imageView.setImageResource(gameType.getImageResID());
+            imageView.setImageResource(memoryMode.getImageResID());
 
             TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            textView.setText(getString(gameType.getStringResID()));
+            textView.setText(getString(memoryMode.getStringResID()));
             return rootView;
         }
+    }
+
+    public class WelcomeDialog extends DialogFragment {
+
+
+        @Override
+        public void onAttach(Activity activity) {
+            super.onAttach(activity);
+        }
+
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+
+            LayoutInflater i = getActivity().getLayoutInflater();
+            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+
+            builder.setView(i.inflate(R.layout.dialog_welcome, null));
+            builder.setIcon(R.mipmap.ic_launcher);
+            builder.setTitle(getActivity().getString(R.string.app_name_long));
+            builder.setPositiveButton(getActivity().getString(R.string.button_continue), null);
+
+            return builder.create();
+        }
+
     }
 
 }

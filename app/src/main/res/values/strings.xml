@@ -20,8 +20,8 @@
     <string name="difficulty_moderate">Moderate</string>
     <string name="difficulty_hard">Hard</string>
 
-    <string name="type_single_player">Single Player</string>
-    <string name="type_duo_player">Duo player</string>
+    <string name="mode_single_player">Single Player</string>
+    <string name="mode_duo_player">Duo player</string>
 
     <!-- about activity -->
     <string name="version_number" translatable="false">v1.0</string>
@@ -44,4 +44,14 @@
     <string name="difficulty_description">Press or swipe the stars to change the difficulty.</string>
     <string name="difficulty_description_headline">Difficulty:</string>
 
+    <!-- win dialoag -->
+    <string name="win_text">Congratulations!</string>
+    <string name="win_time">Time:</string>
+    <string name="win_tries">Tries:</string>
+    <string name="win_highscore">Highscore:</string>
+    <string name="win_button_text">Continue</string>
+    <string name="win_show_game">Show gamefield</string>
+
+    <!-- memory activity -->
+    <string name="player_name_prefix">Player</string>
 </resources>
