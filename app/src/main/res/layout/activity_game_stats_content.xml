@@ -1,52 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/player_name_prefix"
+        android:id="@+id/player_one_name"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="50px"
-        android:layout_marginLeft="15px"
-        android:layout_marginRight="15px"
-    android:stretchColumns="2">
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/stats_found_cards"
+        android:id="@+id/player_one_found"
+        android:layout_alignTop="@+id/player_one_found_value"
+        android:layout_toLeftOf="@+id/player_one_found_value"
+        android:layout_toStartOf="@+id/player_one_found_value" />
 
-            <TextView
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Found:"
-                android:id="@+id/found"
-                android:layout_column="1"
-                android:layout_gravity="center_vertical" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="0"
+        android:id="@+id/player_one_found_value"
+        android:layout_below="@+id/player_one_name"
+        android:layout_toLeftOf="@+id/player_one_name"
+        android:layout_toStartOf="@+id/player_one_name" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="0"
-                android:id="@+id/found_value"
-                android:layout_column="2"
-                android:layout_gravity="center_vertical" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/stats_tries"
+        android:id="@+id/player_one_tries"
+        android:layout_alignBottom="@+id/player_one_found_value"
+        android:layout_toRightOf="@+id/player_one_name"
+        android:layout_toEndOf="@+id/player_one_name" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Tries:"
-                android:id="@+id/tries"
-                android:layout_column="4"
-                android:layout_gravity="center_vertical" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="0"
+        android:id="@+id/player_one_tries_value"
+        android:layout_alignBottom="@+id/player_one_tries"
+        android:layout_toRightOf="@+id/player_one_tries"
+        android:layout_toEndOf="@+id/player_one_tries" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="0"
-                android:id="@+id/tries_value"
-                android:layout_column="4"
-                android:layout_gravity="center_vertical" />
-        </TableRow>
-    </TableLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/player_name_prefix"
+        android:id="@+id/player_two_name"
+        android:layout_below="@+id/player_one_found"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="0"
+        android:id="@+id/player_two_found_value"
+        android:layout_below="@+id/player_two_name"
+        android:layout_toLeftOf="@+id/player_two_name"
+        android:layout_toStartOf="@+id/player_two_name" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/stats_found_cards"
+        android:id="@+id/player_two_found"
+        android:layout_alignBottom="@+id/player_two_found_value"
+        android:layout_alignRight="@+id/player_one_found"
+        android:layout_alignEnd="@+id/player_one_found" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/stats_tries"
+        android:id="@+id/player_two_tries"
+        android:layout_alignBottom="@+id/player_two_found_value"
+        android:layout_alignLeft="@+id/player_one_tries"
+        android:layout_alignStart="@+id/player_one_tries" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="0"
+        android:id="@+id/player_two_tries_value"
+        android:layout_alignBottom="@+id/player_two_tries"
+        android:layout_alignLeft="@+id/player_one_tries_value"
+        android:layout_alignStart="@+id/player_one_tries_value" />
+
+</RelativeLayout>

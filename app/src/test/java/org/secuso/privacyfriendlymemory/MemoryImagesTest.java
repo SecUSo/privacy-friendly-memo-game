@@ -23,9 +23,9 @@ public class MemoryImagesTest {
 
     @Before
     public void setupImages(){
-        IMAGES_FIRST_EASY       = MemoryImages.getResIDs(CardDesign.FIRST, MemoryDifficulty.Easy);
-        IMAGES_FIRST_MODERATE   = MemoryImages.getResIDs(CardDesign.FIRST, MemoryDifficulty.Moderate);
-        IMAGES_FIRST_HARD       = MemoryImages.getResIDs(CardDesign.FIRST, MemoryDifficulty.Hard);
+        IMAGES_FIRST_EASY       = MemoryImages.getResIDs(CardDesign.FIRST, MemoryDifficulty.Easy,false);
+        IMAGES_FIRST_MODERATE   = MemoryImages.getResIDs(CardDesign.FIRST, MemoryDifficulty.Moderate, false);
+        IMAGES_FIRST_HARD       = MemoryImages.getResIDs(CardDesign.FIRST, MemoryDifficulty.Hard, false);
     }
 
     @Test

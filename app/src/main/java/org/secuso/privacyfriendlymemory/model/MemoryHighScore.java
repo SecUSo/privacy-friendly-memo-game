@@ -26,7 +26,9 @@ public class MemoryHighscore {
     }
 
     public int getScore(){
-        return baseScore - (time*tries);
+        int calculatedScore = baseScore - (time*tries);
+        // score should not be negative
+        return calculatedScore < 0 ? 0 : calculatedScore;
     }
 
     public int getTries(){

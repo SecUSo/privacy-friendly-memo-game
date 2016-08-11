@@ -13,6 +13,8 @@ public class MemoryPlayer {
     private final int namePrefixResID = R.string.player_name_prefix;
 
     private final String nameSuffix;
+    private int tries = 0;
+
     private List<MemoryCard> foundCards = new LinkedList<>();
 
     public MemoryPlayer(String nameSuffix){
@@ -33,6 +35,14 @@ public class MemoryPlayer {
 
     public int getNamePrefixResID(){
         return namePrefixResID;
+    }
+
+    public void incrementTries(){
+        tries++;
+    }
+
+    public int getTries(){
+        return tries;
     }
 
 }

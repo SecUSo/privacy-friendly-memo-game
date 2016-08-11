@@ -1,5 +1,25 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <PreferenceCategory android:title="@string/help_game_mode">
+        <Preference android:title=""
+            android:selectable="false"
+            android:icon="@drawable/ic_person_black_24px"
+            android:summary="@string/help_single_player"/>
+        <Preference android:title=""
+            android:selectable="false"
+            android:icon="@drawable/ic_people_black_24px"
+            android:summary="@string/help_duo_player"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/help_game_difficulty">
+
+        <Preference android:title=""
+            android:selectable="false"
+            android:icon="@drawable/ic_star_blue_36dp"
+            android:summary="@string/help_game_difficulty_summary"/>
+
+    </PreferenceCategory>
+
     <PreferenceCategory android:title="@string/help_privacyInfo">
         <Preference
             android:title="@string/help_permissions"

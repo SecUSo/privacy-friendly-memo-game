@@ -37,4 +37,5 @@ public class MemoryDeckTest{
     public void testCardMapping(){
         assertEquals("Mapping should contain twice as much entries", IMAGE_RES_IDS.size()*2, cardMapping.size());
     }
+
 }

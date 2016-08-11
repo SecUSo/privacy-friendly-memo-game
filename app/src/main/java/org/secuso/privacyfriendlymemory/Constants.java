@@ -11,6 +11,14 @@ public final class Constants {
     public final static String FIRST_APP_START          = "FIRST_APP_START";
     public final static String SELECTED_CARD_DESIGN     = "SELECTED_CARD_DESIGN";
 
+    // Preferences Constants Highscore
+    public final static String HIGHSCORE_EASY           = "HIGHSCORE_EASY";
+    public final static String HIGHSCORE_MODERATE       = "HIGHSCORE_MODERATE";
+    public final static String HIGHSCORE_HARD           = "HIGHSCORE_HARD";
+
+    // Preferences Constants Statistics
+    public final static String STATISTICS_DECK_ONE      =  "STATISTICS_DECK_ONE";
+    public final static String STATISTICS_DECK_TWO      =  "STATISTICS_DECK_TWO";
 
     // Intent Extra Constants
     public final static String GAME_DIFFICULTY          = "GAME_DIFFICULTY";

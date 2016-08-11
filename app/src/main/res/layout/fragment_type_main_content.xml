@@ -23,7 +23,7 @@
     <ImageView
         android:layout_weight="5"
         android:id="@+id/gameTypeImage"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:adjustViewBounds="true"
         android:layout_centerInParent="true"
         android:src="@drawable/ic_person_black_24px"

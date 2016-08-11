@@ -1,4 +1,7 @@
-package org.secuso.privacyfriendlymemory.model;
+package org.secuso.privacyfriendlymemory.common;
+
+import org.secuso.privacyfriendlymemory.model.MemoryMode;
+import org.secuso.privacyfriendlymemory.model.MemoryPlayer;
 
 import java.util.LinkedList;
 import java.util.List;

@@ -13,6 +13,7 @@ import android.view.WindowManager;
 
 import org.secuso.privacyfriendlymemory.ui.navigation.AboutActivity;
 import org.secuso.privacyfriendlymemory.ui.navigation.HelpActivity;
+import org.secuso.privacyfriendlymemory.ui.navigation.HighscoreActivity;
 
 /**
  * Created by Hannes on 18.05.2016.
@@ -49,6 +50,11 @@ public abstract class AppCompatDrawerActivity extends AppCompatActivity implemen
 
         switch (id) {
             case R.id.menu_highscore:
+                intent = new Intent(this, HighscoreActivity.class);
+                intent.putExtra(HelpActivity.EXTRA_SHOW_FRAGMENT, HighscoreActivity.HelpFragment.class.getName());
+                intent.putExtra(HelpActivity.EXTRA_NO_HEADERS, true);
+                break;
+            case R.id.menu_statistics:
                 break;
             case R.id.menu_settings:
                 break;

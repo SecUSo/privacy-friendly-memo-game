@@ -1,0 +1,8 @@
+<preference-headers xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- These settings headers are only used on tablets. -->
+
+    <header android:fragment="org.secuso.privacyfriendlymemory.ui.navigation.HighscoreActivity$HelpFragment"
+        android:title="@string/menu_highscore" android:icon="@drawable/ic_info_black_24dp" />
+
+</preference-headers>

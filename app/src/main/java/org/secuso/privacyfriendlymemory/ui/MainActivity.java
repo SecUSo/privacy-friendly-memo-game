@@ -12,6 +12,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,9 +22,17 @@ import android.widget.TextView;
 
 
 import org.secuso.privacyfriendlymemory.Constants;
+import org.secuso.privacyfriendlymemory.common.MemoryStatistics;
+import org.secuso.privacyfriendlymemory.common.ResIdAdapter;
 import org.secuso.privacyfriendlymemory.model.CardDesign;
+import org.secuso.privacyfriendlymemory.model.MemoryDeck;
 import org.secuso.privacyfriendlymemory.model.MemoryDifficulty;
+import org.secuso.privacyfriendlymemory.model.MemoryImages;
 import org.secuso.privacyfriendlymemory.model.MemoryMode;
+
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 
 public class MainActivity extends AppCompatDrawerActivity {
@@ -36,13 +45,11 @@ public class MainActivity extends AppCompatDrawerActivity {
         super.onCreate(savedInstanceState);
         setupPreferences();
 
-        // TODO: to be deleted
-        preferences.edit().putInt(Constants.CARD_DESIGN, CardDesign.FIRST.getValue()).commit();
-
-        if (isFirstAppStart()) {
+        //if (isFirstAppStart()) {
             showWelcomeDialog();
             setAppStarted();
-        }
+            initStatistics();
+      //  }
         setContentView(R.layout.activity_main);
         setupViewPager();
         setupDifficultyBar();
@@ -114,13 +121,28 @@ public class MainActivity extends AppCompatDrawerActivity {
                 Intent intent = new Intent(this, MemoryActivity.class);
                 intent.putExtra(Constants.GAME_MODE, memoryMode);
                 intent.putExtra(Constants.GAME_DIFFICULTY, memoryDifficulty);
-                // preferences.getInt(Constants.SELECTED_CARD_DESIGN, 1) -> to Enum Type
+                int selectedCardDesign = preferences.getInt(Constants.CARD_DESIGN, 1);
+                CardDesign cardDesign =  CardDesign.get(selectedCardDesign);
                 intent.putExtra(Constants.CARD_DESIGN, CardDesign.FIRST);
                 startActivity(intent);
                 break;
             default:
                 break;
         }
+    }
+
+    private void initStatistics(){
+        List<Integer> resIdsDeckOne = MemoryImages.getResIDs(CardDesign.FIRST, MemoryDifficulty.Hard, false);
+     //   List<Integer> resIdsDeckTwo = MemoryImages.getResIDs(CardDesign.SECOND, MemoryDifficulty.Hard, false);
+        List<String> resourceNamesDeckOne = ResIdAdapter.getResourceName(resIdsDeckOne, this);
+        for(String resourceName : resourceNamesDeckOne){
+            Log.d("MainActivity", resourceName);
+        }
+     //   List<String> resourceNamesDeckTwo = ResIdAdapter.getResourceName(resIdsDeckTwo, this);
+        Set<String> statisticsDeckOne = MemoryStatistics.createInitStatistics(resourceNamesDeckOne);
+     //   Set<String> staticticsDeckTwo =  MemoryStatistics.createInitStatistics(resourceNamesDeckTwo);
+        preferences.edit().putStringSet(Constants.STATISTICS_DECK_ONE, statisticsDeckOne).commit();
+    //    preferences.edit().putStringSet(Constants.STATISTICS_DECK_TWO, staticticsDeckTwo).commit();
     }
 
     private void setAppStarted() {
@@ -164,7 +186,7 @@ public class MainActivity extends AppCompatDrawerActivity {
 
         @Override
         public int getCount() {
-            // Show 3 total pages.
+            // Show 2 total pages.
             return MemoryMode.getValidTypes().size();
         }
 

@@ -7,7 +7,7 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 
-import org.secuso.privacyfriendlymemory.model.MemoryLayoutProvider;
+import org.secuso.privacyfriendlymemory.common.MemoryLayoutProvider;
 
 /**
  * Created by Hannes on 21.05.2016.

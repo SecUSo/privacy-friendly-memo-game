@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layoutDirection="ltr"
             android:orientation="horizontal">
-            <!--
+
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -38,13 +38,12 @@
                 android:layout_height="100dp"
                 android:adjustViewBounds="true"
                 android:layout_gravity="center"
-                android:src="@drawable/icon_default_9x9"/>
-            <ImageView
+                android:src="@drawable/ic_people_black_24px"/>
+            <!--<ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@drawable/ic_keyboard_arrow_right_black_24dp"/>
-                -->
+                android:src="@drawable/ic_keyboard_arrow_right_black_24dp"/>-->
         </LinearLayout>
 
         <TextView

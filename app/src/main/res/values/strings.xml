@@ -6,7 +6,8 @@
 
     <!-- menu drawer -->
     <string name="menu_highscore">Highscore</string>
-    <string name="menu_settings">Settings</string>
+    <string name="menu_statistics">Statistics</string>
+    <string name="menu_settings">Deck choice</string>
     <string name="menu_help">Help</string>
     <string name="menu_about">About</string>
 
@@ -33,6 +34,13 @@
     <string name="secuso_url" translatable="false"><a href="https://www.secuso.informatik.tu-darmstadt.de/en/research/results/">https://www.secuso.org</a></string>
 
     <!-- help activity -->
+    <string name="help_game_mode">Game mode</string>
+    <string name="help_single_player">Create a single player game</string>
+    <string name="help_duo_player">Create a duo player game</string>
+
+    <string name="help_game_difficulty">Game difficulty</string>
+    <string name="help_game_difficulty_summary">Number of memory cards depending on the game difficulty</string>
+
     <string name="help_privacyInfo">Privacy Info</string>
     <string name="help_permissions">Permissions</string>
     <string name="help_permissions_summary">Privacy Friendly Memory does not use any permissions.</string>
@@ -46,6 +54,7 @@
 
     <!-- win dialoag -->
     <string name="win_text">Congratulations!</string>
+    <string name="win_text_duo">Congratulations,</string>
     <string name="win_time">Time:</string>
     <string name="win_tries">Tries:</string>
     <string name="win_highscore">Highscore:</string>
@@ -54,4 +63,6 @@
 
     <!-- memory activity -->
     <string name="player_name_prefix">Player</string>
+    <string name="stats_found_cards">Found: </string>
+    <string name="stats_tries">Tries: </string>
 </resources>

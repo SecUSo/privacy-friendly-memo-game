@@ -1,5 +1,10 @@
 package org.secuso.privacyfriendlymemory.model;
 
+import android.util.Log;
+import android.util.Pair;
+
+import org.secuso.privacyfriendlymemory.common.MemoryPlayerFactory;
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -11,26 +16,30 @@ public class Memory {
 
     private final MemoryDifficulty memoryDifficulty;
     private final MemoryMode memoryMode;
+    private final CardDesign cardDesign;
 
     private final Map<Integer, MemoryCard> deck;
     private final int notFoundImageResID;
+
+    private Integer[] falseSelectedCards = new Integer[2];
+    private boolean falseSelected = false;
 
     private MemoryPlayer currentPlayer;
     private MemoryCard selectedCard = null;
     private MemoryTimer timer;
 
-    private MemoryCard[] temporySelectedCards = new MemoryCard[2];
+    private MemoryCard[] temporarySelectedCards = new MemoryCard[2];
     private List<MemoryCard> foundCards = new LinkedList<>();
     private List<MemoryPlayer> players = new LinkedList<>();
 
     private int selectedCardsCount = 0;
-    private int tries = 0;
 
 
     public Memory(CardDesign cardDesign, MemoryMode memoryMode, MemoryDifficulty memoryDifficulty) {
         this.memoryDifficulty = memoryDifficulty;
         this.memoryMode = memoryMode;
-        this.deck = new MemoryDeck(MemoryImages.getResIDs(cardDesign, memoryDifficulty)).getDeck();
+        this.cardDesign = cardDesign;
+        this.deck = new MemoryDeck(MemoryImages.getResIDs(cardDesign, memoryDifficulty, true)).getDeck();
         this.notFoundImageResID = MemoryImages.getNotFoundImageResID();
         this.players = MemoryPlayerFactory.createPlayers(memoryMode);
         this.currentPlayer = players.get(0);
@@ -45,13 +54,14 @@ public class Memory {
         }
         switch (selectedCardsCount) {
             case 0:
-                // set first selected card and clear tempory selected cards
-                temporySelectedCards[0] = null;
-                temporySelectedCards[1] = null;
+                // set first selected card and clear temporary selected cards
+                temporarySelectedCards[0] = null;
+                temporarySelectedCards[1] = null;
                 selectedCard = cardAtPosition;
                 selectedCardsCount++;
                 break;
             case 1:
+                currentPlayer.incrementTries();
                 // set founded if cards are matching; if not matching and more than 1 player is available, set next player
                 if (selectedCard.getMatchingId() == cardAtPosition.getMatchingId()) {
                     setFound(selectedCard, cardAtPosition);
@@ -61,14 +71,29 @@ public class Memory {
                 }else if(players.size() > 1){
                     currentPlayer = getNextPlayer();
                 }
-                // add selected cards as tempory selected that the images are displayed till another card is selected even if they do not match
-                temporySelectedCards[0] = selectedCard;
-                temporySelectedCards[1] = cardAtPosition;
+
+                // if not match set cards to false selected
+                if (selectedCard.getMatchingId() == cardAtPosition.getMatchingId()) {
+                    falseSelectedCards[0] = selectedCard.getResImageID();
+                    falseSelectedCards[1] = cardAtPosition.getResImageID();
+                    falseSelected = true;
+                }
+
+                // add selected cards as temporary selected that the images are displayed till another card is selected even if they do not match
+                temporarySelectedCards[0] = selectedCard;
+                temporarySelectedCards[1] = cardAtPosition;
                 selectedCard = null;
                 selectedCardsCount = 0;
-                tries++;
                 break;
         }
+    }
+
+    public Integer[] getFalseSelectedCards(){
+        if(falseSelected){
+            falseSelected = false;
+            return falseSelectedCards;
+        }
+        return null;
     }
 
     public int getFoundCardsSize(){
@@ -77,10 +102,6 @@ public class Memory {
 
     public int getDeckSize(){ return deck.size();}
 
-
-    public int getTries(){
-        return tries;
-    }
 
     public int getImageResID(int position) {
         MemoryCard cardAtPosition = deck.get(position);
@@ -110,7 +131,7 @@ public class Memory {
     }
 
     private boolean isTemporySelected(MemoryCard card) {
-        return (temporySelectedCards[0] == card || temporySelectedCards[1] == card);
+        return (temporarySelectedCards[0] == card || temporarySelectedCards[1] == card);
     }
 
     private MemoryPlayer getNextPlayer(){
@@ -122,9 +143,28 @@ public class Memory {
             return players.get(indexCurrentPlayer+1);
         }
     }
+    public boolean isMultiplayer(){
+        switch(memoryMode){
+            case ONE_PLAYER:
+                return false;
+            default:
+                return true;
+        }
+    }
+
+    public MemoryPlayer getCurrentPlayer(){
+        return currentPlayer;
+    }
 
     public MemoryHighscore getHighscore(){
-        return new MemoryHighscore(memoryDifficulty, timer.getTime(), tries);
+        if(isMultiplayer()){
+            throw new UnsupportedOperationException("Highscore is disabled in multiplayer mode!");
+        }
+        return new MemoryHighscore(memoryDifficulty, timer.getTime(), currentPlayer.getTries());
+    }
+
+    public List<MemoryPlayer> getPlayers(){
+        return players;
     }
 
     public MemoryDifficulty getDifficulty(){
@@ -145,5 +185,12 @@ public class Memory {
         timer.stop();
     }
 
+    public boolean isCustomDesign(){
+        return cardDesign.isCustom();
+    }
+
+    public CardDesign getCardDesign(){
+        return cardDesign;
+    }
 
 }

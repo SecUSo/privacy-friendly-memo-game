@@ -1,10 +1,11 @@
-package org.secuso.privacyfriendlymemory.model;
+package org.secuso.privacyfriendlymemory.common;
 
 import android.content.Context;
 import android.content.res.Resources;
 import android.util.DisplayMetrics;
 import android.util.Log;
 
+import org.secuso.privacyfriendlymemory.model.Memory;
 import org.secuso.privacyfriendlymemory.model.MemoryDifficulty;
 
 import java.util.HashMap;
