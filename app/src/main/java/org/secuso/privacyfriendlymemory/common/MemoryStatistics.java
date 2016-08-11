@@ -37,12 +37,9 @@ public class MemoryStatistics {
     }
 
     private void createNameCountMapping(Set<String> statisticsSet){
-        Log.d("memorystats", "count stat set " + statisticsSet.size());
         for(String statisticsEntry : statisticsSet){
             String resourceName = statisticsEntry.substring(0, statisticsEntry.lastIndexOf("_"));
-            Integer count = Integer.parseInt(statisticsEntry.substring(statisticsEntry.lastIndexOf("_"), statisticsEntry.length()));
-
-            Log.d("MemoryStats", "Create " + resourceName + " with count " + count);
+            Integer count = Integer.parseInt(statisticsEntry.substring(statisticsEntry.lastIndexOf("_")+1, statisticsEntry.length()));
             nameCountMapping.put(resourceName, count);
         }
     }

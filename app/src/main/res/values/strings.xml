@@ -11,6 +11,9 @@
     <string name="menu_help">Help</string>
     <string name="menu_about">About</string>
 
+    <!-- menu drawer highscore -->
+    <string name="reset_highscore">Reset all</string>
+
     <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
     <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
 

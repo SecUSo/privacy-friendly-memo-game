@@ -123,6 +123,7 @@ public class MemoryActivity extends AppCompatDrawerActivity {
                                     int position, long id) {
                 memory.select(position);
 
+                // if two cards are false selected and memory is played with a custom card set increment "false selected count" for statistics
                 if(!memory.isCustomDesign()){
                     Integer[] falseSelectedCards = memory.getFalseSelectedCards();
                     if(falseSelectedCards != null){
@@ -213,23 +214,34 @@ public class MemoryActivity extends AppCompatDrawerActivity {
         if(!memory.isMultiplayer() && !memory.isCustomDesign()){
             MemoryHighscore highscore = memory.getHighscore();
             int actualCore = highscore.getScore();
+            int actualTries = highscore.getTries();
+            int actualTime = highscore.getTime();
             MemoryDifficulty difficulty = memory.getDifficulty();
-            Log.d("MemoryActivity", "Decksize : " + difficulty.getDeckSize());
             String highscoreConstants = "";
+            String highscoreTriesConstants = "";
+            String highscoreTimeConstants = "";
             switch(difficulty) {
                 case Easy:
                     highscoreConstants = Constants.HIGHSCORE_EASY;
+                    highscoreTriesConstants = Constants.HIGHSCORE_EASY_TRIES;
+                    highscoreTimeConstants = Constants.HIGHSCORE_EASY_TIME;
                     break;
                 case Moderate:
                     highscoreConstants = Constants.HIGHSCORE_MODERATE;
+                    highscoreTriesConstants = Constants.HIGHSCORE_MODERATE_TRIES;
+                    highscoreTimeConstants = Constants.HIGHSCORE_MODERATE_TIME;
                     break;
                 case Hard:
                     highscoreConstants = Constants.HIGHSCORE_HARD;
+                    highscoreTriesConstants = Constants.HIGHSCORE_HARD_TRIES;
+                    highscoreTimeConstants = Constants.HIGHSCORE_HARD_TIME;
                     break;
             }
             int currentScore = preferences.getInt(highscoreConstants, 0);
             if(actualCore > currentScore){
                 preferences.edit().putInt(highscoreConstants, actualCore).commit();
+                preferences.edit().putInt(highscoreTriesConstants, actualTries).commit();
+                preferences.edit().putInt(highscoreTimeConstants, actualTime).commit();
             }
         }
     }

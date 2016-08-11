@@ -73,7 +73,7 @@ public class Memory {
                 }
 
                 // if not match set cards to false selected
-                if (selectedCard.getMatchingId() == cardAtPosition.getMatchingId()) {
+                if (selectedCard.getMatchingId() != cardAtPosition.getMatchingId()) {
                     falseSelectedCards[0] = selectedCard.getResImageID();
                     falseSelectedCards[1] = cardAtPosition.getResImageID();
                     falseSelected = true;

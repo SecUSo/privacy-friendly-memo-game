@@ -20,38 +20,38 @@ public class MemoryImages {
 
     static{
         // fill first deck with images
-        images1.add(R.drawable.set1_card1);
-        images1.add(R.drawable.set1_card2);
-        images1.add(R.drawable.set1_card3);
-        images1.add(R.drawable.set1_card4);
-        images1.add(R.drawable.set1_card5);
-        images1.add(R.drawable.set1_card6);
-        images1.add(R.drawable.set1_card7);
-        images1.add(R.drawable.set1_card8);
-        images1.add(R.drawable.set1_card9);
-        images1.add(R.drawable.set1_card10);
-        images1.add(R.drawable.set1_card11);
-        images1.add(R.drawable.set1_card12);
-        images1.add(R.drawable.set1_card13);
-        images1.add(R.drawable.set1_card14);
-        images1.add(R.drawable.set1_card15);
-        images1.add(R.drawable.set1_card16);
-        images1.add(R.drawable.set1_card17);
-        images1.add(R.drawable.set1_card18);
-        images1.add(R.drawable.set1_card19);
-        images1.add(R.drawable.set1_card20);
-        images1.add(R.drawable.set1_card21);
-        images1.add(R.drawable.set1_card22);
-        images1.add(R.drawable.set1_card23);
-        images1.add(R.drawable.set1_card24);
-        images1.add(R.drawable.set1_card25);
-        images1.add(R.drawable.set1_card26);
-        images1.add(R.drawable.set1_card27);
-        images1.add(R.drawable.set1_card28);
-        images1.add(R.drawable.set1_card29);
-        images1.add(R.drawable.set1_card30);
-        images1.add(R.drawable.set1_card31);
-        images1.add(R.drawable.set1_card32);
+        images1.add(R.drawable.set1card1);
+        images1.add(R.drawable.set1card2);
+        images1.add(R.drawable.set1card3);
+        images1.add(R.drawable.set1card4);
+        images1.add(R.drawable.set1card5);
+        images1.add(R.drawable.set1card6);
+        images1.add(R.drawable.set1card7);
+        images1.add(R.drawable.set1card8);
+        images1.add(R.drawable.set1card9);
+        images1.add(R.drawable.set1card10);
+        images1.add(R.drawable.set1card11);
+        images1.add(R.drawable.set1card12);
+        images1.add(R.drawable.set1card13);
+        images1.add(R.drawable.set1card14);
+        images1.add(R.drawable.set1card15);
+        images1.add(R.drawable.set1card16);
+        images1.add(R.drawable.set1card17);
+        images1.add(R.drawable.set1card18);
+        images1.add(R.drawable.set1card19);
+        images1.add(R.drawable.set1card20);
+        images1.add(R.drawable.set1card21);
+        images1.add(R.drawable.set1card22);
+        images1.add(R.drawable.set1card23);
+        images1.add(R.drawable.set1card24);
+        images1.add(R.drawable.set1card25);
+        images1.add(R.drawable.set1card26);
+        images1.add(R.drawable.set1card27);
+        images1.add(R.drawable.set1card28);
+        images1.add(R.drawable.set1card29);
+        images1.add(R.drawable.set1card30);
+        images1.add(R.drawable.set1card31);
+        images1.add(R.drawable.set1card32);
     }
 
     public static int getNotFoundImageResID(){

@@ -45,11 +45,11 @@ public class MainActivity extends AppCompatDrawerActivity {
         super.onCreate(savedInstanceState);
         setupPreferences();
 
-        //if (isFirstAppStart()) {
+        if (isFirstAppStart()) {
             showWelcomeDialog();
             setAppStarted();
             initStatistics();
-      //  }
+        }
         setContentView(R.layout.activity_main);
         setupViewPager();
         setupDifficultyBar();
@@ -237,7 +237,7 @@ public class MainActivity extends AppCompatDrawerActivity {
         }
     }
 
-    public class WelcomeDialog extends DialogFragment {
+    public static class WelcomeDialog extends DialogFragment {
 
 
         @Override
