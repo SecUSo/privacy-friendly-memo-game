@@ -138,7 +138,8 @@ public class HighscoreActivity extends AppCompatPreferenceActivity {
 
         private void setScoreInPreference(String preferenceKey, int score, int tries, int time){
             Preference preference = findPreference(preferenceKey);
-            preference.setSummary("Score:\t" + score + "\n" + getString(R.string.win_tries
+            preference.setTitle("Score:\t" + score);
+            preference.setSummary(getString(R.string.win_tries
             ) + "\t" + tries +"\n" + getString(R.string.win_time)+ "\t" + timeToString(time));
         }
 

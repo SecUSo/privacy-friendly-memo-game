@@ -6,6 +6,9 @@
 
     <!-- menu drawer -->
     <string name="menu_highscore">Highscore</string>
+    <string name="menu_highscore_easy">Highscore Easy</string>
+    <string name="menu_highscore_moderate">Highscore Moderate</string>
+    <string name="menu_highscore_hard">Highscore Hard</string>
     <string name="menu_statistics">Statistics</string>
     <string name="menu_settings">Deck choice</string>
     <string name="menu_help">Help</string>

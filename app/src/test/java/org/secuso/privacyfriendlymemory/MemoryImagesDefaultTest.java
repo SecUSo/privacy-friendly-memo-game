@@ -4,14 +4,14 @@ import org.junit.Before;
 import org.junit.Test;
 import org.secuso.privacyfriendlymemory.model.CardDesign;
 import org.secuso.privacyfriendlymemory.model.MemoryDifficulty;
-import org.secuso.privacyfriendlymemory.model.MemoryImages;
+import org.secuso.privacyfriendlymemory.model.MemoryDefaultImages;
 
 import java.util.LinkedList;
 import java.util.List;
 
 import static org.junit.Assert.*;
 
-public class MemoryImagesTest {
+public class MemoryImagesDefaultTest {
 
     private static final int     EXPECTED_SIZE_EASY        = MemoryDifficulty.Easy.getDeckSize()/2;
     private static final int     EXPECTED_SIZE_MODERATE    = MemoryDifficulty.Moderate.getDeckSize()/2;
@@ -23,9 +23,9 @@ public class MemoryImagesTest {
 
     @Before
     public void setupImages(){
-        IMAGES_FIRST_EASY       = MemoryImages.getResIDs(CardDesign.FIRST, MemoryDifficulty.Easy,false);
-        IMAGES_FIRST_MODERATE   = MemoryImages.getResIDs(CardDesign.FIRST, MemoryDifficulty.Moderate, false);
-        IMAGES_FIRST_HARD       = MemoryImages.getResIDs(CardDesign.FIRST, MemoryDifficulty.Hard, false);
+        IMAGES_FIRST_EASY       = MemoryDefaultImages.getResIDs(CardDesign.FIRST, MemoryDifficulty.Easy,false);
+        IMAGES_FIRST_MODERATE   = MemoryDefaultImages.getResIDs(CardDesign.FIRST, MemoryDifficulty.Moderate, false);
+        IMAGES_FIRST_HARD       = MemoryDefaultImages.getResIDs(CardDesign.FIRST, MemoryDifficulty.Hard, false);
     }
 
     @Test

@@ -50,7 +50,11 @@ public class MemoryImageAdapter extends BaseAdapter{
         }else{
             card = (ImageView) convertView;
         }
-        card.setImageResource(layoutProvider.getImageResID(position));
+        if(layoutProvider.isCustomDeck()){
+            card.setImageURI(layoutProvider.getImageUri(position));
+        }else{
+            card.setImageResource(layoutProvider.getImageResID(position));
+        }
         return card;
     }
 

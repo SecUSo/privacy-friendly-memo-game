@@ -2,6 +2,7 @@ package org.secuso.privacyfriendlymemory.common;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.net.Uri;
 import android.util.DisplayMetrics;
 import android.util.Log;
 
@@ -47,6 +48,10 @@ public class MemoryLayoutProvider {
         return memory.getImageResID(position);
     }
 
+    public Uri getImageUri(int position){
+        return memory.getImageUri(position);
+    }
+
     public int getCardSizePixel(){
         // calculate the card size in pixel based on the screen width
         // [remember: card = square, so width=height]
@@ -71,6 +76,6 @@ public class MemoryLayoutProvider {
         return MARGIN_RIGHT;
     }
 
-
+    public boolean isCustomDeck(){ return memory.isCustomDesign(); }
 
 }

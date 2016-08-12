@@ -8,7 +8,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.content.ContextCompat;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,12 +26,10 @@ import org.secuso.privacyfriendlymemory.model.Memory;
 import org.secuso.privacyfriendlymemory.model.MemoryDifficulty;
 import org.secuso.privacyfriendlymemory.model.MemoryHighscore;
 import org.secuso.privacyfriendlymemory.common.MemoryLayoutProvider;
-import org.secuso.privacyfriendlymemory.model.MemoryImages;
 import org.secuso.privacyfriendlymemory.model.MemoryMode;
 import org.secuso.privacyfriendlymemory.model.MemoryPlayer;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -41,6 +38,7 @@ import java.util.TimerTask;
 
 public class MemoryActivity extends AppCompatDrawerActivity {
 
+    private static Context context;
     private SharedPreferences preferences = null;
     private Memory memory;
     private MemoryStatistics statistics;
@@ -54,6 +52,8 @@ public class MemoryActivity extends AppCompatDrawerActivity {
         setContentView(R.layout.activity_game);
         super.setupNavigationView();
         setupPreferences();
+        // make context assessable for shared preferences
+        MemoryActivity.context = getApplicationContext();
         createMemory();
         createStatistics();
         createLayoutProvider();
@@ -318,6 +318,10 @@ public class MemoryActivity extends AppCompatDrawerActivity {
         m = (minutes < 10) ? "0" + String.valueOf(minutes) : String.valueOf(minutes);
         h = (hours < 10) ? "0" + String.valueOf(hours) : String.valueOf(hours);
         return h + ":" + m + ":" + s;
+    }
+
+    public static Context getAppContext(){
+        return MemoryActivity.context;
     }
 
     public class SinglePlayerWinDialog extends Dialog {

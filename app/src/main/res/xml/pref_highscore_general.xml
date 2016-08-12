@@ -1,19 +1,25 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <PreferenceCategory android:title="Highscore">
-        <Preference
-            android:title=""
-            android:key="highscore_easy"
-            android:selectable="false"
-            android:icon="@drawable/highscore_easy_bar"
-            android:summary="0"/>
+    <PreferenceCategory android:title="@string/menu_highscore_easy">
+    <Preference
+        android:title=""
+        android:key="highscore_easy"
+        android:selectable="false"
+        android:icon="@drawable/highscore_easy_bar"
+        android:summary="0"/>
 
+</PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/menu_highscore_moderate">
         <Preference
             android:title=""
             android:key="highscore_moderate"
             android:selectable="false"
             android:icon="@drawable/highscore_moderate_bar"
             android:summary="0"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/menu_highscore_hard">
 
         <Preference
             android:title=""

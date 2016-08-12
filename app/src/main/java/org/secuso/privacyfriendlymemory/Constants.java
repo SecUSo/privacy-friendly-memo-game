@@ -10,6 +10,7 @@ public final class Constants {
     // Preferences Constants
     public final static String FIRST_APP_START          = "FIRST_APP_START";
     public final static String SELECTED_CARD_DESIGN     = "SELECTED_CARD_DESIGN";
+    public final static String CUSTOM_CARDS_URIS        = "CUSTOM_CARDS_URIS";
 
     // Preferences Constants Highscore
     public final static String HIGHSCORE_EASY           = "HIGHSCORE_EASY";

@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Created by Hannes on 20.05.2016.
  */
-public class MemoryImages {
+public class MemoryDefaultImages {
 
     private static final int NOT_FOUND_IMAGE_RES_ID = R.drawable.secuso_not_found;
 
@@ -52,6 +52,42 @@ public class MemoryImages {
         images1.add(R.drawable.set1card30);
         images1.add(R.drawable.set1card31);
         images1.add(R.drawable.set1card32);
+    }
+    
+    static{
+        // fill second deck with images
+        images2.add(R.drawable.set2card1);
+        images2.add(R.drawable.set2card2);
+        images2.add(R.drawable.set2card3);
+        images2.add(R.drawable.set2card4);
+        images2.add(R.drawable.set2card5);
+        images2.add(R.drawable.set2card6);
+        images2.add(R.drawable.set2card7);
+        images2.add(R.drawable.set2card8);
+        images2.add(R.drawable.set2card9);
+        images2.add(R.drawable.set2card10);
+        images2.add(R.drawable.set2card11);
+        images2.add(R.drawable.set2card12);
+        images2.add(R.drawable.set2card13);
+        images2.add(R.drawable.set2card14);
+        images2.add(R.drawable.set2card15);
+        images2.add(R.drawable.set2card16);
+        images2.add(R.drawable.set2card17);
+        images2.add(R.drawable.set2card18);
+        images2.add(R.drawable.set2card19);
+        images2.add(R.drawable.set2card20);
+        images2.add(R.drawable.set2card21);
+        images2.add(R.drawable.set2card22);
+        images2.add(R.drawable.set2card23);
+        images2.add(R.drawable.set2card24);
+        images2.add(R.drawable.set2card25);
+        images2.add(R.drawable.set2card26);
+        images2.add(R.drawable.set2card27);
+        images2.add(R.drawable.set2card28);
+        images2.add(R.drawable.set2card29);
+        images2.add(R.drawable.set2card30);
+        images2.add(R.drawable.set2card31);
+        images2.add(R.drawable.set2card32);
     }
 
     public static int getNotFoundImageResID(){

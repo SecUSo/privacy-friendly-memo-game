@@ -1,9 +1,9 @@
 package org.secuso.privacyfriendlymemory.model;
 
-import android.util.Log;
-import android.util.Pair;
+import android.net.Uri;
 
 import org.secuso.privacyfriendlymemory.common.MemoryPlayerFactory;
+import org.secuso.privacyfriendlymemory.ui.R;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -39,8 +39,12 @@ public class Memory {
         this.memoryDifficulty = memoryDifficulty;
         this.memoryMode = memoryMode;
         this.cardDesign = cardDesign;
-        this.deck = new MemoryDeck(MemoryImages.getResIDs(cardDesign, memoryDifficulty, true)).getDeck();
-        this.notFoundImageResID = MemoryImages.getNotFoundImageResID();
+        if(cardDesign == CardDesign.CUSTOM){
+            this.deck = new MemoryDeck(MemoryCustomImages.getUris(memoryDifficulty)).getDeck();
+        }else{
+            this.deck = new MemoryDeck(MemoryDefaultImages.getResIDs(cardDesign, memoryDifficulty, true)).getDeck();
+        }
+        this.notFoundImageResID = MemoryDefaultImages.getNotFoundImageResID();
         this.players = MemoryPlayerFactory.createPlayers(memoryMode);
         this.currentPlayer = players.get(0);
         this.timer = new MemoryTimer();
@@ -109,6 +113,14 @@ public class Memory {
             return cardAtPosition.getResImageID();
         }
         return notFoundImageResID;
+    }
+
+    public Uri getImageUri(int position){
+        MemoryCard cardAtPosition = deck.get(position);
+        if (isFound(cardAtPosition) || isSelected(cardAtPosition) || isTemporySelected(cardAtPosition)) {
+            return cardAtPosition.getImageUri();
+        }
+        return Uri.parse("android.resource://org.secuso.privacyfriendlymemory/" + R.drawable.secuso_not_found);
     }
 
     public boolean isFinished() {

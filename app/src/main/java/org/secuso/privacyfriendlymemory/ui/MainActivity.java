@@ -12,7 +12,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,12 +24,10 @@ import org.secuso.privacyfriendlymemory.Constants;
 import org.secuso.privacyfriendlymemory.common.MemoryStatistics;
 import org.secuso.privacyfriendlymemory.common.ResIdAdapter;
 import org.secuso.privacyfriendlymemory.model.CardDesign;
-import org.secuso.privacyfriendlymemory.model.MemoryDeck;
 import org.secuso.privacyfriendlymemory.model.MemoryDifficulty;
-import org.secuso.privacyfriendlymemory.model.MemoryImages;
+import org.secuso.privacyfriendlymemory.model.MemoryDefaultImages;
 import org.secuso.privacyfriendlymemory.model.MemoryMode;
 
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -121,9 +118,10 @@ public class MainActivity extends AppCompatDrawerActivity {
                 Intent intent = new Intent(this, MemoryActivity.class);
                 intent.putExtra(Constants.GAME_MODE, memoryMode);
                 intent.putExtra(Constants.GAME_DIFFICULTY, memoryDifficulty);
-                int selectedCardDesign = preferences.getInt(Constants.CARD_DESIGN, 1);
+                int selectedCardDesign = 2; // use deck 2 to test
+                //int selectedCardDesign = preferences.getInt(Constants.SELECTED_CARD_DESIGN, 1);
                 CardDesign cardDesign =  CardDesign.get(selectedCardDesign);
-                intent.putExtra(Constants.CARD_DESIGN, CardDesign.FIRST);
+                intent.putExtra(Constants.CARD_DESIGN, cardDesign);
                 startActivity(intent);
                 break;
             default:
@@ -132,17 +130,15 @@ public class MainActivity extends AppCompatDrawerActivity {
     }
 
     private void initStatistics(){
-        List<Integer> resIdsDeckOne = MemoryImages.getResIDs(CardDesign.FIRST, MemoryDifficulty.Hard, false);
-     //   List<Integer> resIdsDeckTwo = MemoryImages.getResIDs(CardDesign.SECOND, MemoryDifficulty.Hard, false);
+        List<Integer> resIdsDeckOne = MemoryDefaultImages.getResIDs(CardDesign.FIRST, MemoryDifficulty.Hard, false);
+        List<Integer> resIdsDeckTwo = MemoryDefaultImages.getResIDs(CardDesign.SECOND, MemoryDifficulty.Hard, false);
         List<String> resourceNamesDeckOne = ResIdAdapter.getResourceName(resIdsDeckOne, this);
-        for(String resourceName : resourceNamesDeckOne){
-            Log.d("MainActivity", resourceName);
-        }
-     //   List<String> resourceNamesDeckTwo = ResIdAdapter.getResourceName(resIdsDeckTwo, this);
+
+        List<String> resourceNamesDeckTwo = ResIdAdapter.getResourceName(resIdsDeckTwo, this);
         Set<String> statisticsDeckOne = MemoryStatistics.createInitStatistics(resourceNamesDeckOne);
-     //   Set<String> staticticsDeckTwo =  MemoryStatistics.createInitStatistics(resourceNamesDeckTwo);
+        Set<String> staticticsDeckTwo =  MemoryStatistics.createInitStatistics(resourceNamesDeckTwo);
         preferences.edit().putStringSet(Constants.STATISTICS_DECK_ONE, statisticsDeckOne).commit();
-    //    preferences.edit().putStringSet(Constants.STATISTICS_DECK_TWO, staticticsDeckTwo).commit();
+        preferences.edit().putStringSet(Constants.STATISTICS_DECK_TWO, staticticsDeckTwo).commit();
     }
 
     private void setAppStarted() {
