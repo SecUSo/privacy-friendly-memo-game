@@ -17,6 +17,11 @@
     <!-- menu drawer highscore -->
     <string name="reset_highscore">Reset all</string>
 
+    <!-- menu drawer deck choice -->
+    <string name="custom_deck_options">Custom deck options</string>
+    <string name="set_custom_deck">Define images for custom deck</string>
+    <string name="reset_custom_deck">Delete custom deck</string>
+
     <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
     <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
 

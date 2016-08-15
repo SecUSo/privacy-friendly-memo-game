@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.WindowManager;
 
 import org.secuso.privacyfriendlymemory.ui.navigation.AboutActivity;
+import org.secuso.privacyfriendlymemory.ui.navigation.DeckChoiceActivity;
 import org.secuso.privacyfriendlymemory.ui.navigation.HelpActivity;
 import org.secuso.privacyfriendlymemory.ui.navigation.HighscoreActivity;
 
@@ -51,12 +52,15 @@ public abstract class AppCompatDrawerActivity extends AppCompatActivity implemen
         switch (id) {
             case R.id.menu_highscore:
                 intent = new Intent(this, HighscoreActivity.class);
-                intent.putExtra(HelpActivity.EXTRA_SHOW_FRAGMENT, HighscoreActivity.HelpFragment.class.getName());
-                intent.putExtra(HelpActivity.EXTRA_NO_HEADERS, true);
+                intent.putExtra(DeckChoiceActivity.EXTRA_SHOW_FRAGMENT, HighscoreActivity.HelpFragment.class.getName());
+                intent.putExtra(DeckChoiceActivity.EXTRA_NO_HEADERS, true);
                 break;
             case R.id.menu_statistics:
                 break;
             case R.id.menu_settings:
+                intent = new Intent(this, DeckChoiceActivity.class);
+                intent.putExtra(DeckChoiceActivity.EXTRA_SHOW_FRAGMENT, DeckChoiceActivity.HelpFragment.class.getName());
+                intent.putExtra(DeckChoiceActivity.EXTRA_NO_HEADERS, true);
                 break;
             case R.id.menu_help:
                 intent = new Intent(this, HelpActivity.class);

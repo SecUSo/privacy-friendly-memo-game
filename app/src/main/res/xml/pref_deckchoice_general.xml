@@ -1,0 +1,33 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" android:fragment="org.secuso.privacyfriendlymemory.ui.navigation.DeckChoiceActivity$HelpFragment">
+
+
+    <PreferenceCategory android:title="@string/menu_settings">
+        <CheckBoxPreference
+            android:title="TuX deck"
+            android:defaultValue="true"
+            android:icon="@drawable/set1card1"
+            android:key="deck1_key" />
+        <CheckBoxPreference
+            android:title="Animal deck"
+            android:defaultValue="false"
+            android:icon="@drawable/set2card3"
+            android:key="deck2_key" />
+        <CheckBoxPreference
+            android:title="Custom deck"
+            android:defaultValue="false"
+            android:icon="@drawable/secuso_not_found"
+            android:key="custom_deck_key" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/custom_deck_options">
+        <Preference android:title="@string/set_custom_deck"
+            android:key="set_custom_deck"
+            android:icon="@drawable/ic_add_to_photos_black_24dp"
+            android:selectable="true" />
+        <Preference android:title="@string/reset_custom_deck"
+            android:key="reset_custom_deck"
+            android:icon="@drawable/ic_delete_black_24dp"
+            android:selectable="true" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

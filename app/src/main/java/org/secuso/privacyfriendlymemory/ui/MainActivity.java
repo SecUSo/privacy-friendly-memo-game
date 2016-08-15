@@ -118,8 +118,7 @@ public class MainActivity extends AppCompatDrawerActivity {
                 Intent intent = new Intent(this, MemoryActivity.class);
                 intent.putExtra(Constants.GAME_MODE, memoryMode);
                 intent.putExtra(Constants.GAME_DIFFICULTY, memoryDifficulty);
-                int selectedCardDesign = 2; // use deck 2 to test
-                //int selectedCardDesign = preferences.getInt(Constants.SELECTED_CARD_DESIGN, 1);
+                int selectedCardDesign = preferences.getInt(Constants.SELECTED_CARD_DESIGN, 1);
                 CardDesign cardDesign =  CardDesign.get(selectedCardDesign);
                 intent.putExtra(Constants.CARD_DESIGN, cardDesign);
                 startActivity(intent);
