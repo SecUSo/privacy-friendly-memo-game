@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.preference.PreferenceManager;
+import android.util.Log;
 
 import org.secuso.privacyfriendlymemory.Constants;
 import org.secuso.privacyfriendlymemory.ui.MemoryActivity;
