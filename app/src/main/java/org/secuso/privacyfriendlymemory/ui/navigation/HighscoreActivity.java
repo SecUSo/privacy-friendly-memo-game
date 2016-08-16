@@ -182,7 +182,7 @@ public class HighscoreActivity extends AppCompatPreferenceActivity {
             s = (seconds < 10) ? "0" + String.valueOf(seconds) : String.valueOf(seconds);
             m = (minutes < 10) ? "0" + String.valueOf(minutes) : String.valueOf(minutes);
             h = (hours < 10) ? "0" + String.valueOf(hours) : String.valueOf(hours);
-            return h + ":" + m + ":" + s;
+            return h + ":" + m + ":" + s + "\t (h:m:s)";
         }
 
     }

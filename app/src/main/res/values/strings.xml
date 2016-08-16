@@ -14,6 +14,11 @@
     <string name="menu_help">Help</string>
     <string name="menu_about">About</string>
 
+    <!-- menu drawer statistics -->
+    <string name="carddesign_displayname_first">TuX Deck</string>
+    <string name="carddesign_displayname_second">Animal Deck</string>
+    <string name="carddesign_displayname_custom">Custom Deck</string>
+    <string name="false_selected">False selected:</string>
     <!-- menu drawer highscore -->
     <string name="reset_highscore">Reset all</string>
 

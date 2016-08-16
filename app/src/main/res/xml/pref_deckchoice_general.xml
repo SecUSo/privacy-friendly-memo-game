@@ -3,17 +3,17 @@
 
     <PreferenceCategory android:title="@string/menu_settings">
         <CheckBoxPreference
-            android:title="TuX deck"
+            android:title="@string/carddesign_displayname_first"
             android:defaultValue="true"
             android:icon="@drawable/set1card1"
             android:key="deck1_key" />
         <CheckBoxPreference
-            android:title="Animal deck"
+            android:title="@string/carddesign_displayname_second"
             android:defaultValue="false"
             android:icon="@drawable/set2card3"
             android:key="deck2_key" />
         <CheckBoxPreference
-            android:title="Custom deck"
+            android:title="@string/carddesign_displayname_custom"
             android:defaultValue="false"
             android:icon="@drawable/secuso_not_found"
             android:key="custom_deck_key" />

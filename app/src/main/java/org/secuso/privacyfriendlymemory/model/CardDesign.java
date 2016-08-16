@@ -1,20 +1,25 @@
 package org.secuso.privacyfriendlymemory.model;
 
+import org.secuso.privacyfriendlymemory.ui.R;
+
 /**
  * Created by Hannes on 20.05.2016.
  */
 public enum CardDesign {
 
-    FIRST(1),
-    SECOND(2),
-    CUSTOM(3);
+    FIRST(1, R.string.carddesign_displayname_first),
+    SECOND(2, R.string.carddesign_displayname_second),
+    CUSTOM(3, R.string.carddesign_displayname_custom);
 
     private final int value;
+    private final int displayNameResId;
 
-    CardDesign(int value){
+    CardDesign(int value, int displayNameResId){
         this.value = value;
+        this.displayNameResId = displayNameResId;
     }
 
+    public int getDisplayNameResId(){ return displayNameResId; }
     public int getValue(){
         return value;
     }

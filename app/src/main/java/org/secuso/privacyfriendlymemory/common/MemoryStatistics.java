@@ -2,6 +2,7 @@ package org.secuso.privacyfriendlymemory.common;
 
 import android.util.Log;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,5 +52,13 @@ public class MemoryStatistics {
             initialStatistics.add(initialStatsEntry);
         }
         return initialStatistics;
+    }
+
+    public Integer[] getFalseSelectedCounts(){
+        return nameCountMapping.values().toArray(new Integer[nameCountMapping.values().size()]);
+    }
+
+    public String[] getResourceNames(){
+        return nameCountMapping.keySet().toArray(new String[nameCountMapping.keySet().size()]);
     }
 }
