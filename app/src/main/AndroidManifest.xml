@@ -21,6 +21,7 @@
         <activity android:name=".navigation.AboutActivity" />
         <activity android:name=".navigation.HelpActivity" />
         <activity android:name=".navigation.HighscoreActivity" />
+        <activity android:name=".navigation.StatisticsActivity" />
         <activity android:name=".navigation.DeckChoiceActivity" />
         <activity android:name=".MemoryActivity"
                   android:label="@string/app_name"

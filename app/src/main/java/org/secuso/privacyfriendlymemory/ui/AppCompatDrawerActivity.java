@@ -15,6 +15,7 @@ import org.secuso.privacyfriendlymemory.ui.navigation.AboutActivity;
 import org.secuso.privacyfriendlymemory.ui.navigation.DeckChoiceActivity;
 import org.secuso.privacyfriendlymemory.ui.navigation.HelpActivity;
 import org.secuso.privacyfriendlymemory.ui.navigation.HighscoreActivity;
+import org.secuso.privacyfriendlymemory.ui.navigation.StatisticsActivity;
 
 /**
  * Created by Hannes on 18.05.2016.
@@ -56,6 +57,7 @@ public abstract class AppCompatDrawerActivity extends AppCompatActivity implemen
                 intent.putExtra(DeckChoiceActivity.EXTRA_NO_HEADERS, true);
                 break;
             case R.id.menu_statistics:
+                intent = new Intent(this, StatisticsActivity.class);
                 break;
             case R.id.menu_settings:
                 intent = new Intent(this, DeckChoiceActivity.class);
