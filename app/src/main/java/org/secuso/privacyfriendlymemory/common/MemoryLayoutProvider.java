@@ -1,6 +1,7 @@
 package org.secuso.privacyfriendlymemory.common;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.net.Uri;
 import android.util.DisplayMetrics;
@@ -24,58 +25,60 @@ public class MemoryLayoutProvider {
     private final MemoryDifficulty memoryDifficulty;
     private static Map<MemoryDifficulty, Integer> columnCountMapping = new HashMap<>();
 
-    static{
+    static {
         columnCountMapping.put(MemoryDifficulty.Easy, 4);
         columnCountMapping.put(MemoryDifficulty.Moderate, 6);
         columnCountMapping.put(MemoryDifficulty.Hard, 8);
     }
 
-    public MemoryLayoutProvider(Context context, Memory memory){
+    public MemoryLayoutProvider(Context context, Memory memory) {
         this.context = context;
         this.memory = memory;
         this.memoryDifficulty = memory.getDifficulty();
     }
 
-    public int getColumnCount(){
+    public int getColumnCount() {
         return columnCountMapping.get(memoryDifficulty);
     }
 
-    public int getDeckSize(){
+    public int getDeckSize() {
         return memoryDifficulty.getDeckSize();
     }
 
-    public int getImageResID(int position){
+    public int getImageResID(int position) {
         return memory.getImageResID(position);
     }
 
-    public Uri getImageUri(int position){
+    public Uri getImageUri(int position) {
         return memory.getImageUri(position);
     }
 
-    public int getCardSizePixel(){
+    public int getCardSizePixel() {
         // calculate the card size in pixel based on the screen width
         // [remember: card = square, so width=height]
         int displayWidth = context.getResources().getDisplayMetrics().widthPixels;
-        int cardSize = (displayWidth-getMarginLeft()-getMarginRight())/getColumnCount();
+        int cardSize = (displayWidth - getMarginLeft() - getMarginRight()) / getColumnCount();
         return cardSize;
     }
 
-    public int getMargin(){
+    public int getMargin() {
         int displayHeight = context.getResources().getDisplayMetrics().heightPixels;
-        int cardsHeight = getColumnCount()*getCardSizePixel();
-        int heightLeft = displayHeight-cardsHeight;
-        return heightLeft/2;
+        int cardsHeight = getColumnCount() * getCardSizePixel();
+        int heightLeft = displayHeight - cardsHeight;
+        return heightLeft / 2;
     }
 
 
-    public int getMarginLeft(){
+    public int getMarginLeft() {
         return MARGIN_LEFT;
     }
 
-    public int getMarginRight(){
+    public int getMarginRight() {
         return MARGIN_RIGHT;
     }
 
-    public boolean isCustomDeck(){ return memory.isCustomDesign(); }
+    public boolean isCustomDeck() {
+        return memory.isCustomDesign();
+    }
 
 }

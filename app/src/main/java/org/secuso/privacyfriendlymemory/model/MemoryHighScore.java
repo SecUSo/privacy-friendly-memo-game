@@ -16,7 +16,7 @@ public class MemoryHighscore {
     static{
         baseScoreMapping.put(MemoryDifficulty.Easy, 3000);
         baseScoreMapping.put(MemoryDifficulty.Moderate, 9000);
-        baseScoreMapping.put(MemoryDifficulty.Hard, 15000);
+        baseScoreMapping.put(MemoryDifficulty.Hard, 50000);
     }
 
     public MemoryHighscore(MemoryDifficulty difficulty, int time, int tries){

@@ -17,6 +17,7 @@ import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBar;
 import android.util.Log;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import org.secuso.privacyfriendlymemory.Constants;
 import org.secuso.privacyfriendlymemory.model.CardDesign;
@@ -181,6 +182,7 @@ public class DeckChoiceActivity extends AppCompatPreferenceActivity {
                 public boolean onPreferenceClick(Preference preference) {
                     sharedPreferences.edit().putStringSet(Constants.CUSTOM_CARDS_URIS, new HashSet<String>()).commit();
                     customImageUris.clear();
+                    Toast.makeText(getActivity(),getResources().getString(R.string.custom_deck_deleted) , Toast.LENGTH_SHORT).show();
                     // refresh selection after custom images are deleted in case of the custom deck was selected
                     if (thirdBox.isChecked()) {
                         saveSelectedCardDesign("deck1_key");
