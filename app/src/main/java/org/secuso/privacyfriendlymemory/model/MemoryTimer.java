@@ -37,11 +37,6 @@ public class MemoryTimer {
         }
     }
 
-    public void delete(){
-        timerRunning.set(false);
-        internalTimer.cancel();
-    }
-
     public int getTime(){
         return time;
     }
