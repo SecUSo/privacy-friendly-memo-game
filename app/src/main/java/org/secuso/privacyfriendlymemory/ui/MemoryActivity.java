@@ -384,7 +384,7 @@ public class MemoryActivity extends AppCompatDrawerActivity {
             int cardsPlayerTwo = playerTwo.getFoundCardsCount();
 
             if(cardsPlayerOne == cardsPlayerTwo){
-                winnerName = computePlayerName(playerOne) + " & " + computePlayerName(playerTwo);
+                winnerName = ""; // computePlayerName(playerOne) + " & " + computePlayerName(playerTwo);
             }else if(cardsPlayerOne > cardsPlayerTwo) {
                 winnerName = computePlayerName(playerOne);
             }else{

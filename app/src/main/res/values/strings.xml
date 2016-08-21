@@ -71,7 +71,7 @@
 
     <!-- win dialoag -->
     <string name="win_text">Congratulations!</string>
-    <string name="win_text_duo">Congratulations,</string>
+    <string name="win_text_duo">Congratulations</string>
     <string name="win_time">Time:</string>
     <string name="win_tries">Tries:</string>
     <string name="win_highscore">Highscore:</string>
