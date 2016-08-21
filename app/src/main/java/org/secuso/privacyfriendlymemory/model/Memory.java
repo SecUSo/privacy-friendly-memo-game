@@ -172,7 +172,7 @@ public class Memory {
         if(isMultiplayer()){
             throw new UnsupportedOperationException("Highscore is disabled in multiplayer mode!");
         }
-        return new MemoryHighscore(memoryDifficulty, timer.getTime(), currentPlayer.getTries());
+        return new MemoryHighscore(memoryDifficulty, timer.getTime(), currentPlayer.getTries(), !isCustomDesign());
     }
 
     public List<MemoryPlayer> getPlayers(){

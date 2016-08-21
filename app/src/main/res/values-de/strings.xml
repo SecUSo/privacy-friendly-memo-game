@@ -27,6 +27,7 @@
     <string name="set_custom_deck">Bilder für eigenes Deck festlegen</string>
     <string name="reset_custom_deck">Eigenes Deck löschen</string>
     <string name="custom_deck_deleted">Eigenes Deck gelöscht.</string>
+    <string name="custom_deck_not_enough_images">Eigenes Deck konnte nicht erstellt werden. Bitte wähle mindestens 32 Bilder.</string>
 
 
     <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>

@@ -338,7 +338,12 @@ public class MemoryActivity extends AppCompatDrawerActivity {
             super.onCreate(savedInstanceState);
             ((TextView) findViewById(R.id.win_time)).setText(timeToString(highscore.getTime()));
             ((TextView) findViewById(R.id.win_tries)).setText(String.valueOf(highscore.getTries()));
-            ((TextView) findViewById(R.id.win_highscore)).setText(String.valueOf(highscore.getScore()));
+            // highscore is not valid if a custom deck is selected
+            if(highscore.isValid()){
+                ((TextView) findViewById(R.id.win_highscore)).setText(String.valueOf(highscore.getScore()));
+            }else{
+                ((TextView) findViewById(R.id.win_highscore_text)).setText("");
+            }
 
         }
     }

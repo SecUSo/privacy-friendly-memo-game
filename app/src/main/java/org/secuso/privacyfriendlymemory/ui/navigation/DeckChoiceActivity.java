@@ -153,6 +153,8 @@ public class DeckChoiceActivity extends AppCompatPreferenceActivity {
                 sharedPreferences.edit().putStringSet(Constants.CUSTOM_CARDS_URIS, customImageUris).commit();
                 thirdBox.setEnabled(true);
                 customImageUris.clear();
+            }else{
+                Toast.makeText(getActivity(), getString(R.string.custom_deck_not_enough_images), Toast.LENGTH_LONG).show();
             }
 
             super.onActivityResult(requestCode, resultCode, data);
@@ -172,7 +174,6 @@ public class DeckChoiceActivity extends AppCompatPreferenceActivity {
                     intent.setType("image/*");
                     intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
                     startActivityForResult(Intent.createChooser(intent, ""), PICK_IMAGE_MULTIPLE);
-
                     return true;
                 }
             });

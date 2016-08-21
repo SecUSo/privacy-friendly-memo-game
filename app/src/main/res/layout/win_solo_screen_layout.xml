@@ -92,6 +92,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/win_highscore"
                     android:textColor="@color/white"
+                    android:id="@+id/win_highscore_text"
                     android:layout_gravity="center" />
                 <TextView
                     android:layout_width="wrap_content"
