@@ -6,11 +6,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/player_name_prefix"
+        android:text="Player 1"
         android:id="@+id/player_one_name"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp" />
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -56,10 +57,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/player_name_prefix"
+        android:text="Player 2"
         android:id="@+id/player_two_name"
         android:layout_below="@+id/player_one_found"
         android:layout_centerHorizontal="true" />
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -68,8 +70,9 @@
         android:text="00:00"
         android:id="@+id/player_two_found_value"
         android:layout_below="@+id/player_two_name"
-        android:layout_toLeftOf="@+id/player_two_name"
-        android:layout_toStartOf="@+id/player_two_name" />
+        android:layout_toStartOf="@+id/player_two_name"
+        android:layout_toLeftOf="@+id/player_two_name" />
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -77,9 +80,9 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/stats_found_cards"
         android:id="@+id/player_two_found"
-        android:layout_alignBottom="@+id/player_two_found_value"
-        android:layout_alignRight="@+id/player_one_found"
-        android:layout_alignEnd="@+id/player_one_found" />
+        android:layout_alignTop="@+id/player_two_found_value"
+        android:layout_toLeftOf="@+id/player_two_found_value"
+        android:layout_toStartOf="@+id/player_two_found_value" />
 
     <TextView
         android:layout_width="wrap_content"

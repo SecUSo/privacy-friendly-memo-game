@@ -8,6 +8,7 @@ import android.util.Log;
 
 import org.secuso.privacyfriendlymemory.Constants;
 import org.secuso.privacyfriendlymemory.ui.MemoryActivity;
+import org.secuso.privacyfriendlymemory.ui.R;
 
 import java.util.LinkedHashSet;
 import java.util.LinkedList;

@@ -73,7 +73,7 @@
 
     <!-- win dialoag -->
     <string name="win_text">Glückwunsch!</string>
-    <string name="win_text_duo">Glückwunsch,</string>
+    <string name="win_text_duo">Glückwunsch</string>
     <string name="win_time">Zeit:</string>
     <string name="win_tries">Versuche:</string>
     <string name="win_highscore">Highscore:</string>

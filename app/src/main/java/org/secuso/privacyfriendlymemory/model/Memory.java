@@ -100,10 +100,6 @@ public class Memory {
         return null;
     }
 
-    public int getFoundCardsSize(){
-        return foundCards.size();
-    }
-
     public int getDeckSize(){ return deck.size();}
 
 
@@ -205,4 +201,5 @@ public class Memory {
         return cardDesign;
     }
 
+    public Map<Integer, MemoryCard> getDeck(){ return deck; }
 }

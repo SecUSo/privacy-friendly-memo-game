@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -11,6 +12,7 @@ import android.widget.GridView;
 import android.widget.ImageView;
 
 import org.secuso.privacyfriendlymemory.common.MemoryLayoutProvider;
+import org.secuso.privacyfriendlymemory.model.MemoryCustomImages;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -25,11 +27,14 @@ public class MemoryImageAdapter extends BaseAdapter {
     private final MemoryLayoutProvider layoutProvider;
     private Map<Integer, Bitmap> positionBitmapCache = new HashMap<>();
     private final Uri notFoundUri;
+    private final Bitmap notFoundBitmap;
 
     public MemoryImageAdapter(Context context, MemoryLayoutProvider layoutProvider) {
         this.context = context;
         this.layoutProvider = layoutProvider;
         this.notFoundUri = Uri.parse("android.resource://org.secuso.privacyfriendlymemory/" + R.drawable.secuso_not_found);
+        this.positionBitmapCache = layoutProvider.getCachedDeck();
+        this.notFoundBitmap = decodeUri(notFoundUri, layoutProvider.getCardSizePixel());
     }
 
     @Override
@@ -60,33 +65,23 @@ public class MemoryImageAdapter extends BaseAdapter {
         }
         if (layoutProvider.isCustomDeck()) {
             Uri imageUri = layoutProvider.getImageUri(position);
-            Bitmap resizedBitmap;
+            Bitmap bitmapForUri;
 
             boolean isCurrentUriNotFoundUri = notFoundUri.toString().equals(imageUri.toString());
-            // check if bitmap exist in cache already
-            if (positionBitmapCache.get(position) == null || isCurrentUriNotFoundUri) {
-                resizedBitmap = decodeUri(imageUri, layoutProvider.getCardSizePixel());
-                if (!isCurrentUriNotFoundUri) {
-                    positionBitmapCache.put(position, resizedBitmap);
-                }
+            // check if uri is not found uri
+            if (isCurrentUriNotFoundUri) {
+                bitmapForUri = notFoundBitmap;
             } else {
-                resizedBitmap = positionBitmapCache.get(position);
+                bitmapForUri = positionBitmapCache.get(position);
 
             }
-            card.setImageBitmap(resizedBitmap);
+            card.setImageBitmap(bitmapForUri);
         } else{
             card.setImageResource(layoutProvider.getImageResID(position));
         }
         return card;
     }
 
-
-    public int dpToPx(int dps) {
-        final float scale = context.getResources().getDisplayMetrics().density;
-        int pixels = (int) (dps * scale + 0.5f);
-
-        return pixels;
-    }
 
     private Bitmap decodeUri(Uri uri, final int requiredSize) {
         BitmapFactory.Options o = new BitmapFactory.Options();

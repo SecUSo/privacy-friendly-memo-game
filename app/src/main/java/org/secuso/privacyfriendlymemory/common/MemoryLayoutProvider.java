@@ -3,13 +3,17 @@ package org.secuso.privacyfriendlymemory.common;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.util.DisplayMetrics;
 import android.util.Log;
 
 import org.secuso.privacyfriendlymemory.model.Memory;
+import org.secuso.privacyfriendlymemory.model.MemoryCard;
 import org.secuso.privacyfriendlymemory.model.MemoryDifficulty;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -81,4 +85,42 @@ public class MemoryLayoutProvider {
         return memory.isCustomDesign();
     }
 
+    public Map<Integer, Bitmap> getCachedDeck(){
+        Map<Integer, Bitmap> cachedDeck = new HashMap<>();
+        // generate mapping only if it is a custom deck
+        if(memory.isCustomDesign()){
+            for(Map.Entry<Integer, MemoryCard> entry : memory.getDeck().entrySet()){
+                cachedDeck.put(entry.getKey(), decodeUri(entry.getValue().getImageUri(), getCardSizePixel()));
+            }
+        }
+        return cachedDeck;
+    }
+
+
+    private Bitmap decodeUri(Uri uri, final int requiredSize) {
+        BitmapFactory.Options o = new BitmapFactory.Options();
+        o.inJustDecodeBounds = true;
+        try {
+            BitmapFactory.decodeStream(context.getContentResolver().openInputStream(uri), null, o);
+        } catch (IOException e) {
+        }
+        int width_tmp = o.outWidth, height_tmp = o.outHeight;
+        int scale = 1;
+
+        while (true) {
+            if (width_tmp / 2 < requiredSize || height_tmp / 2 < requiredSize)
+                break;
+            width_tmp /= 2;
+            height_tmp /= 2;
+            scale *= 2;
+        }
+
+        BitmapFactory.Options o2 = new BitmapFactory.Options();
+        o2.inSampleSize = scale;
+        try {
+            return BitmapFactory.decodeStream(context.getContentResolver().openInputStream(uri), null, o2);
+        } catch (IOException e) {
+        }
+        return null;
+    }
 }
