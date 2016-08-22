@@ -8,7 +8,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.content.ContextCompat;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,13 +19,13 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import org.secuso.privacyfriendlymemory.Constants;
+import org.secuso.privacyfriendlymemory.common.MemoryLayoutProvider;
 import org.secuso.privacyfriendlymemory.common.MemoryStatistics;
 import org.secuso.privacyfriendlymemory.common.ResIdAdapter;
 import org.secuso.privacyfriendlymemory.model.CardDesign;
 import org.secuso.privacyfriendlymemory.model.Memory;
 import org.secuso.privacyfriendlymemory.model.MemoryDifficulty;
 import org.secuso.privacyfriendlymemory.model.MemoryHighscore;
-import org.secuso.privacyfriendlymemory.common.MemoryLayoutProvider;
 import org.secuso.privacyfriendlymemory.model.MemoryMode;
 import org.secuso.privacyfriendlymemory.model.MemoryPlayer;
 

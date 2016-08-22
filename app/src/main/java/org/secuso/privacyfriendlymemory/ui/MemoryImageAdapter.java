@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -12,7 +11,6 @@ import android.widget.GridView;
 import android.widget.ImageView;
 
 import org.secuso.privacyfriendlymemory.common.MemoryLayoutProvider;
-import org.secuso.privacyfriendlymemory.model.MemoryCustomImages;
 
 import java.io.IOException;
 import java.util.HashMap;

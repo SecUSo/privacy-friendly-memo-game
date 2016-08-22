@@ -1,8 +1,5 @@
 package org.secuso.privacyfriendlymemory.common;
 
-import android.util.Log;
-
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;

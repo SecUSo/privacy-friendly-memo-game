@@ -1,13 +1,9 @@
 package org.secuso.privacyfriendlymemory.common;
 
 import android.content.Context;
-import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.util.DisplayMetrics;
-import android.util.Log;
 
 import org.secuso.privacyfriendlymemory.model.Memory;
 import org.secuso.privacyfriendlymemory.model.MemoryCard;
