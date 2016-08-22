@@ -1,6 +1,6 @@
 ## Privacy Friendly Memory
 
-Privacy Friendly Memory does not use any permission. The app can provide its full functionality without the usage of permissions and it does not include advertisement nor tracking mechanisms.
+Privacy Friendly Memory is a card game. The application does not use any permission, which means it can provide its full functionality without the usage of permissions and it does not include advertisement nor tracking mechanisms.
 
 ## Motivation 
 
