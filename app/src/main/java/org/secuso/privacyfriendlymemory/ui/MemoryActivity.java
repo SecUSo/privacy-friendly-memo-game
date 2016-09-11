@@ -396,10 +396,10 @@ public class MemoryActivity extends MemoryAppCompatDrawerActivity {
 
             ((TextView) findViewById(R.id.win_player_name)).setText(computeWinnerName());
             ((TextView) findViewById(R.id.win_first_player_name)).setText(computePlayerName(playerOne));
-            ((TextView) findViewById(R.id.win_first_player_cards)).setText(playerOne.getFoundCardsCount() + "/" + cardsCount / 2);
+            ((TextView) findViewById(R.id.win_first_player_cards)).setText(playerOne.getFoundCardsCount() + "/" + cardsCount);
 
             ((TextView) findViewById(R.id.win_second_player_name)).setText(computePlayerName(playerTwo));
-            ((TextView) findViewById(R.id.win_second_player_cards)).setText(playerTwo.getFoundCardsCount() + "/" + cardsCount / 2);
+            ((TextView) findViewById(R.id.win_second_player_cards)).setText(playerTwo.getFoundCardsCount() + "/" + cardsCount);
         }
 
         private String computePlayerName(MemoryPlayer player) {
