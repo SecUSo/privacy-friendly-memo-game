@@ -5,6 +5,7 @@
     <string name="button_continue">Fortsetzen</string>
 
     <!-- menu drawer -->
+    <string name="menu_menu">Hauptmenü</string>
     <string name="menu_highscore">Highscore</string>
     <string name="menu_highscore_easy">Highscore Leicht</string>
     <string name="menu_highscore_moderate">Highscore Normal</string>
@@ -23,11 +24,14 @@
     <string name="reset_highscore">Zurücksetzen</string>
 
     <!-- menu drawer deck choice -->
-    <string name="custom_deck_options">Eigenes Deck Optionen</string>
+    <string name="custom_deck_options">Eigenes Deck</string>
     <string name="set_custom_deck">Bilder für eigenes Deck festlegen</string>
     <string name="reset_custom_deck">Eigenes Deck löschen</string>
     <string name="custom_deck_deleted">Eigenes Deck gelöscht.</string>
     <string name="custom_deck_not_enough_images">Eigenes Deck konnte nicht erstellt werden. Bitte wähle mindestens 32 Bilder.</string>
+    <string name="set_custom_deck_hint">Bitte wählen Sie mindestens 32 Bilder.</string>
+    <string name="set_custom_deck_hint_ok">Ok</string>
+
 
 
     <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
@@ -40,8 +44,8 @@
     <string name="difficulty_moderate">Normal</string>
     <string name="difficulty_hard">Schwer</string>
 
-    <string name="mode_single_player">Einzelspieler</string>
-    <string name="mode_duo_player">Zweispieler</string>
+    <string name="mode_single_player">1 Spieler</string>
+    <string name="mode_duo_player">2 Spieler</string>
 
     <!-- about activity -->
     <string name="version_number" translatable="false">v1.0</string>
@@ -51,14 +55,20 @@
     <string name="privacy_friendly">Diese App gehört zur Gruppe der Privacy Friendly Apps.</string>
     <string name="more_info">Mehr Informationen unter::</string>
     <string name="secuso_url" translatable="false"><a href="https://www.secuso.informatik.tu-darmstadt.de/en/research/results/">https://www.secuso.org</a></string>
+    <string name="tux_deck_provided">TuX Deck Bilder bereitgestellt von:</string>
+    <string name="animal_deck_provided">Tier Deck Bilder bereitgestellt von:</string>
 
     <!-- help activity -->
     <string name="help_game_mode">Spielmodus</string>
-    <string name="help_single_player">Einzelspieler Modus</string>
-    <string name="help_duo_player">Zweispieler Modus</string>
+    <string name="help_single_player">1 Spieler Modus</string>
+    <string name="help_duo_player">2 Spieler Modus</string>
 
     <string name="help_game_difficulty">Spielschwierigkeit</string>
     <string name="help_game_difficulty_summary">Anzahl der Memorykarten abhängig der gewählten Schwierigkeit</string>
+
+    <string name="help_custom_deck">Sie können in den Einstellungen unter Deckwahl eigene Kartenbilder auswählen.</string>
+
+    <string name="help_highscore">Der Highscore berechnet sich aus der benötigten Anzahl an Versuchen, der Zeit und der Spielschwierigkeit.</string>
 
     <string name="help_privacyInfo">Privatsphäre Informationen</string>
     <string name="help_permissions">Berechtigungen</string>
@@ -74,6 +84,7 @@
     <!-- win dialoag -->
     <string name="win_text">Glückwunsch!</string>
     <string name="win_text_duo">Glückwunsch</string>
+    <string name="win_text_duo_draw">Unentschieden!</string>
     <string name="win_time">Zeit:</string>
     <string name="win_tries">Versuche:</string>
     <string name="win_highscore">Highscore:</string>
@@ -82,7 +93,10 @@
 
     <!-- memory activity -->
     <string name="player_name_prefix">Spieler</string>
-    <string name="stats_found_cards">Gefunden: </string>
+    <string name="stats_found_cards">Pärchen: </string>
     <string name="stats_tries">Versuche: </string>
+    <string name="quit_game_text">Möchten Sie das Spiel verlassen?</string>
+    <string name="quit_yes">Ja</string>
+    <string name="quit_no">Nein</string>
 </resources>
 

@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <!-- include layout for current game stats -->
     <include layout="@layout/activity_game_stats_content" />
 
-    <GridView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/gridview"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:verticalSpacing="2dp"
-    android:horizontalSpacing="2dp"
-    android:stretchMode="columnWidth">
-</GridView>
+        <GridView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/gridview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:horizontalSpacing="2dp"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="2dp"></GridView>
+
 
 </RelativeLayout>

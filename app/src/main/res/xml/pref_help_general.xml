@@ -13,11 +13,27 @@
 
     <PreferenceCategory android:title="@string/help_game_difficulty">
 
+    <Preference android:title=""
+        android:selectable="false"
+        android:icon="@drawable/ic_star_blue_48dp"
+        android:summary="@string/help_game_difficulty_summary"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/custom_deck_options">
+
         <Preference android:title=""
             android:selectable="false"
-            android:icon="@drawable/ic_star_blue_36dp"
-            android:summary="@string/help_game_difficulty_summary"/>
+            android:icon="@drawable/secuso_not_found"
+            android:summary="@string/help_custom_deck"/>
+    </PreferenceCategory>
 
+    <PreferenceCategory android:title="@string/menu_highscore">
+
+        <Preference android:title=""
+            android:selectable="false"
+            android:icon="@drawable/highscore_hard_bar"
+            android:summary="@string/help_highscore"/>
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/help_privacyInfo">

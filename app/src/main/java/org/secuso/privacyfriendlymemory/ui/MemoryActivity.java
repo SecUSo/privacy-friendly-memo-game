@@ -5,9 +5,14 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.content.ContextCompat;
+import android.util.DisplayMetrics;
+import android.util.Log;
+import android.view.Display;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +22,7 @@ import android.widget.Button;
 import android.widget.GridView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.secuso.privacyfriendlymemory.Constants;
 import org.secuso.privacyfriendlymemory.common.MemoryLayoutProvider;
@@ -36,13 +42,14 @@ import java.util.Set;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class MemoryActivity extends AppCompatDrawerActivity {
+public class MemoryActivity extends MemoryAppCompatDrawerActivity {
 
     private static Context context;
     private SharedPreferences preferences = null;
     private Memory memory;
     private MemoryStatistics statistics;
     private MemoryLayoutProvider layoutProvider;
+    private GridView  gridview;
     private Timer timerViewUpdater;
 
     @Override
@@ -52,8 +59,9 @@ public class MemoryActivity extends AppCompatDrawerActivity {
         setContentView(R.layout.activity_game);
         super.setupNavigationView();
         setupPreferences();
-        // make context assessable for shared preferences
+        // make context available for shared preferences
         MemoryActivity.context = getApplicationContext();
+
         createMemory();
         createStatistics();
         createLayoutProvider();
@@ -63,23 +71,23 @@ public class MemoryActivity extends AppCompatDrawerActivity {
     }
 
     @Override
-    protected void onResume(){
+    protected void onResume() {
         super.onResume();
         memory.startTimer();
         createStatistics();
     }
 
     @Override
-    protected void onPause(){
+    protected void onPause() {
         super.onPause();
         memory.stopTimer();
     }
 
-    private void setupPreferences(){
+    private void setupPreferences() {
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
     }
 
-    private void setupToolBar(){
+    private void setupToolBar() {
         // setup memory mode text view
         TextView modeView = (TextView) findViewById(R.id.gameModeText);
         modeView.setText(memory.getMode().getStringResID());
@@ -107,15 +115,15 @@ public class MemoryActivity extends AppCompatDrawerActivity {
                     }
                 });
             }
-        },0 , 1000);
+        }, 0, 1000);
 
     }
 
-    private void setupGridview(){
-        final GridView gridview = (GridView) findViewById(R.id.gridview);
+    private void setupGridview() {
+        gridview = (GridView) findViewById(R.id.gridview);
         gridview.setNumColumns(layoutProvider.getColumnCount());
-        final ViewGroup.MarginLayoutParams marginLayoutParams =(ViewGroup.MarginLayoutParams)gridview.getLayoutParams();
-        marginLayoutParams.setMargins(layoutProvider.getMarginLeft(),layoutProvider.getMargin(),layoutProvider.getMarginRight(),0);
+        final ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) gridview.getLayoutParams();
+        marginLayoutParams.setMargins(layoutProvider.getMarginLeft(), layoutProvider.getMargin(), layoutProvider.getMarginRight(), 0);
         gridview.setLayoutParams(marginLayoutParams);
         final MemoryImageAdapter imageAdapter = new MemoryImageAdapter(this, layoutProvider);
         gridview.setAdapter(imageAdapter);
@@ -125,9 +133,9 @@ public class MemoryActivity extends AppCompatDrawerActivity {
                 memory.select(position);
 
                 // if two cards are false selected and memory is played with a custom card set increment "false selected count" for statistics
-                if(!memory.isCustomDesign()){
+                if (!memory.isCustomDesign()) {
                     Integer[] falseSelectedCards = memory.getFalseSelectedCards();
-                    if(falseSelectedCards != null){
+                    if (falseSelectedCards != null) {
                         List<String> resourceNames = ResIdAdapter.getResourceName(Arrays.asList(falseSelectedCards), getApplicationContext());
                         statistics.incrementCount(resourceNames);
                         String staticsConstants = memory.getCardDesign() == CardDesign.FIRST ? Constants.STATISTICS_DECK_ONE : Constants.STATISTICS_DECK_TWO;
@@ -139,7 +147,7 @@ public class MemoryActivity extends AppCompatDrawerActivity {
                 // update stats (found cards, tries, next player,..)
                 updateStatsView();
 
-                if(memory.isFinished()){
+                if (memory.isFinished()) {
                     saveHighscore();
                     showWinDialog();
                     gridview.setEnabled(false);
@@ -149,16 +157,19 @@ public class MemoryActivity extends AppCompatDrawerActivity {
         });
 
     }
-    private void updateStatsView(){
+
+    private void updateStatsView() {
         // set views for player one
         MemoryPlayer playerOne = memory.getPlayers().get(0);
         // init player name view
         TextView playerOneNameView = (TextView) findViewById(R.id.player_one_name);
         playerOneNameView.setText(getResources().getString(R.string.player_name_prefix) + " " + playerOne.getNameSuffix());
+        // do not show player one name in singleplayer game
+        playerOneNameView.setVisibility(View.INVISIBLE);
         // init found values for player one
         TextView playerOneFoundsValueView = (TextView) findViewById(R.id.player_one_found_value);
         StringBuilder playerOneFoundsValueBuilder = new StringBuilder();
-        playerOneFoundsValueBuilder.append(playerOne.getFoundCardsCount()).append("/").append(memory.getDeckSize());
+        playerOneFoundsValueBuilder.append(playerOne.getFoundCardsCount()).append("/").append(memory.getDeckSize() / 2);
         String playerOneFoundsValue = playerOneFoundsValueBuilder.toString();
         playerOneFoundsValueView.setText(playerOneFoundsValue);
         // init tries value for player one
@@ -170,18 +181,19 @@ public class MemoryActivity extends AppCompatDrawerActivity {
         TextView playerTwoFoundsValueView = (TextView) findViewById(R.id.player_two_found_value);
         TextView playerTwoTriesView = (TextView) findViewById(R.id.player_two_tries);
         TextView playerTwoTriesValueView = (TextView) findViewById(R.id.player_two_tries_value);
-        if(memory.isMultiplayer()){
+        if (memory.isMultiplayer()) {
+            playerOneNameView.setVisibility(View.VISIBLE);
             MemoryPlayer playerTwo = memory.getPlayers().get(1);
             // set player two name
             playerTwoNameView.setText(getResources().getString(R.string.player_name_prefix) + " " + playerTwo.getNameSuffix());
             // init found values for player two
             StringBuilder playerTwoFoundsValueBuilder = new StringBuilder();
-            playerTwoFoundsValueBuilder.append(playerTwo.getFoundCardsCount()).append("/").append(memory.getDeckSize());
+            playerTwoFoundsValueBuilder.append(playerTwo.getFoundCardsCount()).append("/").append(memory.getDeckSize() / 2);
             String playerTwoFoundsValue = playerTwoFoundsValueBuilder.toString();
             playerTwoFoundsValueView.setText(playerTwoFoundsValue);
             // init tries value for player two
             playerTwoTriesValueView.setText(String.valueOf(playerTwo.getTries()));
-        }else{
+        } else {
             // set all views empty
             playerTwoNameView.setText("");
             playerTwoFoundsView.setText("");
@@ -196,23 +208,23 @@ public class MemoryActivity extends AppCompatDrawerActivity {
         MemoryPlayer currentPlayer = memory.getCurrentPlayer();
         int highlightColor = ContextCompat.getColor(this, R.color.colorPrimary);
         int normalColor = ContextCompat.getColor(this, R.color.middlegrey);
-        if(currentPlayer == playerOne){
+        if (currentPlayer == playerOne) {
             setColorFor(highlightColor, playerOneNameView, playerOneFoundsView, playerOneFoundsValueView, playerOneTriesView, playerOneTriesValueView);
             setColorFor(normalColor, playerTwoNameView, playerTwoFoundsView, playerTwoFoundsValueView, playerTwoTriesView, playerTwoTriesValueView);
-        }else{
+        } else {
             setColorFor(highlightColor, playerTwoNameView, playerTwoFoundsView, playerTwoFoundsValueView, playerTwoTriesView, playerTwoTriesValueView);
             setColorFor(normalColor, playerOneNameView, playerOneFoundsView, playerOneFoundsValueView, playerOneTriesView, playerOneTriesValueView);
         }
     }
 
-    private void setColorFor(int color, TextView... views){
-        for(TextView view : views){
+    private void setColorFor(int color, TextView... views) {
+        for (TextView view : views) {
             view.setTextColor(color);
         }
     }
 
-    private void saveHighscore(){
-        if(!memory.isMultiplayer() && !memory.isCustomDesign()){
+    private void saveHighscore() {
+        if (!memory.isMultiplayer() && !memory.isCustomDesign()) {
             MemoryHighscore highscore = memory.getHighscore();
             int actualCore = highscore.getScore();
             int actualTries = highscore.getTries();
@@ -221,7 +233,7 @@ public class MemoryActivity extends AppCompatDrawerActivity {
             String highscoreConstants = "";
             String highscoreTriesConstants = "";
             String highscoreTimeConstants = "";
-            switch(difficulty) {
+            switch (difficulty) {
                 case Easy:
                     highscoreConstants = Constants.HIGHSCORE_EASY;
                     highscoreTriesConstants = Constants.HIGHSCORE_EASY_TRIES;
@@ -239,7 +251,7 @@ public class MemoryActivity extends AppCompatDrawerActivity {
                     break;
             }
             int currentScore = preferences.getInt(highscoreConstants, 0);
-            if(actualCore > currentScore){
+            if (actualCore > currentScore) {
                 preferences.edit().putInt(highscoreConstants, actualCore).commit();
                 preferences.edit().putInt(highscoreTriesConstants, actualTries).commit();
                 preferences.edit().putInt(highscoreTimeConstants, actualTime).commit();
@@ -247,12 +259,12 @@ public class MemoryActivity extends AppCompatDrawerActivity {
         }
     }
 
-    private void showWinDialog(){
+    private void showWinDialog() {
         final Dialog dialog;
-        if(memory.isMultiplayer()){
+        if (memory.isMultiplayer()) {
             dialog = new DuoPlayerWinDialog(this, R.style.WinDialog, memory.getPlayers());
             dialog.getWindow().setContentView(R.layout.win_duo_screen_layout);
-        }else {
+        } else {
             dialog = new SinglePlayerWinDialog(this, R.style.WinDialog, memory.getHighscore());
             dialog.getWindow().setContentView(R.layout.win_solo_screen_layout);
         }
@@ -262,7 +274,7 @@ public class MemoryActivity extends AppCompatDrawerActivity {
         dialog.show();
 
         final Activity activity = this;
-        ((Button)dialog.findViewById(R.id.win_continue_button)).setOnClickListener(new View.OnClickListener() {
+        ((Button) dialog.findViewById(R.id.win_continue_button)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dialog.dismiss();
@@ -272,7 +284,7 @@ public class MemoryActivity extends AppCompatDrawerActivity {
                 activity.finish();
             }
         });
-        ((Button)dialog.findViewById(R.id.win_showGame_button)).setOnClickListener(new View.OnClickListener() {
+        ((Button) dialog.findViewById(R.id.win_showGame_button)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dialog.dismiss();
@@ -280,7 +292,7 @@ public class MemoryActivity extends AppCompatDrawerActivity {
         });
     }
 
-    private void createLayoutProvider(){
+    private void createLayoutProvider() {
         layoutProvider = new MemoryLayoutProvider(this, memory);
     }
 
@@ -292,8 +304,8 @@ public class MemoryActivity extends AppCompatDrawerActivity {
         memory = new Memory(design, mode, difficulty);
     }
 
-    private void createStatistics(){
-        if(!memory.isCustomDesign()) {
+    private void createStatistics() {
+        if (!memory.isCustomDesign()) {
             Bundle intentExtras = getIntent().getExtras();
             CardDesign design = (CardDesign) intentExtras.get(Constants.CARD_DESIGN);
             String statisticsConstants = "";
@@ -310,6 +322,16 @@ public class MemoryActivity extends AppCompatDrawerActivity {
         }
     }
 
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+
+        // create a new gridview based on the changed orientation
+        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE || newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
+            setupGridview();
+        }
+    }
+
     private String timeToString(int time) {
         int seconds = time % 60;
         int minutes = ((time - seconds) / 60) % 60;
@@ -321,7 +343,7 @@ public class MemoryActivity extends AppCompatDrawerActivity {
         return h + ":" + m + ":" + s;
     }
 
-    public static Context getAppContext(){
+    public static Context getAppContext() {
         return MemoryActivity.context;
     }
 
@@ -340,14 +362,15 @@ public class MemoryActivity extends AppCompatDrawerActivity {
             ((TextView) findViewById(R.id.win_time)).setText(timeToString(highscore.getTime()));
             ((TextView) findViewById(R.id.win_tries)).setText(String.valueOf(highscore.getTries()));
             // highscore is not valid if a custom deck is selected
-            if(highscore.isValid()){
+            if (highscore.isValid()) {
                 ((TextView) findViewById(R.id.win_highscore)).setText(String.valueOf(highscore.getScore()));
-            }else{
+            } else {
                 ((TextView) findViewById(R.id.win_highscore_text)).setText("");
             }
 
         }
     }
+
     public class DuoPlayerWinDialog extends Dialog {
 
         private final MemoryPlayer playerOne;
@@ -356,8 +379,8 @@ public class MemoryActivity extends AppCompatDrawerActivity {
         private final int cardsCount;
 
         public DuoPlayerWinDialog(Context context, int themeResId, List<MemoryPlayer> players) {
-            super(context,themeResId);
-            if(players.size() > 2){
+            super(context, themeResId);
+            if (players.size() > 2) {
                 throw new RuntimeException("Can not create DuoPlayerWinDialog for more than 2 players");
             }
             this.playerOne = players.get(0);
@@ -366,37 +389,36 @@ public class MemoryActivity extends AppCompatDrawerActivity {
         }
 
 
-
         @Override
         protected void onCreate(Bundle savedInstanceState) {
 
             super.onCreate(savedInstanceState);
 
-            ((TextView)findViewById(R.id.win_player_name)).setText(computeWinnerName());
-            ((TextView)findViewById(R.id.win_first_player_name)).setText(computePlayerName(playerOne));
-            ((TextView)findViewById(R.id.win_first_player_cards)).setText(playerOne.getFoundCardsCount() + "/" +  cardsCount);
+            ((TextView) findViewById(R.id.win_player_name)).setText(computeWinnerName());
+            ((TextView) findViewById(R.id.win_first_player_name)).setText(computePlayerName(playerOne));
+            ((TextView) findViewById(R.id.win_first_player_cards)).setText(playerOne.getFoundCardsCount() + "/" + cardsCount / 2);
 
-            ((TextView)findViewById(R.id.win_second_player_name)).setText(computePlayerName(playerTwo));
-            ((TextView)findViewById(R.id.win_second_player_cards)).setText(playerTwo.getFoundCardsCount() + "/" +  cardsCount);
+            ((TextView) findViewById(R.id.win_second_player_name)).setText(computePlayerName(playerTwo));
+            ((TextView) findViewById(R.id.win_second_player_cards)).setText(playerTwo.getFoundCardsCount() + "/" + cardsCount / 2);
         }
 
-        private String computePlayerName(MemoryPlayer player){
+        private String computePlayerName(MemoryPlayer player) {
             return getResources().getString(R.string.player_name_prefix) + " " + player.getNameSuffix();
         }
 
-        private String computeWinnerName(){
+        private String computeWinnerName() {
             String winnerName;
             int cardsPlayerOne = playerOne.getFoundCardsCount();
             int cardsPlayerTwo = playerTwo.getFoundCardsCount();
 
-            if(cardsPlayerOne == cardsPlayerTwo){
-                winnerName = ""; // computePlayerName(playerOne) + " & " + computePlayerName(playerTwo);
-            }else if(cardsPlayerOne > cardsPlayerTwo) {
-                winnerName = computePlayerName(playerOne);
-            }else{
-                winnerName = computePlayerName(playerTwo);
+            if (cardsPlayerOne == cardsPlayerTwo) {
+                winnerName = getResources().getString(R.string.win_text_duo_draw); // "Draw!"
+            } else if (cardsPlayerOne > cardsPlayerTwo) {
+                winnerName = computePlayerName(playerOne) + "!";
+            } else {
+                winnerName = computePlayerName(playerTwo) + "!";
             }
-            return winnerName + "!";
+            return winnerName;
         }
 
 

@@ -1,6 +1,7 @@
 package org.secuso.privacyfriendlymemory.model;
 
 import android.support.annotation.StringRes;
+
 import org.secuso.privacyfriendlymemory.ui.R;
 
 import java.util.LinkedList;

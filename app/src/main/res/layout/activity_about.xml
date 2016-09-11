@@ -100,6 +100,39 @@
             android:layout_gravity="center_horizontal"
             android:autoLink="web"/>
 
+        <TextView
+            android:id="@+id/tuxText"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/tux_deck_provided"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="www.androidsoft.org/tux-memory.html"
+            android:layout_gravity="center_horizontal"
+            android:autoLink="web"/>
+
+
+        <TextView
+            android:id="@+id/animalText"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/animal_deck_provided"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="www.openclipart.org"
+            android:layout_gravity="center_horizontal"
+            android:autoLink="web"/>
+
 
     </LinearLayout>
 </ScrollView>

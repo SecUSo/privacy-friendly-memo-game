@@ -26,16 +26,16 @@ public class MemoryPlayer {
     }
 
     public int getFoundCardsCount(){
-        return foundCards.size();
+        if(foundCards.isEmpty()){
+            return 0;
+        }
+        return foundCards.size()/2;
     }
 
     public String getNameSuffix(){
         return nameSuffix;
     }
 
-    public int getNamePrefixResID(){
-        return namePrefixResID;
-    }
 
     public void incrementTries(){
         tries++;

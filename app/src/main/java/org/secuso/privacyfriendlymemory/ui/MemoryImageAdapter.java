@@ -31,7 +31,6 @@ public class MemoryImageAdapter extends BaseAdapter {
         this.context = context;
         this.layoutProvider = layoutProvider;
         this.notFoundUri = Uri.parse("android.resource://org.secuso.privacyfriendlymemory/" + R.drawable.secuso_not_found);
-        this.positionBitmapCache = layoutProvider.getCachedDeck();
         this.notFoundBitmap = decodeUri(notFoundUri, layoutProvider.getCardSizePixel());
     }
 
@@ -69,9 +68,11 @@ public class MemoryImageAdapter extends BaseAdapter {
             // check if uri is not found uri
             if (isCurrentUriNotFoundUri) {
                 bitmapForUri = notFoundBitmap;
-            } else {
+            } else if(positionBitmapCache.get(position) != null){
                 bitmapForUri = positionBitmapCache.get(position);
-
+            }else{
+                bitmapForUri = decodeUri(imageUri, layoutProvider.getCardSizePixel());
+                positionBitmapCache.put(position, bitmapForUri);
             }
             card.setImageBitmap(bitmapForUri);
         } else{

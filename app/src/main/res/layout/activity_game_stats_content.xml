@@ -5,7 +5,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Player 1"
         android:id="@+id/player_one_name"
         android:layout_alignParentTop="true"
@@ -16,7 +16,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/stats_found_cards"
         android:id="@+id/player_one_found"
         android:layout_alignTop="@+id/player_one_found_value"
@@ -26,7 +26,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="00:00"
         android:id="@+id/player_one_found_value"
         android:layout_below="@+id/player_one_name"
@@ -36,7 +36,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/stats_tries"
         android:id="@+id/player_one_tries"
         android:layout_alignBottom="@+id/player_one_found_value"
@@ -46,7 +46,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="0"
         android:id="@+id/player_one_tries_value"
         android:layout_alignBottom="@+id/player_one_tries"
@@ -56,7 +56,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Player 2"
         android:id="@+id/player_two_name"
         android:layout_below="@+id/player_one_found"
@@ -66,18 +66,18 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="00:00"
         android:id="@+id/player_two_found_value"
         android:layout_below="@+id/player_two_name"
-        android:layout_toStartOf="@+id/player_two_name"
-        android:layout_toLeftOf="@+id/player_two_name" />
+        android:layout_toLeftOf="@+id/player_two_name"
+        android:layout_toStartOf="@+id/player_two_name" />
 
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/stats_found_cards"
         android:id="@+id/player_two_found"
         android:layout_alignTop="@+id/player_two_found_value"
@@ -87,7 +87,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/stats_tries"
         android:id="@+id/player_two_tries"
         android:layout_alignBottom="@+id/player_two_found_value"
@@ -97,7 +97,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="0"
         android:id="@+id/player_two_tries_value"
         android:layout_alignBottom="@+id/player_two_tries"

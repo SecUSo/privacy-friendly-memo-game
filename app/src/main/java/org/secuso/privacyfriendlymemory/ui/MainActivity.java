@@ -19,13 +19,12 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-
 import org.secuso.privacyfriendlymemory.Constants;
 import org.secuso.privacyfriendlymemory.common.MemoryStatistics;
 import org.secuso.privacyfriendlymemory.common.ResIdAdapter;
 import org.secuso.privacyfriendlymemory.model.CardDesign;
-import org.secuso.privacyfriendlymemory.model.MemoryDifficulty;
 import org.secuso.privacyfriendlymemory.model.MemoryDefaultImages;
+import org.secuso.privacyfriendlymemory.model.MemoryDifficulty;
 import org.secuso.privacyfriendlymemory.model.MemoryMode;
 
 import java.util.List;
@@ -46,7 +45,8 @@ public class MainActivity extends AppCompatDrawerActivity {
             showWelcomeDialog();
             setAppStarted();
             initStatistics();
-        }
+         }
+
         setContentView(R.layout.activity_main);
         setupViewPager();
         setupDifficultyBar();
@@ -253,7 +253,6 @@ public class MainActivity extends AppCompatDrawerActivity {
 
             return builder.create();
         }
-
     }
 
 }
