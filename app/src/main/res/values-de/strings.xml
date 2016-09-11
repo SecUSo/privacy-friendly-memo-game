@@ -1,7 +1,5 @@
 <resources>
     <!-- Shared -->
-    <string name="app_name" translatable="false">Memory</string>
-    <string name="app_name_long" translatable="false">Privacy Friendly Memory</string>
     <string name="button_continue">Fortsetzen</string>
 
     <!-- menu drawer -->
@@ -33,10 +31,6 @@
     <string name="set_custom_deck_hint_ok">Ok</string>
 
 
-
-    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
-    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
-
     <!-- main activity -->
     <string name="new_game">Neues Spiel</string>
 
@@ -48,13 +42,10 @@
     <string name="mode_duo_player">2 Spieler</string>
 
     <!-- about activity -->
-    <string name="version_number" translatable="false">v1.0</string>
     <string name="about_author">Autor:</string>
-    <string name="about_author_names" translatable="false">Hannes Hofmann</string>
     <string name="about_affiliation">In Zusammenarbeit mit:</string>
     <string name="privacy_friendly">Diese App gehört zur Gruppe der Privacy Friendly Apps.</string>
     <string name="more_info">Mehr Informationen unter::</string>
-    <string name="secuso_url" translatable="false"><a href="https://www.secuso.informatik.tu-darmstadt.de/en/research/results/">https://www.secuso.org</a></string>
     <string name="tux_deck_provided">TuX Deck Bilder bereitgestellt von:</string>
     <string name="animal_deck_provided">Tier Deck Bilder bereitgestellt von:</string>
 
