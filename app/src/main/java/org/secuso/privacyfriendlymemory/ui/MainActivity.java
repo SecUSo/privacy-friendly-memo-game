@@ -252,7 +252,7 @@ public class MainActivity extends AppCompatDrawerActivity {
             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
             builder.setView(i.inflate(R.layout.dialog_welcome, null));
-            builder.setIcon(R.mipmap.ic_launcher);
+            builder.setIcon(R.mipmap.ic_drawer);
             builder.setTitle(getActivity().getString(R.string.welcome_title));
             builder.setPositiveButton(getActivity().getString(R.string.button_ok), null);
             builder.setNegativeButton(getActivity().getString(R.string.button_help), new DialogInterface.OnClickListener() {
