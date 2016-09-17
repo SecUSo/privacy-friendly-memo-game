@@ -11,6 +11,11 @@ Universtität Darmstadt in Germany it is optimized due to user's privacy.
 
 Further development requires Android Studio.
 
+### API Reference
+
+Mininum SDK: 16
+Target SDK: 23 
+
 ## License
 
 Privacy Friendly Memory is lisenced under the GPLv3. Copyright (C) 2016 Hannes Hofmann
