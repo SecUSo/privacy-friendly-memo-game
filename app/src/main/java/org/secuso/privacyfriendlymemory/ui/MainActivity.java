@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -26,6 +27,7 @@ import org.secuso.privacyfriendlymemory.model.CardDesign;
 import org.secuso.privacyfriendlymemory.model.MemoryDefaultImages;
 import org.secuso.privacyfriendlymemory.model.MemoryDifficulty;
 import org.secuso.privacyfriendlymemory.model.MemoryMode;
+import org.secuso.privacyfriendlymemory.ui.navigation.HelpActivity;
 
 import java.util.List;
 import java.util.Set;
@@ -40,6 +42,9 @@ public class MainActivity extends AppCompatDrawerActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setupPreferences();
+
+        showWelcomeDialog();
+
 
         if (isFirstAppStart()) {
             showWelcomeDialog();
@@ -248,9 +253,17 @@ public class MainActivity extends AppCompatDrawerActivity {
 
             builder.setView(i.inflate(R.layout.dialog_welcome, null));
             builder.setIcon(R.mipmap.ic_launcher);
-            builder.setTitle(getActivity().getString(R.string.app_name_long));
-            builder.setPositiveButton(getActivity().getString(R.string.button_continue), null);
-
+            builder.setTitle(getActivity().getString(R.string.welcome_title));
+            builder.setPositiveButton(getActivity().getString(R.string.button_ok), null);
+            builder.setNegativeButton(getActivity().getString(R.string.button_help), new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Intent intent = new Intent(getActivity(), HelpActivity.class);
+                    intent.putExtra(HelpActivity.EXTRA_SHOW_FRAGMENT, HelpActivity.HelpFragment.class.getName());
+                    intent.putExtra(HelpActivity.EXTRA_NO_HEADERS, true);
+                    startActivity(intent);
+                }
+            });
             return builder.create();
         }
     }

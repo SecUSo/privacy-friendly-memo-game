@@ -2,7 +2,8 @@
     <!-- Shared -->
     <string name="app_name" translatable="false">Memory</string>
     <string name="app_name_long" translatable="false">Privacy Friendly Memory</string>
-    <string name="button_continue">Continue</string>
+    <string name="button_ok">Okay</string>
+    <string name="button_help">View Help</string>
 
     <!-- menu drawer -->
     <string name="menu_menu">Main menu</string>
@@ -45,13 +46,14 @@
     <string name="mode_duo_player">Dual player</string>
 
     <!-- about activity -->
-    <string name="version_number" translatable="false">v1.0</string>
+    <string name="version_number" translatable="false">Version 1.0</string>
     <string name="about_author">Author:</string>
     <string name="about_author_names" translatable="false">Hannes Hofmann</string>
     <string name="about_affiliation">In affiliation with:</string>
-    <string name="privacy_friendly">This application belongs to the Privacy Friendly Apps.</string>
+    <string name="privacy_friendly">This application belongs to the group of Privacy Friendly Apps developed by Technische Universität Darmstadt. Sourcecode licensed under GPLv3. Images copyright TU Darmstadt and Google Inc.</string>
     <string name="more_info">More information can be found on:</string>
-    <string name="secuso_url" translatable="false"><a href="https://www.secuso.informatik.tu-darmstadt.de/en/research/results/">https://www.secuso.org</a></string>
+    <string name="secuso_url" translatable="false"><a href="https://www.secuso.org/pfa">SECUSO-Website</a></string>
+    <string name="gitrepo_url" translatable="false"><a href="https://github.com/SecUSo/privacy-friendly-memory">Github-Repo</a></string>
     <string name="tux_deck_provided">TuX deck images provided by:</string>
     <string name="animal_deck_provided">Animal deck images provided by:</string>
 
@@ -73,7 +75,7 @@
     <string name="help_permissions_summary">Privacy Friendly Memory does not use any permissions.</string>
 
     <!-- welcome dialog -->
-    <string name="welcome">Welcome to Privacy Friendly Memory. </string>
+    <string name="welcome_title">Welcome</string>
     <string name="field_select_description">Swipe or press the arrow buttons on the left and right to change the game mode.</string>
     <string name="field_select_description_headline">Game mode:</string>
     <string name="difficulty_description">Press or swipe the stars to change the difficulty.</string>

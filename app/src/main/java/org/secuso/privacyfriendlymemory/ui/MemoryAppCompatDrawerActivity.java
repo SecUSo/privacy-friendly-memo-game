@@ -96,12 +96,12 @@ public abstract class MemoryAppCompatDrawerActivity extends AppCompatActivity im
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
             builder.setMessage(getResources().getString(R.string.quit_game_text));
-            builder.setPositiveButton(getResources().getString(R.string.quit_no), new DialogInterface.OnClickListener() {
+            builder.setNegativeButton(getResources().getString(R.string.quit_no), new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
                     // nothing to do here
                 }
             });
-            builder.setNegativeButton(getResources().getString(R.string.quit_yes), new DialogInterface.OnClickListener() {
+            builder.setPositiveButton(getResources().getString(R.string.quit_yes), new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
                     cancelMemory();
                 }

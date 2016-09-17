@@ -99,6 +99,15 @@
             android:textStyle="bold"
             android:layout_gravity="center_horizontal"
             android:autoLink="web"/>
+        <TextView
+            android:id="@+id/linkID2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gitrepo_url"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:autoLink="web"/>
+
 
         <TextView
             android:id="@+id/tuxText"
