@@ -43,9 +43,6 @@ public class MainActivity extends AppCompatDrawerActivity {
         super.onCreate(savedInstanceState);
         setupPreferences();
 
-        showWelcomeDialog();
-
-
         if (isFirstAppStart()) {
             showWelcomeDialog();
             setAppStarted();
