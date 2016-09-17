@@ -32,6 +32,6 @@ The icons used in the nagivation drawer are licensed under the [CC BY 2.5] (http
 The app provides two defined card design images. The images for the TuX deck are licensed under the GPLv3 (https://github.com/androidsoft-org/androidsoft-tuxmemory) and the images for the Animal deck are taken from openclipart.org and are licensed under the [Creative Commons Zero 1.0] (https://openclipart.org/share) License. Also the icons ic_trophy_award_black_48dp and ic_trophy_black_48dp are licensed under the Sil Open Font License Version 1.1.
 
 <br />
-All other images (the logo of Privacy Friendly Apps, the SECUSO logo and the header in the navigation drawer) copyright [Technische Universtität Darmstadt] (www.tu-darmstadt.de)  (2016).
+All other images (the logo of Privacy Friendly Apps, the SECUSO logo and the header in the navigation drawer) copyright [Technische Universtität Darmstadt] (https://www.tu-darmstadt.de)  (2016).
 
 
