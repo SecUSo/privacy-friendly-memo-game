@@ -40,3 +40,10 @@ The app provides two defined card design images. The images for the TuX deck are
 All other images (the logo of Privacy Friendly Apps, the SECUSO logo and the header in the navigation drawer) copyright [Technische Universtität Darmstadt] (https://www.tu-darmstadt.de)  (2016).
 
 
+## Contributors
+
+App-Icon: <br />
+Markus Hau<br />
+
+Github-Users: <br />
+Xrygramming <br />
