@@ -1,6 +1,6 @@
 <resources>
     <!-- Shared -->
-    <string name="button_ok">Ok</string>
+    <string name="button_ok">Okay</string>
     <string name="button_help">Zeige Hilfe</string>
 
 
@@ -24,13 +24,13 @@
     <string name="reset_highscore">Zurücksetzen</string>
 
     <!-- menu drawer deck choice -->
-    <string name="custom_deck_options">Eigenes Deck</string>
-    <string name="set_custom_deck">Bilder für eigenes Deck festlegen</string>
-    <string name="reset_custom_deck">Eigenes Deck löschen</string>
-    <string name="custom_deck_deleted">Eigenes Deck gelöscht.</string>
-    <string name="custom_deck_not_enough_images">Eigenes Deck konnte nicht erstellt werden. Bitte wähle mindestens 32 Bilder.</string>
-    <string name="set_custom_deck_hint">Bitte wählen Sie mindestens 32 Bilder.</string>
-    <string name="set_custom_deck_hint_ok">Ok</string>
+    <string name="custom_deck_options">Eigenes Kartendeck</string>
+    <string name="set_custom_deck">Bilder für eigenes Kartendeck festlegen</string>
+    <string name="reset_custom_deck">Eigenes Kartendeck löschen</string>
+    <string name="custom_deck_deleted">Eigenes Kartendeck gelöscht.</string>
+    <string name="custom_deck_not_enough_images">Eigenes Kartendeck konnte nicht erstellt werden. Bitte wählen Sie mindestens 32 Bilder.</string>
+    <string name="set_custom_deck_hint">Bitte wählen Sie mindestens 32 Bilder auf Ihrer Gallerie für Ihr eigenes Deck.</string>
+    <string name="set_custom_deck_hint_ok">Okay</string>
 
 
     <!-- main activity -->
@@ -53,26 +53,27 @@
 
     <!-- help activity -->
     <string name="help_game_mode">Spielmodus</string>
-    <string name="help_single_player">1 Spieler Modus</string>
-    <string name="help_duo_player">2 Spieler Modus</string>
+    <string name="help_single_player">Modus für einen Spieler</string>
+    <string name="help_duo_player">Modus für zwei Spieler</string>
 
     <string name="help_game_difficulty">Spielschwierigkeit</string>
-    <string name="help_game_difficulty_summary">Anzahl der Memorykarten abhängig der gewählten Schwierigkeit</string>
+    <string name="help_game_difficulty_summary">Anzahl der Memorykarten abhängig der gewählten Schwierigkeit.</string>
 
-    <string name="help_custom_deck">Sie können in den Einstellungen unter Deckwahl eigene Kartenbilder auswählen.</string>
+    <string name="help_custom_deck">Sie können in den Einstellungen unter Kartendeckwahl eigene Kartenbilder aus Ihrer Gallerie auswählen.</string>
 
     <string name="help_highscore">Der Highscore berechnet sich aus der benötigten Anzahl an Versuchen, der Zeit und der Spielschwierigkeit.</string>
 
-    <string name="help_privacyInfo">Privatsphäre Informationen</string>
+    <string name="help_privacyInfo">Datenschutz Informationen</string>
     <string name="help_permissions">Berechtigungen</string>
-    <string name="help_permissions_summary">Privacy Friendly Memory benötigt keinerlei Berechtigungen.</string>
+    <string name="help_permissions_summary">Privacy Friendly Memory verwendet keinerlei Berechtigungen.</string>
 
     <!-- welcome dialog -->
     <string name="welcome_title">Willkommen</string>
     <string name="field_select_description">Wische oder drücke auf die Pfeile auf der linken und rechten Seite um den Spielmodus zu ändern.</string>
-    <string name="field_select_description_headline">Spielmodus:</string>
+    <string name="field_select_description_headline">1. Spielmodus:</string>
     <string name="difficulty_description">Drücke oder wische über die Sterne um den Schwierigkeitsgrad zu ändern.</string>
-    <string name="difficulty_description_headline">Schwierigkeitsgrad:</string>
+    <string name="difficulty_description_headline">2. Schwierigkeit:</string>
+    <string name="play">Lass uns Memory spielen.</string>
 
     <!-- win dialoag -->
     <string name="win_text">Glückwunsch!</string>

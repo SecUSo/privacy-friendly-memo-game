@@ -2,21 +2,36 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
+
     <LinearLayout
-        android:orientation="vertical"
-        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
         android:padding="@dimen/activity_horizontal_margin">
+
         <Space
             android:layout_width="10dp"
-            android:layout_height="20dp" />
+            android:layout_height="5dp" />
+
         <TextView
+            style="@style/Base.DialogWindowTitle.AppCompat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
+            android:text="@string/play"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="15dp" />
+
+        <TextView
+            style="@style/Base.DialogWindowTitle.AppCompat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="@string/field_select_description_headline"
-            style="@style/Base.DialogWindowTitle.AppCompat"/>
+            android:textStyle="bold" />
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -27,48 +42,49 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@drawable/ic_keyboard_arrow_left_black_24dp"/>
+                android:src="@drawable/ic_keyboard_arrow_left_black_24dp" />
+
             <ImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
+                android:layout_gravity="center"
                 android:adjustViewBounds="true"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_people_black_24px"/>
-            <!--<ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_keyboard_arrow_right_black_24dp"/>-->
+                android:src="@drawable/ic_people_black_24px" />
+
         </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@string/field_select_description"/>
+            android:text="@string/field_select_description" />
+
         <Space
             android:layout_width="20dp"
             android:layout_height="20dp" />
+
         <TextView
+            style="@style/Base.DialogWindowTitle.AppCompat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
             android:text="@string/difficulty_description_headline"
-            style="@style/Base.DialogWindowTitle.AppCompat"/>
+            android:textStyle="bold" />
+
         <RatingBar
+            android:id="@+id/difficultyBar"
+            style="@style/RatingBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/difficultyBar"
             android:layout_gravity="center_horizontal"
             android:isIndicator="true"
             android:numStars="3"
             android:rating="1"
-            android:stepSize="1"
-            style="@style/RatingBar"/>
+            android:stepSize="1" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@string/difficulty_description"/>
+            android:text="@string/difficulty_description" />
     </LinearLayout>
 </ScrollView>

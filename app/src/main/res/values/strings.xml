@@ -30,7 +30,7 @@
     <string name="reset_custom_deck">Delete custom deck</string>
     <string name="custom_deck_deleted">Custom deck deleted.</string>
     <string name="custom_deck_not_enough_images">Could not create custom deck. Please select at least 32 images.</string>
-    <string name="set_custom_deck_hint">Please select at least 32 images.</string>
+    <string name="set_custom_deck_hint">Please select at least 32 images from your gallery for the custon deck.</string>
     <string name="set_custom_deck_hint_ok">OKAY</string>
     <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
     <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
@@ -62,14 +62,10 @@
     <string name="help_game_mode">Game mode</string>
     <string name="help_single_player">Create a single player game</string>
     <string name="help_duo_player">Create a dual player game</string>
-
     <string name="help_game_difficulty">Game difficulty</string>
-    <string name="help_game_difficulty_summary">Number of memory cards depending on the game difficulty</string>
-
-    <string name="help_custom_deck">You can select own images for the cards in the deck choice settings.</string>
-
+    <string name="help_game_difficulty_summary">Number of memory cards depending on the game difficulty.</string>
+    <string name="help_custom_deck">You can select own images for the cards from your gallery in the deck choice settings.</string>
     <string name="help_highscore">The Highscore is calculated using the number of tries, the time and the game difficulty.</string>
-
     <string name="help_privacyInfo">Privacy Info</string>
     <string name="help_permissions">Permissions</string>
     <string name="help_permissions_summary">Privacy Friendly Memory does not use any permissions.</string>
@@ -77,9 +73,10 @@
     <!-- welcome dialog -->
     <string name="welcome_title">Welcome</string>
     <string name="field_select_description">Swipe or press the arrow buttons on the left and right to change the game mode.</string>
-    <string name="field_select_description_headline">Game mode:</string>
+    <string name="field_select_description_headline">1. Game mode:</string>
     <string name="difficulty_description">Press or swipe the stars to change the difficulty.</string>
-    <string name="difficulty_description_headline">Difficulty:</string>
+    <string name="difficulty_description_headline">2. Difficulty:</string>
+    <string name="play">Let\'s play Memory!</string>
 
     <!-- win dialoag -->
     <string name="win_text">Congratulations!</string>
