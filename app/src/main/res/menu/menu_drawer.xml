@@ -2,6 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:id="@+id/group1">
+        <item android:id="@+id/menu_main" android:icon="@android:drawable/ic_menu_today"
+            android:title="@string/menu_menu" />
         <item android:id="@+id/menu_highscore" android:icon="@android:drawable/ic_menu_myplaces"
             android:title="@string/menu_highscore" />
         <item android:id="@+id/menu_statistics" android:icon="@android:drawable/ic_menu_report_image"
