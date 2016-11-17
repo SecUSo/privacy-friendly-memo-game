@@ -5,7 +5,7 @@ Privacy Friendly Memory is a card game. The application does not use any permiss
 ## Motivation 
 
 As it is part of the Privacy Friendly Apps developed by the SECUSO research group of the Technische 
-Universtität Darmstadt in Germany it is optimized due to user's privacy.
+Universtität Darmstadt in Germany it is optimized due to user's privacy. More information can be found here [secuso.org/pfa].
 
 ## Installation
 
@@ -37,7 +37,7 @@ The icons used in the nagivation drawer are licensed under the [CC BY 2.5] (http
 The app provides two defined card design images. The images for the TuX deck are licensed under the GPLv3 (https://github.com/androidsoft-org/androidsoft-tuxmemory) and the images for the Animal deck are taken from openclipart.org and are licensed under the [Creative Commons Zero 1.0] (https://openclipart.org/share) License. Also the icons ic_trophy_award_black_48dp and ic_trophy_black_48dp are licensed under the Sil Open Font License Version 1.1.
 
 <br />
-All other images (the logo of Privacy Friendly Apps, the SECUSO logo and the header in the navigation drawer) copyright [Technische Universtität Darmstadt] (https://www.tu-darmstadt.de)  (2016).
+All other images (the logo of Privacy Friendly Apps, the SECUSO logo and the splash screen logo) copyright [Technische Universtität Darmstadt] (https://www.tu-darmstadt.de)  (2016).
 
 
 ## Contributors
@@ -47,3 +47,5 @@ Markus Hau<br />
 
 Github-Users: <br />
 Xrygramming <br />
+yonjuni <br />
+Kamuno
