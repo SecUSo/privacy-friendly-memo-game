@@ -23,8 +23,8 @@ import android.widget.Toast;
 
 import org.secuso.privacyfriendlymemogame.Constants;
 import org.secuso.privacyfriendlymemogame.model.CardDesign;
-import org.secuso.privacyfriendlymemogame.ui.AppCompatPreferenceActivity;
 import org.secuso.privacyfriendlymemogame.model.MemoGameDifficulty;
+import org.secuso.privacyfriendlymemogame.ui.AppCompatPreferenceActivity;
 import org.secuso.privacyfriendlymemogame.ui.R;
 
 import java.util.HashSet;

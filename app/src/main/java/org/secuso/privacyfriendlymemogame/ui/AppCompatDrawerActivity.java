@@ -13,9 +13,8 @@ import android.view.MenuItem;
 import org.secuso.privacyfriendlymemogame.ui.navigation.AboutActivity;
 import org.secuso.privacyfriendlymemogame.ui.navigation.DeckChoiceActivity;
 import org.secuso.privacyfriendlymemogame.ui.navigation.HelpActivity;
-import org.secuso.privacyfriendlymemogame.ui.navigation.StatisticsActivity;
-import org.secuso.privacyfriendlymemogame.ui.R;
 import org.secuso.privacyfriendlymemogame.ui.navigation.HighscoreActivity;
+import org.secuso.privacyfriendlymemogame.ui.navigation.StatisticsActivity;
 
 /**
  * Created by Hannes on 18.05.2016.

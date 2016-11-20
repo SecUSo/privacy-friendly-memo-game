@@ -20,16 +20,15 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import org.secuso.privacyfriendlymemogame.Constants;
-import org.secuso.privacyfriendlymemogame.common.MemoGameStatistics;
-import org.secuso.privacyfriendlymemogame.model.MemoGame;
-import org.secuso.privacyfriendlymemogame.model.MemoGamePlayer;
 import org.secuso.privacyfriendlymemogame.common.MemoGameLayoutProvider;
+import org.secuso.privacyfriendlymemogame.common.MemoGameStatistics;
 import org.secuso.privacyfriendlymemogame.common.ResIdAdapter;
 import org.secuso.privacyfriendlymemogame.model.CardDesign;
+import org.secuso.privacyfriendlymemogame.model.MemoGame;
 import org.secuso.privacyfriendlymemogame.model.MemoGameDifficulty;
 import org.secuso.privacyfriendlymemogame.model.MemoGameHighscore;
 import org.secuso.privacyfriendlymemogame.model.MemoGameMode;
-import org.secuso.privacyfriendlymemogame.ui.R;
+import org.secuso.privacyfriendlymemogame.model.MemoGamePlayer;
 
 import java.util.Arrays;
 import java.util.HashSet;

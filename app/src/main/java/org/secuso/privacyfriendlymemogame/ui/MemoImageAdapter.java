@@ -11,7 +11,6 @@ import android.widget.GridView;
 import android.widget.ImageView;
 
 import org.secuso.privacyfriendlymemogame.common.MemoGameLayoutProvider;
-import org.secuso.privacyfriendlymemogame.ui.R;
 
 import java.io.IOException;
 import java.util.HashMap;

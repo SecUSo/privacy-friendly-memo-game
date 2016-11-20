@@ -6,12 +6,9 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.preference.PreferenceFragment;
-
-
+import android.support.v7.app.ActionBar;
 import android.view.MenuItem;
-
 
 import org.secuso.privacyfriendlymemogame.ui.AppCompatPreferenceActivity;
 import org.secuso.privacyfriendlymemogame.ui.R;
