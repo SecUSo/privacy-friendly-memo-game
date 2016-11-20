@@ -1,13 +1,11 @@
 package org.secuso.privacyfriendlymemory;
 
-import android.util.Log;
-
 import org.junit.Before;
 import org.junit.Test;
-import org.secuso.privacyfriendlymemory.model.CardDesign;
-import org.secuso.privacyfriendlymemory.model.Memory;
-import org.secuso.privacyfriendlymemory.model.MemoryDifficulty;
-import org.secuso.privacyfriendlymemory.model.MemoryMode;
+import org.secuso.privacyfriendlymemogame.model.CardDesign;
+import org.secuso.privacyfriendlymemogame.model.Memory;
+import org.secuso.privacyfriendlymemogame.model.MemoryDifficulty;
+import org.secuso.privacyfriendlymemogame.model.MemoryMode;
 
 import static junit.framework.Assert.assertTrue;
 

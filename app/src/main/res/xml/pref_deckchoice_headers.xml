@@ -2,7 +2,7 @@
 
     <!-- These settings headers are only used on tablets. -->
 
-    <header android:fragment="org.secuso.privacyfriendlymemory.ui.navigation.DeckChoiceActivity$HelpFragment"
+    <header android:fragment="org.secuso.privacyfriendlymemogame.ui.navigation.DeckChoiceActivity$HelpFragment"
         android:title="@string/menu_settings" />
 
 </preference-headers>
