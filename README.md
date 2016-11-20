@@ -1,6 +1,6 @@
-## Privacy Friendly Memory
+## Privacy Friendly Memo-Game
 
-Privacy Friendly Memory is a card game. The application does not use any permission, which means it can provide its full functionality without the usage of permissions and it does not include advertisement nor tracking mechanisms.
+Privacy Friendly Memo-Game is a card game. The task is to find matching pairs within the cards. The application does not use any permission, which means it can provide its full functionality without the usage of permissions and it does not include advertisement nor tracking mechanisms.
 
 ## Motivation 
 
@@ -18,7 +18,7 @@ Target SDK: 25
 
 ## License
 
-Privacy Friendly Memory is lisenced under the GPLv3. Copyright (C) 2016 Hannes Hofmann
+Privacy Friendly Memo-Game is lisenced under the GPLv3. Copyright (C) 2016 Hannes Hofmann
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
