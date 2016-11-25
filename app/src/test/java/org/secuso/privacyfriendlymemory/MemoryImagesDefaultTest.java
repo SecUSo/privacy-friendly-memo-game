@@ -3,13 +3,13 @@ package org.secuso.privacyfriendlymemory;
 import org.junit.Before;
 import org.junit.Test;
 import org.secuso.privacyfriendlymemory.model.CardDesign;
-import org.secuso.privacyfriendlymemory.model.MemoGameDifficulty;
 import org.secuso.privacyfriendlymemory.model.MemoGameDefaultImages;
+import org.secuso.privacyfriendlymemory.model.MemoGameDifficulty;
 
 import java.util.LinkedList;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class MemoryImagesDefaultTest {
 

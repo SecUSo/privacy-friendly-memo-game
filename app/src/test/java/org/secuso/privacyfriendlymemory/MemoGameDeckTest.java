@@ -3,7 +3,6 @@ package org.secuso.privacyfriendlymemory;
 import org.junit.Before;
 import org.junit.Test;
 import org.secuso.privacyfriendlymemory.model.MemoGameCard;
-import org.secuso.privacyfriendlymemory.model.MemoGameCard;
 import org.secuso.privacyfriendlymemory.model.MemoGameDeck;
 
 import java.util.HashMap;
@@ -11,7 +10,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 
 /**
