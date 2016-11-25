@@ -7,7 +7,11 @@ Privacy Friendly Memo-Game is a card game. The task is to find matching pairs wi
 As it is part of the Privacy Friendly Apps developed by the SECUSO research group of the Technische 
 Universtität Darmstadt in Germany it is optimized due to user's privacy. More information can be found here [secuso.org/pfa].
 
-## Installation
+## Download and more information
+
+<a href="https://play.google.com/store/apps/details?id=org.secuso.privacyfriendlymemory"><img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" height="60"></a>
+
+### Building
 
 Further development requires Android Studio.
 
