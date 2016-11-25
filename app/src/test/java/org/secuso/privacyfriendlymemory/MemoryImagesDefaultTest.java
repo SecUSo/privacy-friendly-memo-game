@@ -2,9 +2,9 @@ package org.secuso.privacyfriendlymemory;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.secuso.privacyfriendlymemory.model.CardDesign;
-import org.secuso.privacyfriendlymemory.model.MemoryDifficulty;
-import org.secuso.privacyfriendlymemory.model.MemoryDefaultImages;
+import org.secuso.privacyfriendlymemogame.model.CardDesign;
+import org.secuso.privacyfriendlymemogame.model.MemoryDifficulty;
+import org.secuso.privacyfriendlymemogame.model.MemoryDefaultImages;
 
 import java.util.LinkedList;
 import java.util.List;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.secuso.privacyfriendlymemory.ui">
+    package="org.secuso.privacyfriendlymemogame.ui">
 
     <application
         android:allowBackup="true"
@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".SplashActivity"
+            android:name="org.secuso.privacyfriendlymemogame.ui.SplashActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,16 +18,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name="org.secuso.privacyfriendlymemogame.ui.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".navigation.AboutActivity" />
-        <activity android:name=".navigation.HelpActivity" />
-        <activity android:name=".navigation.HighscoreActivity" />
-        <activity android:name=".navigation.StatisticsActivity" />
-        <activity android:name=".navigation.DeckChoiceActivity" />
-        <activity android:name=".MemoryActivity"
+        <activity android:name="org.secuso.privacyfriendlymemogame.ui.navigation.AboutActivity" />
+        <activity android:name="org.secuso.privacyfriendlymemogame.ui.navigation.HelpActivity" />
+        <activity android:name="org.secuso.privacyfriendlymemogame.ui.navigation.HighscoreActivity" />
+        <activity android:name="org.secuso.privacyfriendlymemogame.ui.navigation.StatisticsActivity" />
+        <activity android:name="org.secuso.privacyfriendlymemogame.ui.navigation.DeckChoiceActivity" />
+        <activity android:name="org.secuso.privacyfriendlymemogame.ui.MemoActivity"
                   android:label="@string/app_name"
                   android:theme="@style/AppTheme.NoActionBar"
                   android:configChanges="orientation|screenSize">

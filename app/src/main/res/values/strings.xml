@@ -1,7 +1,7 @@
 <resources>
     <!-- Shared -->
-    <string name="app_name" translatable="false">Memory</string>
-    <string name="app_name_long" translatable="false">Privacy Friendly Memory</string>
+    <string name="app_name">Memo Game</string>
+    <string name="app_name_long">Privacy Friendly Memo Game</string>
     <string name="button_ok">Okay</string>
     <string name="button_help">View Help</string>
 
@@ -46,7 +46,7 @@
     <string name="mode_duo_player">Dual player</string>
 
     <!-- about activity -->
-    <string name="version_number" translatable="false">Version 1.0</string>
+    <string name="version_number" translatable="false">Version 1.0.1</string>
     <string name="about_author">Author:</string>
     <string name="about_author_names" translatable="false">Hannes Hofmann</string>
     <string name="about_author_contributors">and contributors.</string>
@@ -64,12 +64,12 @@
     <string name="help_single_player">Create a single player game</string>
     <string name="help_duo_player">Create a dual player game</string>
     <string name="help_game_difficulty">Game difficulty</string>
-    <string name="help_game_difficulty_summary">Number of memory cards depending on the game difficulty.</string>
+    <string name="help_game_difficulty_summary">Number of cards depending on the game difficulty.</string>
     <string name="help_custom_deck">You can select own images for the cards from your gallery in the deck choice settings.</string>
     <string name="help_highscore">The Highscore is calculated using the number of tries, the time and the game difficulty.</string>
     <string name="help_privacyInfo">Privacy Info</string>
     <string name="help_permissions">Permissions</string>
-    <string name="help_permissions_summary">Privacy Friendly Memory does not use any permissions.</string>
+    <string name="help_permissions_summary">Privacy Friendly Memo Game does not use any permissions.</string>
 
     <!-- welcome dialog -->
     <string name="welcome_title">Welcome</string>
@@ -77,7 +77,7 @@
     <string name="field_select_description_headline">1. Game mode:</string>
     <string name="difficulty_description">Press or swipe the stars to change the difficulty.</string>
     <string name="difficulty_description_headline">2. Difficulty:</string>
-    <string name="play">Let\'s play Memory!</string>
+    <string name="play">Let\'s play the Memo Game!</string>
 
     <!-- win dialoag -->
     <string name="win_text">Congratulations!</string>
@@ -89,7 +89,7 @@
     <string name="win_button_text">Continue</string>
     <string name="win_show_game">Show gamefield</string>
 
-    <!-- memory activity -->
+    <!-- memo-game activity -->
     <string name="player_name_prefix">Player</string>
     <string name="stats_found_cards">Pairs: </string>
     <string name="stats_tries">Tries: </string>

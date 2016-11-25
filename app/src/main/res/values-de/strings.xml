@@ -1,8 +1,9 @@
 <resources>
     <!-- Shared -->
+    <string name="app_name">Memo-Spiel</string>
+    <string name="app_name_long">Privacy Friendly Memo-Spiel</string>
     <string name="button_ok">Okay</string>
     <string name="button_help">Zeige Hilfe</string>
-
 
     <!-- menu drawer -->
     <string name="menu_menu">Hauptmenü</string>
@@ -29,7 +30,7 @@
     <string name="reset_custom_deck">Eigenes Kartendeck löschen</string>
     <string name="custom_deck_deleted">Eigenes Kartendeck gelöscht.</string>
     <string name="custom_deck_not_enough_images">Eigenes Kartendeck konnte nicht erstellt werden. Bitte wählen Sie mindestens 32 Bilder.</string>
-    <string name="set_custom_deck_hint">Bitte wählen Sie mindestens 32 Bilder auf Ihrer Gallerie für Ihr eigenes Deck.</string>
+    <string name="set_custom_deck_hint">Bitte wählen Sie mindestens 32 Bilder auf Ihrer Galerie für Ihr eigenes Deck.</string>
     <string name="set_custom_deck_hint_ok">Okay</string>
 
 
@@ -58,15 +59,15 @@
     <string name="help_duo_player">Modus für zwei Spieler</string>
 
     <string name="help_game_difficulty">Spielschwierigkeit</string>
-    <string name="help_game_difficulty_summary">Anzahl der Memorykarten abhängig der gewählten Schwierigkeit.</string>
+    <string name="help_game_difficulty_summary">Anzahl der Spielkarten abhängig der gewählten Schwierigkeit.</string>
 
-    <string name="help_custom_deck">Sie können in den Einstellungen unter Kartendeckwahl eigene Kartenbilder aus Ihrer Gallerie auswählen.</string>
+    <string name="help_custom_deck">Sie können in den Einstellungen unter Kartendeckwahl eigene Kartenbilder aus Ihrer Galerie auswählen.</string>
 
     <string name="help_highscore">Der Highscore berechnet sich aus der benötigten Anzahl an Versuchen, der Zeit und der Spielschwierigkeit.</string>
 
     <string name="help_privacyInfo">Datenschutz Informationen</string>
     <string name="help_permissions">Berechtigungen</string>
-    <string name="help_permissions_summary">Privacy Friendly Memory verwendet keinerlei Berechtigungen.</string>
+    <string name="help_permissions_summary">Privacy Friendly Memo-Spiel verwendet keinerlei Berechtigungen.</string>
 
     <!-- welcome dialog -->
     <string name="welcome_title">Willkommen</string>
@@ -74,7 +75,7 @@
     <string name="field_select_description_headline">1. Spielmodus:</string>
     <string name="difficulty_description">Drücke oder wische über die Sterne um den Schwierigkeitsgrad zu ändern.</string>
     <string name="difficulty_description_headline">2. Schwierigkeit:</string>
-    <string name="play">Lass uns Memory spielen.</string>
+    <string name="play">Lass uns das Memo-Spiel spielen.</string>
 
     <!-- win dialoag -->
     <string name="win_text">Glückwunsch!</string>
@@ -86,7 +87,7 @@
     <string name="win_button_text">Fortsetzen</string>
     <string name="win_show_game">Zeige Spielfeld</string>
 
-    <!-- memory activity -->
+    <!-- memo game activity -->
     <string name="player_name_prefix">Spieler</string>
     <string name="stats_found_cards">Pärchen: </string>
     <string name="stats_tries">Versuche: </string>
