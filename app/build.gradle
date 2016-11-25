@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.3"
 
     defaultConfig {
-        applicationId "org.secuso.privacyfriendlymemogame"
+        applicationId "org.secuso.privacyfriendlymemory"
         minSdkVersion 17
         targetSdkVersion 25
         versionCode 2
