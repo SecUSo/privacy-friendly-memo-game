@@ -10,12 +10,12 @@
     android:gravity="center_horizontal|center_vertical"
     android:orientation="vertical"
     android:weightSum="8"
-    tools:context="org.secuso.privacyfriendlymemogame.ui.MainActivity$GameTypeFragment">
+    tools:context="org.secuso.privacyfriendlymemory.ui.MainActivity$GameTypeFragment">
 
     <TextView android:id="@+id/section_label"
         android:text="Label"
         android:textStyle="bold"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:layout_weight="1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />

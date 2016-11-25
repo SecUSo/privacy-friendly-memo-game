@@ -1,4 +1,4 @@
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" android:fragment="org.secuso.privacyfriendlymemogame.ui.navigation.DeckChoiceActivity$HelpFragment">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" android:fragment="org.secuso.privacyfriendlymemory.ui.navigation.DeckChoiceActivity$HelpFragment">
 
 
     <PreferenceCategory android:title="@string/menu_settings">

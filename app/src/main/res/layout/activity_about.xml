@@ -17,7 +17,7 @@
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
         android:gravity="center"
-        tools:context="org.secuso.privacyfriendlymemogame.ui.navigation.AboutActivity">
+        tools:context="org.secuso.privacyfriendlymemory.ui.navigation.AboutActivity">
         <ImageView
             android:id="@+id/barcodeLogo"
             android:layout_width="fill_parent"

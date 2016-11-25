@@ -2,9 +2,9 @@ package org.secuso.privacyfriendlymemory;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.secuso.privacyfriendlymemogame.model.MemoGameCard;
-import org.secuso.privacyfriendlymemogame.model.MemoGameCard;
-import org.secuso.privacyfriendlymemogame.model.MemoGameDeck;
+import org.secuso.privacyfriendlymemory.model.MemoGameCard;
+import org.secuso.privacyfriendlymemory.model.MemoGameCard;
+import org.secuso.privacyfriendlymemory.model.MemoGameDeck;
 
 import java.util.HashMap;
 import java.util.LinkedList;

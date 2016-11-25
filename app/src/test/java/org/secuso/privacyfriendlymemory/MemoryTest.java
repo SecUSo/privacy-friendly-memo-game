@@ -2,10 +2,10 @@ package org.secuso.privacyfriendlymemory;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.secuso.privacyfriendlymemogame.model.CardDesign;
-import org.secuso.privacyfriendlymemogame.model.Memory;
-import org.secuso.privacyfriendlymemogame.model.MemoryDifficulty;
-import org.secuso.privacyfriendlymemogame.model.MemoryMode;
+import org.secuso.privacyfriendlymemory.model.CardDesign;
+import org.secuso.privacyfriendlymemory.model.MemoGame;
+import org.secuso.privacyfriendlymemory.model.MemoGameDifficulty;
+import org.secuso.privacyfriendlymemory.model.MemoGameMode;
 
 import static junit.framework.Assert.assertTrue;
 
@@ -14,11 +14,11 @@ import static junit.framework.Assert.assertTrue;
  */
 public class MemoryTest {
 
-    private Memory memory;
+    private MemoGame memory;
 
     @Before
     public void setUp(){
-        this.memory = new Memory(CardDesign.FIRST, MemoryMode.ONE_PLAYER, MemoryDifficulty.Easy);
+        this.memory = new MemoGame(CardDesign.FIRST, MemoGameMode.ONE_PLAYER, MemoGameDifficulty.Easy);
     }
 
     @Test

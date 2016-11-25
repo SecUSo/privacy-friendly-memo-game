@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/main_content"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:fitsSystemWindows="true" tools:context="org.secuso.privacyfriendlymemogame.ui.navigation.StatisticsActivity">
+    android:fitsSystemWindows="true" tools:context="org.secuso.privacyfriendlymemory.ui.navigation.StatisticsActivity">
 
     <android.support.design.widget.AppBarLayout android:id="@+id/appbar"
         android:layout_width="match_parent" android:layout_height="wrap_content"
