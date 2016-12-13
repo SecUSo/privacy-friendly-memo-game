@@ -1,0 +1,93 @@
+<resources>
+    <!-- Shared -->
+    <string name="app_name">Memo Game</string>
+    <string name="app_name_long">Privacy Friendly Memo Game</string>
+    <string name="button_ok">OK</string>
+    <string name="button_help">ヘルプを表示</string>
+
+    <!-- menu drawer -->
+    <string name="menu_menu">メインメニュー</string>
+    <string name="menu_highscore">ハイスコア</string>
+    <string name="menu_highscore_easy">ハイスコア 簡単</string>
+    <string name="menu_highscore_moderate">ハイスコア 普通</string>
+    <string name="menu_highscore_hard">ハイスコア 難しい</string>
+    <string name="menu_statistics">統計情報</string>
+    <string name="menu_settings">デッキの選択</string>
+    <string name="menu_help">ヘルプ</string>
+    <string name="menu_about">アプリについて</string>
+
+    <!-- menu drawer statistics -->
+    <string name="carddesign_displayname_first">タックス デッキ</string>
+    <string name="carddesign_displayname_second">アニマルデッキ</string>
+    <string name="carddesign_displayname_custom">カスタム デッキ</string>
+    <string name="false_selected">間違った選択:</string>
+    <!-- menu drawer highscore -->
+    <string name="reset_highscore">すべてリセット</string>
+
+    <!-- menu drawer deck choice -->
+    <string name="custom_deck_options">カスタム デッキ</string>
+    <string name="set_custom_deck">カスタム デッキの画像を定義</string>
+    <string name="reset_custom_deck">カスタム デッキを削除</string>
+    <string name="custom_deck_deleted">カスタム デッキを削除しました。</string>
+    <string name="custom_deck_not_enough_images">カスタム デッキを作成できませんでした。 32 枚以上の画像を選択してください。</string>
+    <string name="set_custom_deck_hint">ギャラリーから、カスタムデッキに 32 枚以上の画像を選択してください。</string>
+    <string name="set_custom_deck_hint_ok">OK</string>
+
+    <!-- main activity -->
+    <string name="new_game">新しいゲーム</string>
+
+    <string name="difficulty_easy">簡単</string>
+    <string name="difficulty_moderate">普通</string>
+    <string name="difficulty_hard">難しい</string>
+
+    <string name="mode_single_player">一人プレイヤー</string>
+    <string name="mode_duo_player">二人プレイヤー</string>
+
+    <!-- about activity -->
+    <string name="about_author">作者:</string>
+    <string name="about_author_contributors">と貢献者。</string>
+    <string name="about_affiliation">提携:</string>
+    <string name="privacy_friendly">このアプリケーションは、ダルムシュタット工科大学 (Technische Universität Darmstadt, Germany) が開発したプライバシーフレンドリーアプリのグループに属しています。ソースコードは GPLv3 の下でライセンスされます。画像の著作権は TU Darmstadt および Google Inc.</string>
+    <string name="more_info">さらに詳しい情報は以下でご覧ください:</string>
+    <string name="tux_deck_provided">タックス デッキ画像の提供:</string>
+    <string name="animal_deck_provided">アニマル デッキ画像の提供:</string>
+
+
+    <!-- help activity -->
+    <string name="help_game_mode">ゲームモード</string>
+    <string name="help_single_player">一人プレイヤーのゲームを作成</string>
+    <string name="help_duo_player">二人プレイヤーのゲームを作成</string>
+    <string name="help_game_difficulty">ゲームの難易度</string>
+    <string name="help_game_difficulty_summary">ゲームの難易度に応じたカードの数。</string>
+    <string name="help_custom_deck">デッキの選択設定では、ギャラリーからカードの画像を選択することができます。</string>
+    <string name="help_highscore">回数、時間、ゲームの難易度を用いてハイスコアが計算されます。</string>
+    <string name="help_privacyInfo">プライバシー情報</string>
+    <string name="help_permissions">アクセス許可</string>
+    <string name="help_permissions_summary">プライバシーに配慮したメモゲームはアクセス許可を何も使用しません。</string>
+
+    <!-- welcome dialog -->
+    <string name="welcome_title">ようこそ</string>
+    <string name="field_select_description">スワイプまたは左右の矢印ボタンを押してゲームモードを変更します。</string>
+    <string name="field_select_description_headline">1. ゲームモード:</string>
+    <string name="difficulty_description">星を押すか、スワイプして難易度を変えます。</string>
+    <string name="difficulty_description_headline">2. 難易度:</string>
+    <string name="play">メモゲームをプレイしましょう!</string>
+
+    <!-- win dialoag -->
+    <string name="win_text">おめでとう!</string>
+    <string name="win_text_duo">おめでとう</string>
+    <string name="win_text_duo_draw">引き分け!</string>
+    <string name="win_time">時間:</string>
+    <string name="win_tries">回数:</string>
+    <string name="win_highscore">ハイスコア:</string>
+    <string name="win_button_text">続行</string>
+    <string name="win_show_game">ゲームフィールドを表示</string>
+
+    <!-- memo-game activity -->
+    <string name="player_name_prefix">プレイヤー</string>
+    <string name="stats_found_cards">ペア: </string>
+    <string name="stats_tries">回数: </string>
+    <string name="quit_game_text">ゲームを終了しますか?</string>
+    <string name="quit_yes">はい</string>
+    <string name="quit_no">いいえ</string>
+</resources>
