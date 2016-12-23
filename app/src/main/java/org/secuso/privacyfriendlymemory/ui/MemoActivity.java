@@ -219,7 +219,7 @@ public class MemoActivity extends MemoAppCompatDrawerActivity {
     }
 
     private void saveHighscore() {
-        if (!memory.isMultiplayer() && !memory.isCustomDesign()) {
+        if (!memory.isMultiplayer()) {
             MemoGameHighscore highscore = memory.getHighscore();
             int actualCore = highscore.getScore();
             int actualTries = highscore.getTries();
