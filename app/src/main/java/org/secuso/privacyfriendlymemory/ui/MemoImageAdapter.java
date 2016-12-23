@@ -88,7 +88,9 @@ public class MemoImageAdapter extends BaseAdapter {
         try {
             BitmapFactory.decodeStream(context.getContentResolver().openInputStream(uri), null, o);
         } catch (IOException e) {
+            e.printStackTrace();
         }
+
         int width_tmp = o.outWidth, height_tmp = o.outHeight;
         int scale = 1;
 
@@ -105,6 +107,7 @@ public class MemoImageAdapter extends BaseAdapter {
         try {
             return BitmapFactory.decodeStream(context.getContentResolver().openInputStream(uri), null, o2);
         } catch (IOException e) {
+            e.printStackTrace();
         }
         return null;
     }
