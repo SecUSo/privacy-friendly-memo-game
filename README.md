@@ -1,4 +1,6 @@
-## Privacy Friendly Memo-Game
+# Privacy Friendly Memo-Game
+
+[<img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="60">](https://f-droid.org/repository/browse/?fdid=org.secuso.privacyfriendlymemory)<a href="https://play.google.com/store/apps/details?id=org.secuso.privacyfriendlymemory"><img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" height="60"></a>
 
 Privacy Friendly Memo-Game is a card game. The task is to find matching pairs within the cards. The application does not use any permission, which means it can provide its full functionality without the usage of permissions and it does not include advertisement nor tracking mechanisms.
 
@@ -7,11 +9,7 @@ Privacy Friendly Memo-Game is a card game. The task is to find matching pairs wi
 As it is part of the Privacy Friendly Apps developed by the SECUSO research group of the Technische 
 Universtität Darmstadt in Germany it is optimized due to user's privacy. More information can be found here [secuso.org/pfa].
 
-## Download and more information
-
-[<img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="60">](https://f-droid.org/repository/browse/?fdid=org.secuso.privacyfriendlymemory)<a href="https://play.google.com/store/apps/details?id=org.secuso.privacyfriendlymemory"><img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" height="60"></a>
-
-### Building
+## Building
 
 Further development requires Android Studio.
 
@@ -41,7 +39,7 @@ The icons used in the nagivation drawer are licensed under the [CC BY 2.5] (http
 The app provides two defined card design images. The images for the TuX deck are licensed under the GPLv3 (https://github.com/androidsoft-org/androidsoft-tuxmemory) and the images for the Animal deck are taken from openclipart.org and are licensed under the [Creative Commons Zero 1.0] (https://openclipart.org/share) License. Also the icons ic_trophy_award_black_48dp and ic_trophy_black_48dp are licensed under the Sil Open Font License Version 1.1.
 
 <br />
-All other images (the logo of Privacy Friendly Apps, the SECUSO logo and the splash screen logo) copyright [Technische Universtität Darmstadt] (https://www.tu-darmstadt.de)  (2016).
+All other images (the logo of Privacy Friendly Apps, the SECUSO logo, the app logo and the splash screen logo) copyright [Technische Universtität Darmstadt](https://www.tu-darmstadt.de)  (2016).
 
 
 ## Contributors
