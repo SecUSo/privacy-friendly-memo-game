@@ -1,7 +1,7 @@
 <resources>
     <!-- Shared -->
-    <string name="app_name">Memory</string>
-    <string name="app_name_long">Memory Privacy Friendly</string>
+    <string name="app_name">Jeu de Mémoire</string>
+    <string name="app_name_long">Jeu de Mémoire Privacy Friendly</string>
     <string name="button_ok">OK</string>
     <string name="button_help">Aide</string>
 
@@ -62,7 +62,7 @@
     <string name="help_highscore">Le meilleur score est calculé via le nombre d\'essais, le temps et la difficulté du jeu.</string>
     <string name="help_privacyInfo">Infos Confidentialité</string>
     <string name="help_permissions">Permissions</string>
-    <string name="help_permissions_summary">Memory Privacy Friendly n\'utilise aucune permission.</string>
+    <string name="help_permissions_summary">Jeu de Mémoire Privacy Friendly n\'utilise aucune permission.</string>
 
     <!-- welcome dialog -->
     <string name="welcome_title">Bienvenue</string>
