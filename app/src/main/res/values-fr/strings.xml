@@ -1,0 +1,92 @@
+<resources>
+    <!-- Shared -->
+    <string name="app_name">Jeu de Mémoire</string>
+    <string name="app_name_long">Jeu de Mémoire Privacy Friendly</string>
+    <string name="button_ok">OK</string>
+    <string name="button_help">Aide</string>
+
+    <!-- menu drawer -->
+    <string name="menu_menu">Menu principal</string>
+    <string name="menu_highscore">Meilleurs scores</string>
+    <string name="menu_highscore_easy">Meilleur score facile</string>
+    <string name="menu_highscore_moderate">Meilleur score moyen</string>
+    <string name="menu_highscore_hard">Meilleur score difficile</string>
+    <string name="menu_statistics">Statistiques</string>
+    <string name="menu_settings">Choix du deck</string>
+    <string name="menu_help">Aide</string>
+    <string name="menu_about">À propos</string>
+
+    <!-- menu drawer statistics -->
+    <string name="carddesign_displayname_first">Deck Tux</string>
+    <string name="carddesign_displayname_second">Deck Animaux</string>
+    <string name="carddesign_displayname_custom">Deck Personnalisé</string>
+    <string name="false_selected">Sélection incorrecte :</string>
+    <!-- menu drawer highscore -->
+    <string name="reset_highscore">Tout réinitialiser</string>
+
+    <!-- menu drawer deck choice -->
+    <string name="custom_deck_options">Deck Personnalisé</string>
+    <string name="set_custom_deck">Définir les images pour votre deck personnalisé</string>
+    <string name="reset_custom_deck">Supprimer le deck personnalisé</string>
+    <string name="custom_deck_deleted">Deck personnalisé supprimé</string>
+    <string name="custom_deck_not_enough_images">Impossible de créer un deck personnalisé. Veuillez sélectionner au moins 32 images.</string>
+    <string name="set_custom_deck_hint">Sélectionnez au moins 32 images de votre galerie pour votre deck personnalisé.</string>
+    <string name="set_custom_deck_hint_ok">OK</string>
+
+    <!-- main activity -->
+    <string name="new_game">Nouvelle Partie</string>
+
+    <string name="difficulty_easy">Facile</string>
+    <string name="difficulty_moderate">Moyen</string>
+    <string name="difficulty_hard">Difficile</string>
+
+    <string name="mode_single_player">Un joueur</string>
+    <string name="mode_duo_player">Deux joueurs</string>
+
+    <!-- about activity -->
+    <string name="about_author">Auteur :</string>
+    <string name="about_author_contributors">et les contributeurs.</string>
+    <string name="about_affiliation">En affiliation avec :</string>
+    <string name="privacy_friendly">Cette application appartient au groupe d\'applications privacy friendly développées par la Technische Universität Darmstadt. Le code source est sous licence GPLv3. Copyright des images : TU Darmstadt et Google Inc.</string>
+    <string name="more_info">Plus d\'informations sur :</string>
+    <string name="tux_deck_provided">Deck des images de Tux fourni par :</string>
+    <string name="animal_deck_provided">Deck des images d\'animaux fourni par :</string>
+
+    <!-- help activity -->
+    <string name="help_game_mode">Mode de jeu</string>
+    <string name="help_single_player">Créer une partie un joueur</string>
+    <string name="help_duo_player">Créer une partie deux joueurs</string>
+    <string name="help_game_difficulty">Difficulté du jeu</string>
+    <string name="help_game_difficulty_summary">Nombre de cartes en fonction de la difficulté du jeu.</string>
+    <string name="help_custom_deck">Vous pouvez sélectionner les images de votre propre galerie pour les cartes dans les paramètres de choix du deck.</string>
+    <string name="help_highscore">Le meilleur score est calculé via le nombre d\'essais, le temps et la difficulté du jeu.</string>
+    <string name="help_privacyInfo">Infos Confidentialité</string>
+    <string name="help_permissions">Permissions</string>
+    <string name="help_permissions_summary">Jeu de Mémoire Privacy Friendly n\'utilise aucune permission.</string>
+
+    <!-- welcome dialog -->
+    <string name="welcome_title">Bienvenue</string>
+    <string name="field_select_description">Faites glisser ou appuyez sur les flèches à gauche et à droite pour changer le mode de jeu.</string>
+    <string name="field_select_description_headline">1. Mode de jeu :</string>
+    <string name="difficulty_description">Appuyez ou faites glisser les étoiles pour changer la difficulté.</string>
+    <string name="difficulty_description_headline">2. Difficulté :</string>
+    <string name="play">Jouons au Memory !</string>
+
+    <!-- win dialoag -->
+    <string name="win_text">Félicitations !</string>
+    <string name="win_text_duo">Félicitations</string>
+    <string name="win_text_duo_draw">Match nul !</string>
+    <string name="win_time">Temps :</string>
+    <string name="win_tries">Essais :</string>
+    <string name="win_highscore">Meilleur score :</string>
+    <string name="win_button_text">Continuer</string>
+    <string name="win_show_game">Afficher le jeu</string>
+
+    <!-- memo-game activity -->
+    <string name="player_name_prefix">Joueur</string>
+    <string name="stats_found_cards">Paires : </string>
+    <string name="stats_tries">Essais : </string>
+    <string name="quit_game_text">Voulez-vous quitter le jeu ?</string>
+    <string name="quit_yes">Oui</string>
+    <string name="quit_no">Non</string>
+</resources>
