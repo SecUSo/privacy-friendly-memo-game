@@ -221,17 +221,32 @@ public class StatisticsActivity extends AppCompatActivity {
             orderedNameCountMapping = sortByValue(orderedNameCountMapping);
         }
 
-        @Override
+        private static class ViewHolderItem {
+			private TextView txtTitle;
+			private ImageView imageView;
+		}
+
+		@Override
         public View getView(int position, View view, ViewGroup parent) {
-            // invert index to show resource with highest false selection count on the top
+            ViewHolderItem viewHolderItem;
+			// invert index to show resource with highest false selection count on the top
             int invertedIndex = orderedNameCountMapping.size() - position - 1;
             LayoutInflater inflater = activity.getLayoutInflater();
-            View rowView = inflater.inflate(R.layout.activity_single_statistics_entry, null, true);
-            TextView txtTitle = (TextView) rowView.findViewById(R.id.card_false_selected_stats);
+            if (view == null) {
+				view = inflater.inflate(R.layout.activity_single_statistics_entry, null, true);
+				viewHolderItem = new ViewHolderItem();
+				viewHolderItem.txtTitle = (TextView) view.findViewById(R.id.card_false_selected_stats);
+				viewHolderItem.imageView = (ImageView) view.findViewById(R.id.card_image);
+				convertView.setTag(viewHolderItem);
+			} else {
+				viewHolderItem = (ViewHolderItem) convertView.getTag();
+			}
+			View rowView = view;
+			TextView txtTitle = viewHolderItem.txtTitle;
             txtTitle.setText("\t" + activity.getResources().getString(R.string.false_selected) + "\t" + getCountAtPosition(invertedIndex));
 
             // get drawable from resource name
-            ImageView imageView = (ImageView) rowView.findViewById(R.id.card_image);
+            ImageView imageView = viewHolderItem.imageView;
             int drawableResourceId = activity.getResources().getIdentifier(getResourceNameAtPosition(invertedIndex), "drawable", activity.getPackageName());
             imageView.setImageResource(drawableResourceId);
 
