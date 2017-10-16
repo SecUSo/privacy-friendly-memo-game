@@ -46,7 +46,7 @@
     <string name="mode_duo_player">Dual player</string>
 
     <!-- about activity -->
-    <string name="version_number" translatable="false">Version 1.0.2</string>
+    <string name="version_number" translatable="false">Version</string>
     <string name="about_author">Author:</string>
     <string name="about_author_names" translatable="false">Hannes Hofmann</string>
     <string name="about_author_contributors">and contributors.</string>
@@ -57,8 +57,7 @@
     <string name="gitrepo_url" translatable="false"><a href="https://github.com/SecUSo/privacy-friendly-memory">Github-Repo</a></string>
     <string name="tux_deck_provided">TuX deck images provided by:</string>
     <string name="animal_deck_provided">Animal deck images provided by:</string>
-
-
+    
     <!-- help activity -->
     <string name="help_game_mode">Game mode</string>
     <string name="help_single_player">Create a single player game</string>
