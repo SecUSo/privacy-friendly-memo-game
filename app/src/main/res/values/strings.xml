@@ -57,7 +57,7 @@
     <string name="gitrepo_url" translatable="false"><a href="https://github.com/SecUSo/privacy-friendly-memory">Github-Repo</a></string>
     <string name="tux_deck_provided">TuX deck images provided by:</string>
     <string name="animal_deck_provided">Animal deck images provided by:</string>
-    
+
     <!-- help activity -->
     <string name="help_game_mode">Game mode</string>
     <string name="help_single_player">Create a single player game</string>
