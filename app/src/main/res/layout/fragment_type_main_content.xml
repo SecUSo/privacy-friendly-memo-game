@@ -1,32 +1,31 @@
-
+<?xml version='1.0' encoding='UTF-8'?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_horizontal|center_vertical"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:gravity="center_horizontal|center_vertical"
-    android:orientation="vertical"
     android:weightSum="8"
     tools:context="org.secuso.privacyfriendlymemory.ui.MainActivity$GameTypeFragment">
 
-    <TextView android:id="@+id/section_label"
-        android:text="Label"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:layout_weight="1"
+    <TextView
+        android:id="@+id/section_label"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Label"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <ImageView
-        android:layout_weight="5"
         android:id="@+id/gameTypeImage"
         android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
         android:adjustViewBounds="true"
-        android:layout_centerInParent="true"
-        android:src="@drawable/ic_person_black_24px"
-        android:layout_height="0dp" />
-
+        android:src="@drawable/ic_person_black_24px"></ImageView>
 </LinearLayout>
