@@ -1,7 +1,7 @@
 <resources>
     <!-- Shared -->
     <string name="app_name">Memospiel</string>
-    <string name="app_name_long">Privacy Friendly Memo-Spiel</string>
+    <string name="app_name_long">Privacy Friendly Memospiel</string>
     <string name="button_ok">Okay</string>
     <string name="button_help">Zeige Hilfe</string>
 
@@ -67,7 +67,7 @@
 
     <string name="help_privacyInfo">Datenschutz Informationen</string>
     <string name="help_permissions">Berechtigungen</string>
-    <string name="help_permissions_summary">Privacy Friendly Memo-Spiel verwendet keinerlei Berechtigungen.</string>
+    <string name="help_permissions_summary">Privacy Friendly Memospiel verwendet keinerlei Berechtigungen.</string>
 
     <!-- welcome dialog -->
     <string name="welcome_title">Willkommen</string>
@@ -75,7 +75,7 @@
     <string name="field_select_description_headline">1. Spielmodus:</string>
     <string name="difficulty_description">Drücke oder wische über die Sterne um den Schwierigkeitsgrad zu ändern.</string>
     <string name="difficulty_description_headline">2. Schwierigkeit:</string>
-    <string name="play">Lass uns das Memo-Spiel spielen.</string>
+    <string name="play">Lass uns das Memospiel spielen.</string>
 
     <!-- win dialoag -->
     <string name="win_text">Glückwunsch!</string>
