@@ -10,6 +10,12 @@ local.properties
 # Gradle generated files
 .gradle/
 
+#build files
+build/
+
+# Idea configuations
+.idea/
+
 # Signing files
 .signing/
 
@@ -42,3 +48,5 @@ Thumbs.db
 *.docx
 *.odt
 
+#APK
+*.apk
