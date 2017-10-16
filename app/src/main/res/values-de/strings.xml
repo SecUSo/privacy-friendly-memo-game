@@ -1,6 +1,6 @@
 <resources>
     <!-- Shared -->
-    <string name="app_name">Memo-Spiel</string>
+    <string name="app_name">Memospiel</string>
     <string name="app_name_long">Privacy Friendly Memo-Spiel</string>
     <string name="button_ok">Okay</string>
     <string name="button_help">Zeige Hilfe</string>
@@ -12,7 +12,7 @@
     <string name="menu_highscore_moderate">Highscore Normal</string>
     <string name="menu_highscore_hard">Highscore Schwer</string>
     <string name="menu_statistics">Statistik</string>
-    <string name="menu_settings">Deckwahl</string>
+    <string name="menu_settings">Deckauswahl</string>
     <string name="menu_help">Hilfe</string>
     <string name="menu_about">Über</string>
 
@@ -61,7 +61,7 @@
     <string name="help_game_difficulty">Spielschwierigkeit</string>
     <string name="help_game_difficulty_summary">Anzahl der Spielkarten abhängig der gewählten Schwierigkeit.</string>
 
-    <string name="help_custom_deck">Sie können in den Einstellungen unter Kartendeckwahl eigene Kartenbilder aus Ihrer Galerie auswählen.</string>
+    <string name="help_custom_deck">Sie können unter Deckauswahl eigene Kartenbilder aus Ihrer Galerie auswählen.</string>
 
     <string name="help_highscore">Der Highscore berechnet sich aus der benötigten Anzahl an Versuchen, der Zeit und der Spielschwierigkeit.</string>
 

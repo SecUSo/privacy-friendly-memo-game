@@ -1,7 +1,7 @@
 <resources>
     <!-- Shared -->
     <string name="app_name">Jeu de Mémoire</string>
-    <string name="app_name_long">Jeu de Mémoire Privacy Friendly</string>
+    <string name="app_name_long">Privacy Friendly Jeu de Mémoire</string>
     <string name="button_ok">OK</string>
     <string name="button_help">Aide</string>
 
