@@ -2,19 +2,31 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:id="@+id/group1">
-        <item android:id="@+id/menu_main" android:icon="@drawable/ic_home"
+        <item
+            android:id="@+id/menu_main"
+            android:icon="@drawable/ic_home"
             android:title="@string/menu_menu" />
-        <item android:id="@+id/menu_highscore" android:icon="@android:drawable/ic_menu_myplaces"
+        <item
+            android:id="@+id/menu_highscore"
+            android:icon="@drawable/ic_menu_myplaces_dark"
             android:title="@string/menu_highscore" />
-        <item android:id="@+id/menu_statistics" android:icon="@drawable/ic_statistics"
+        <item
+            android:id="@+id/menu_statistics"
+            android:icon="@drawable/ic_statistics"
             android:title="@string/menu_statistics" />
     </group>
     <group android:id="@+id/group4">
-        <item android:id="@+id/menu_settings" android:icon="@drawable/ic_settings"
+        <item
+            android:id="@+id/menu_settings"
+            android:icon="@drawable/ic_settings"
             android:title="@string/menu_settings" />
-        <item android:id="@+id/menu_help" android:icon="@drawable/ic_help"
+        <item
+            android:id="@+id/menu_help"
+            android:icon="@drawable/ic_help"
             android:title="@string/menu_help" />
-        <item android:id="@+id/menu_about" android:icon="@drawable/ic_about"
+        <item
+            android:id="@+id/menu_about"
+            android:icon="@drawable/ic_about"
             android:title="@string/menu_about" />
     </group>
 
