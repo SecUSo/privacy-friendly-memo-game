@@ -143,6 +143,11 @@ public class DeckChoiceActivity extends AppCompatPreferenceActivity {
                     for (int i = 0; i < mClipData.getItemCount(); i++) {
                         ClipData.Item item = mClipData.getItemAt(i);
                         Uri uri = item.getUri();
+                        final int takeFlags = data.getFlags() & (Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                            getActivity().getContentResolver().takePersistableUriPermission(uri, takeFlags);
+                        }
+
                         customImageUris.add(uri.toString());
                     }
                 }
@@ -177,9 +182,19 @@ public class DeckChoiceActivity extends AppCompatPreferenceActivity {
                     builder.setMessage(getResources().getString(R.string.set_custom_deck_hint));
                     builder.setPositiveButton(getResources().getString(R.string.set_custom_deck_hint_ok), new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
-                            Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+
+                            Intent intent = new Intent();
+
+                            if (android.os.Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
+                                intent.setAction(Intent.ACTION_GET_CONTENT);
+                            } else {
+                                intent.setAction(Intent.ACTION_OPEN_DOCUMENT);
+                                intent.addCategory(Intent.CATEGORY_OPENABLE);
+                            }
+
                             intent.setType("image/*");
                             intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+
                             startActivityForResult(Intent.createChooser(intent, ""), PICK_IMAGE_MULTIPLE);
                         }
                     });
