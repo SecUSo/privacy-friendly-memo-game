@@ -16,7 +16,7 @@ Further development requires Android Studio.
 ### API Reference
 
 Mininum SDK: 17
-Target SDK: 25 
+Target SDK: 26 
 
 ## License
 
@@ -47,7 +47,7 @@ App-Icon: <br />
 Markus Hau<br />
 
 Github-Users: <br />
-Xrygramming <br />
+hanneshofmann <br />
 yonjuni <br />
 Kamuno <br />
 Poussinou
