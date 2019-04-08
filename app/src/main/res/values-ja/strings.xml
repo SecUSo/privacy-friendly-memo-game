@@ -79,6 +79,7 @@
     <string name="win_text_duo_draw">引き分け!</string>
     <string name="win_time">時間:</string>
     <string name="win_tries">回数:</string>
+    <string name="win_score">スコア:</string>
     <string name="win_highscore">ハイスコア:</string>
     <string name="win_button_text">続行</string>
     <string name="win_show_game">ゲームフィールドを表示</string>

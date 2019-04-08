@@ -84,6 +84,7 @@
     <string name="win_text_duo_draw">Draw!</string>
     <string name="win_time">Time:</string>
     <string name="win_tries">Tries:</string>
+    <string name="win_score">Score:</string>
     <string name="win_highscore">Highscore:</string>
     <string name="win_button_text">Continue</string>
     <string name="win_show_game">Show gamefield</string>
