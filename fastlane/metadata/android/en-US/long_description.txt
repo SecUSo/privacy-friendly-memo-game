@@ -1,0 +1,19 @@
+Privacy Friendly Memo Game is a card game. The goal is to find the same cards in one turn. It belongs to the Privacy Friendly Apps group developed by the research group SECUSO at Technische Universität Darmstadt. More information can be found an secuso.org/pfa
+
+The application provides two predefined card decks, as well as the option to select own images from your device.
+In addition to a single player mode, it is also possible to play in a dual player mode.
+
+Privacy Friendly Memo Game has three difficulty level:
+1. a game field with 4x4 cards (overall 16 cards)
+2. a game field with 6x6 cards (overall 36 cards)
+3. a game field with 8x8 cards (overall 64 cards)
+
+What makes Privacy Friendly Memo Game different from other similar apps?
+
+1. No permissions
+Privacy Friendly Memo Game does not require any permissions. The selection of images is done by a task to the gallery so the app does not have any access to the device's storage without the user's control and interaction.
+
+For comparison: The Top Ten of similar apps from the Google Play Store requires an average of 3,9 permissions (in September 2016). These are for instance the access to the network.
+
+2. No advertisement
+Many other free apps in the Google Play Store dazzle annoying advertising and also shortens battery life.

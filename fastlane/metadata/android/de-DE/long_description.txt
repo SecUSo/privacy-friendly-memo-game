@@ -1,0 +1,20 @@
+Privacy Friendly Memospiel ist ein Kartenspiel. Ziel ist es, möglichst viele passende Kartenpaare gleichzeitig aufzudecken.
+
+Die App bietet zwei vordefinierte Kartendecks, sowie eine Option um eigene Bilder festzulegen und mit diesen zu spielen. Zusätzlich zu einem Einzelspieler-Modus kann auch gleichzeitig zu zweit in einem Spiel gespielt werden.
+
+Privacy Friendly Memo-Spiel hat drei Schwierigkeitsgrade:
+1. ein Spielfeld mit 4x4 Karten (insgesamt 16 Karten)
+2. ein Spielfeld mit 6x6 Karten (insgesamt 36 Karten)
+3. ein Spielfeld mit 8x8 Karten (insgesamt 64 Karten)
+
+Was unterscheidet Privacy Friendly Memospiel von anderen, ähnlichen Apps?
+
+1. Keine Berechtigungen
+Privacy Friendly Memospiel verzichtet komplett auf Berechtigungen - bei voller Funktionalität.
+
+Zum Vergleich: Die Top Ten der Memospiel -Apps im Google Play Store (Stand: September 2016) verwenden durchschnittlich 3,9 Berechtigungen. Hierzu zählen Netzwerk- und Internetzugriff, was bei einer Memo-Spiel-App überflüssig ist.
+
+2. Keine störende Werbung
+Viele andere kostenlose Apps blenden störende Werbung ein, die unter anderem auch die Akkulaufzeit verkürzt und Datenvolumen verbrauchen kann.
+
+Die App gehört zur Gruppe der Privacy Friendly Apps, die von der Forschungsgruppe SECUSO der Technischen Universität Darmstadt entwickelt werden. Mehr Informationen unter: https://secuso.org/pfa
