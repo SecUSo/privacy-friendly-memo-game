@@ -212,11 +212,11 @@ public class MemoActivity extends MemoAppCompatDrawerActivity {
         }
     }
 
-    private void setColorFor(int color, TextView... views) {
-        for (TextView view : views) {
-            view.setTextColor(color);
-        }
-    }
+    private static void setColorFor(int color, TextView... views) {
+		for (TextView view : views) {
+			view.setTextColor(color);
+		}
+	}
 
     private void saveHighscore() {
         if (!memory.isMultiplayer()) {
