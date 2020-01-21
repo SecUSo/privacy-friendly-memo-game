@@ -221,7 +221,7 @@ public class MemoActivity extends MemoAppCompatDrawerActivity {
     private void saveHighscore() {
         if (!memory.isMultiplayer()) {
             MemoGameHighscore highscore = memory.getHighscore();
-            int actualCore = highscore.getScore();
+            int actualScore = highscore.getScore();
             int actualTries = highscore.getTries();
             int actualTime = highscore.getTime();
             MemoGameDifficulty difficulty = memory.getDifficulty();
@@ -246,8 +246,8 @@ public class MemoActivity extends MemoAppCompatDrawerActivity {
                     break;
             }
             int currentScore = preferences.getInt(highscoreConstants, 0);
-            if (actualCore > currentScore) {
-                preferences.edit().putInt(highscoreConstants, actualCore).commit();
+            if (actualScore > currentScore) {
+                preferences.edit().putInt(highscoreConstants, actualScore).commit();
                 preferences.edit().putInt(highscoreTriesConstants, actualTries).commit();
                 preferences.edit().putInt(highscoreTimeConstants, actualTime).commit();
             }
@@ -358,11 +358,24 @@ public class MemoActivity extends MemoAppCompatDrawerActivity {
             ((TextView) findViewById(R.id.win_tries)).setText(String.valueOf(highscore.getTries()));
             // highscore is not valid if a custom deck is selected
             if (highscore.isValid()) {
-                ((TextView) findViewById(R.id.win_highscore)).setText(String.valueOf(highscore.getScore()));
+                ((TextView) findViewById(R.id.win_score)).setText(String.valueOf(highscore.getScore()));
+                ((TextView) findViewById(R.id.win_highscore)).setText(String.valueOf(getSavedHighscore()));
             } else {
                 ((TextView) findViewById(R.id.win_highscore_text)).setText("");
             }
 
+        }
+
+        private int getSavedHighscore() {
+            switch(memory.getDifficulty()) {
+                case Easy:
+                    return preferences.getInt(Constants.HIGHSCORE_EASY, 0);
+                case Moderate:
+                    return preferences.getInt(Constants.HIGHSCORE_MODERATE, 0);
+                case Hard:
+                    return preferences.getInt(Constants.HIGHSCORE_HARD, 0);
+            }
+            return 0;
         }
     }
 
@@ -415,8 +428,6 @@ public class MemoActivity extends MemoAppCompatDrawerActivity {
             }
             return winnerName;
         }
-
-
     }
 
 }

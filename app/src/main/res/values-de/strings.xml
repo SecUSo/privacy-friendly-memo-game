@@ -83,6 +83,7 @@
     <string name="win_text_duo_draw">Unentschieden!</string>
     <string name="win_time">Zeit:</string>
     <string name="win_tries">Versuche:</string>
+    <string name="win_score">Score:</string>
     <string name="win_highscore">Highscore:</string>
     <string name="win_button_text">Fortsetzen</string>
     <string name="win_show_game">Zeige Spielfeld</string>
