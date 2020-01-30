@@ -47,7 +47,7 @@ App-Icon: <br />
 Markus Hau<br />
 
 Github-Users: <br />
-Xrygramming <br />
+hanneshofmann <br />
 yonjuni <br />
 Kamuno <br />
 Poussinou
