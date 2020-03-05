@@ -68,6 +68,12 @@ public class StatisticsActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(mViewPager);
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        statisticsActivity = null;
+    }
+
     private void setupActionBar() {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
