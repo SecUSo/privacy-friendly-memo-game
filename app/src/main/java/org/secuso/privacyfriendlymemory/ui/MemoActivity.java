@@ -9,6 +9,7 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -118,7 +119,8 @@ public class MemoActivity extends MemoAppCompatDrawerActivity {
         gridview = (GridView) findViewById(R.id.gridview);
         gridview.setNumColumns(layoutProvider.getColumnCount());
         final ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) gridview.getLayoutParams();
-        marginLayoutParams.setMargins(layoutProvider.getMarginLeft(), layoutProvider.getMargin(), layoutProvider.getMarginRight(), 0);
+        marginLayoutParams.setMargins(layoutProvider.getMarginLeft(), layoutProvider.getMargin()+100, layoutProvider.getMarginRight(), 0);
+        Log.d("debug","layoutProvider.getMargin() = "+layoutProvider.getMargin() );
         gridview.setLayoutParams(marginLayoutParams);
         final MemoImageAdapter imageAdapter = new MemoImageAdapter(this, layoutProvider);
         gridview.setAdapter(imageAdapter);
@@ -126,8 +128,7 @@ public class MemoActivity extends MemoAppCompatDrawerActivity {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
                 memory.select(position);
-
-                // if two cards are false selected and memory is played with a custom card set increment "false selected count" for statistics
+                // if two carsetupGridviewds are false selected and memory is played with a custom card set increment "false selected count" for statistics
                 if (!memory.isCustomDesign()) {
                     Integer[] falseSelectedCards = memory.getFalseSelectedCards();
                     if (falseSelectedCards != null) {
@@ -140,6 +141,7 @@ public class MemoActivity extends MemoAppCompatDrawerActivity {
                 // adapter must be notified, that images will be refreshed if selected
                 imageAdapter.notifyDataSetChanged();
                 // update stats (found cards, tries, next player,..)
+                // change game state
                 updateStatsView();
 
                 if (memory.isFinished()) {
@@ -153,6 +155,7 @@ public class MemoActivity extends MemoAppCompatDrawerActivity {
 
     }
 
+    // This function is called after each card click
     private void updateStatsView() {
         // set views for player one
         MemoGamePlayer playerOne = memory.getPlayers().get(0);
@@ -170,12 +173,27 @@ public class MemoActivity extends MemoAppCompatDrawerActivity {
         // init tries value for player one
         TextView playerOneTriesValueView = (TextView) findViewById(R.id.player_one_tries_value);
         playerOneTriesValueView.setText(String.valueOf(playerOne.getTries()));
+
+        // Add new Textviews for Player 1
+        TextView playerOneOptimalScoreView = (TextView) findViewById(R.id.player_one_optimal_score);
+        TextView playerOneOptimalScoreValueView = (TextView) findViewById(R.id.player_one_optimal_score_value);
+        TextView playerOneNonOptimalScoreView = (TextView) findViewById(R.id.player_one_non_optimal_score);
+        TextView playerOneNonOptimalScoreValueView = (TextView) findViewById(R.id.player_one_non_optimal_score_value);
+
         // set views for player two, if only one player exists set views empty
         TextView playerTwoNameView = (TextView) findViewById(R.id.player_two_name);
         TextView playerTwoFoundsView = (TextView) findViewById(R.id.player_two_found);
         TextView playerTwoFoundsValueView = (TextView) findViewById(R.id.player_two_found_value);
         TextView playerTwoTriesView = (TextView) findViewById(R.id.player_two_tries);
         TextView playerTwoTriesValueView = (TextView) findViewById(R.id.player_two_tries_value);
+
+
+        // Add new Textviews for Player 2
+        TextView playerTwoOptimalScoreView = (TextView) findViewById(R.id.player_two_optimal_score);
+        TextView playerTwoOptimalScoreValueView = (TextView) findViewById(R.id.player_two_optimal_score_value);
+        TextView playerTwoNonOptimalScoreView = (TextView) findViewById(R.id.player_two_non_optimal_score);
+        TextView playerTwoNonOptimalScoreValueView = (TextView) findViewById(R.id.player_two_non_optimal_score_value);
+
         if (memory.isMultiplayer()) {
             playerOneNameView.setVisibility(View.VISIBLE);
             MemoGamePlayer playerTwo = memory.getPlayers().get(1);
@@ -195,6 +213,10 @@ public class MemoActivity extends MemoAppCompatDrawerActivity {
             playerTwoFoundsValueView.setText("");
             playerTwoTriesView.setText("");
             playerTwoTriesValueView.setText("");
+            playerTwoOptimalScoreView.setText("");
+            playerTwoOptimalScoreValueView.setText("");
+            playerTwoNonOptimalScoreView.setText("");
+            playerTwoNonOptimalScoreValueView.setText("");
         }
 
         TextView playerOneFoundsView = (TextView) findViewById(R.id.player_one_found);
@@ -204,13 +226,18 @@ public class MemoActivity extends MemoAppCompatDrawerActivity {
         int highlightColor = ContextCompat.getColor(this, R.color.colorPrimary);
         int normalColor = ContextCompat.getColor(this, R.color.middlegrey);
         if (currentPlayer == playerOne) {
-            setColorFor(highlightColor, playerOneNameView, playerOneFoundsView, playerOneFoundsValueView, playerOneTriesView, playerOneTriesValueView);
-            setColorFor(normalColor, playerTwoNameView, playerTwoFoundsView, playerTwoFoundsValueView, playerTwoTriesView, playerTwoTriesValueView);
+            setColorFor(highlightColor, playerOneNameView, playerOneFoundsView, playerOneFoundsValueView, playerOneTriesView, playerOneTriesValueView,
+                        playerOneOptimalScoreView,playerOneOptimalScoreValueView,playerOneNonOptimalScoreView,playerOneNonOptimalScoreValueView);
+            setColorFor(normalColor, playerTwoNameView, playerTwoFoundsView, playerTwoFoundsValueView, playerTwoTriesView, playerTwoTriesValueView,
+                        playerTwoOptimalScoreView,playerTwoOptimalScoreValueView,playerTwoNonOptimalScoreView,playerTwoNonOptimalScoreValueView );
         } else {
-            setColorFor(highlightColor, playerTwoNameView, playerTwoFoundsView, playerTwoFoundsValueView, playerTwoTriesView, playerTwoTriesValueView);
-            setColorFor(normalColor, playerOneNameView, playerOneFoundsView, playerOneFoundsValueView, playerOneTriesView, playerOneTriesValueView);
+            setColorFor( normalColor, playerOneNameView, playerOneFoundsView, playerOneFoundsValueView, playerOneTriesView, playerOneTriesValueView,
+                    playerOneOptimalScoreView,playerOneOptimalScoreValueView,playerOneNonOptimalScoreView,playerOneNonOptimalScoreValueView);
+            setColorFor(highlightColor, playerTwoNameView, playerTwoFoundsView, playerTwoFoundsValueView, playerTwoTriesView, playerTwoTriesValueView,
+                    playerTwoOptimalScoreView,playerTwoOptimalScoreValueView,playerTwoNonOptimalScoreView,playerTwoNonOptimalScoreValueView );
         }
     }
+
 
     private static void setColorFor(int color, TextView... views) {
 		for (TextView view : views) {
