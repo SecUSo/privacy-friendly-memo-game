@@ -127,9 +127,8 @@ public class MemoActivity extends MemoAppCompatDrawerActivity {
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
-
-
                 memory.select(position);
+                Log.d("DEBUG", "MATCHING_ID = " );
 
                 // if two carsetupGridviewds are false selected and memory is played with a custom card set increment "false selected count" for statistics
                 if (!memory.isCustomDesign()) {
@@ -177,14 +176,11 @@ public class MemoActivity extends MemoAppCompatDrawerActivity {
         TextView playerOneTriesValueView = (TextView) findViewById(R.id.player_one_tries_value);
         playerOneTriesValueView.setText(String.valueOf(playerOne.getTries()));
 
-        // Add new Textviews for Player 1
-        TextView playerOneOptimalScoreView = (TextView) findViewById(R.id.player_one_optimal_score);
-        TextView playerOneOptimalScoreValueView = (TextView) findViewById(R.id.player_one_optimal_score_value);
-        // Update the nonOptimaScore of PlayerTwo
-        playerOneOptimalScoreValueView.setText(String.valueOf(playerOne.getNonOptimalScore()));
-
+        // Add new Textviews for Player 1 for NonOptimalScore
         TextView playerOneNonOptimalScoreView = (TextView) findViewById(R.id.player_one_non_optimal_score);
         TextView playerOneNonOptimalScoreValueView = (TextView) findViewById(R.id.player_one_non_optimal_score_value);
+        playerOneNonOptimalScoreValueView.setText(String.valueOf(playerOne.getNonOptimalScore()));
+
 
         // set views for player two, if only one player exists set views empty
         TextView playerTwoNameView = (TextView) findViewById(R.id.player_two_name);
@@ -193,10 +189,7 @@ public class MemoActivity extends MemoAppCompatDrawerActivity {
         TextView playerTwoTriesView = (TextView) findViewById(R.id.player_two_tries);
         TextView playerTwoTriesValueView = (TextView) findViewById(R.id.player_two_tries_value);
 
-
-        // Add new Textviews for Player 2
-        TextView playerTwoOptimalScoreView = (TextView) findViewById(R.id.player_two_optimal_score);
-        TextView playerTwoOptimalScoreValueView = (TextView) findViewById(R.id.player_two_optimal_score_value);
+        // Add new Textviews for Player 2 for NonOptimalScore
         TextView playerTwoNonOptimalScoreView = (TextView) findViewById(R.id.player_two_non_optimal_score);
         TextView playerTwoNonOptimalScoreValueView = (TextView) findViewById(R.id.player_two_non_optimal_score_value);
 
@@ -223,8 +216,6 @@ public class MemoActivity extends MemoAppCompatDrawerActivity {
             playerTwoFoundsValueView.setText("");
             playerTwoTriesView.setText("");
             playerTwoTriesValueView.setText("");
-            playerTwoOptimalScoreView.setText("");
-            playerTwoOptimalScoreValueView.setText("");
             playerTwoNonOptimalScoreView.setText("");
             playerTwoNonOptimalScoreValueView.setText("");
         }
@@ -236,15 +227,15 @@ public class MemoActivity extends MemoAppCompatDrawerActivity {
         int highlightColor = ContextCompat.getColor(this, R.color.colorPrimary);
         int normalColor = ContextCompat.getColor(this, R.color.middlegrey);
         if (currentPlayer == playerOne) {
-            setColorFor(highlightColor, playerOneNameView, playerOneFoundsView, playerOneFoundsValueView, playerOneTriesView, playerOneTriesValueView,
-                        playerOneOptimalScoreView,playerOneOptimalScoreValueView,playerOneNonOptimalScoreView,playerOneNonOptimalScoreValueView);
-            setColorFor(normalColor, playerTwoNameView, playerTwoFoundsView, playerTwoFoundsValueView, playerTwoTriesView, playerTwoTriesValueView,
-                        playerTwoOptimalScoreView,playerTwoOptimalScoreValueView,playerTwoNonOptimalScoreView,playerTwoNonOptimalScoreValueView );
+            setColorFor(highlightColor, playerOneNameView, playerOneFoundsView, playerOneFoundsValueView, playerOneTriesView, playerOneTriesValueView
+                        ,playerOneNonOptimalScoreView,playerOneNonOptimalScoreValueView);
+            setColorFor(normalColor, playerTwoNameView, playerTwoFoundsView, playerTwoFoundsValueView, playerTwoTriesView, playerTwoTriesValueView
+                        ,playerTwoNonOptimalScoreView,playerTwoNonOptimalScoreValueView );
         } else {
             setColorFor( normalColor, playerOneNameView, playerOneFoundsView, playerOneFoundsValueView, playerOneTriesView, playerOneTriesValueView,
-                    playerOneOptimalScoreView,playerOneOptimalScoreValueView,playerOneNonOptimalScoreView,playerOneNonOptimalScoreValueView);
+                    playerOneNonOptimalScoreView,playerOneNonOptimalScoreValueView);
             setColorFor(highlightColor, playerTwoNameView, playerTwoFoundsView, playerTwoFoundsValueView, playerTwoTriesView, playerTwoTriesValueView,
-                    playerTwoOptimalScoreView,playerTwoOptimalScoreValueView,playerTwoNonOptimalScoreView,playerTwoNonOptimalScoreValueView );
+                    playerTwoNonOptimalScoreView,playerTwoNonOptimalScoreValueView );
         }
     }
 

@@ -12,6 +12,7 @@ public class MemoGameHighscore {
     private final int baseScore;
     private final int time;
     private final int tries;
+    private final int nonOptimalScore;
     private final boolean isValid;
 
     static {
@@ -20,15 +21,17 @@ public class MemoGameHighscore {
         baseScoreMapping.put(MemoGameDifficulty.Hard, 50000);
     }
 
-    public MemoGameHighscore(MemoGameDifficulty difficulty, int time, int tries, boolean isValid) {
+    public MemoGameHighscore(MemoGameDifficulty difficulty, int time, int tries,int nonOptimalScore, boolean isValid) {
         this.baseScore = baseScoreMapping.get(difficulty);
         this.time = time;
         this.tries = tries;
         this.isValid = isValid;
+        this.nonOptimalScore = nonOptimalScore;
     }
 
     public int getScore() {
-        int calculatedScore = baseScore - (time * tries);
+        // Add nonOptimalScore to calculate the final score
+        int calculatedScore = baseScore - (time * (tries + nonOptimalScore));
         // score should not be negative
         return calculatedScore < 0 ? 0 : calculatedScore;
     }

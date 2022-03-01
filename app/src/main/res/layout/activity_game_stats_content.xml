@@ -53,43 +53,23 @@
         android:text="0"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
-    <!--  New player one optimal score view -->
-    <TextView
-        android:id="@+id/player_one_optimal_score"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/player_one_found"
-        android:layout_toRightOf="@+id/player_one_name"
-        android:text="Optimal-score: "
-        android:textAppearance="?android:attr/textAppearanceSmall" />
-
-    <!--  New player one optimal score value view -->
-    <TextView
-        android:id="@+id/player_one_non_optimal_score_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/player_one_tries_value"
-        android:layout_toRightOf="@+id/player_one_optimal_score"
-        android:text="0"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
-
 
     <!--  New player one non-optimal score view -->
     <TextView
         android:id="@+id/player_one_non_optimal_score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/player_one_optimal_score"
+        android:layout_below="@+id/player_one_tries"
         android:layout_toRightOf="@+id/player_one_name"
-        android:text="Non-optimal-score: "
+        android:text="NonOptimalScore: "
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <!--  New player one non-optimal score value view -->
     <TextView
-        android:id="@+id/player_one_optimal_score_value"
+        android:id="@+id/player_one_non_optimal_score_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/player_one_optimal_score"
+        android:layout_below="@+id/player_one_tries"
         android:layout_toRightOf="@+id/player_one_non_optimal_score"
         android:text="0"
         android:textAppearance="?android:attr/textAppearanceSmall" />
@@ -147,35 +127,14 @@
 
 
 
-    <!--  New player two optimal score view -->
-    <TextView
-        android:id="@+id/player_two_optimal_score"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/player_two_tries"
-        android:layout_toRightOf="@+id/player_two_name"
-        android:text="Optimal-score: "
-        android:textAppearance="?android:attr/textAppearanceSmall" />
-
-    <!--  New player two optimal score value view -->
-    <TextView
-        android:id="@+id/player_two_optimal_score_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/player_two_tries"
-        android:layout_toRightOf="@+id/player_two_optimal_score"
-        android:text="0"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
-
-
     <!--  New player two non-optimal score view -->
     <TextView
         android:id="@+id/player_two_non_optimal_score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/player_two_optimal_score"
+        android:layout_below="@+id/player_two_tries"
         android:layout_toRightOf="@+id/player_one_name"
-        android:text="Non-optimal-score: "
+        android:text="NonOptimalScore: "
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <!--  New player two non-optimal score value view -->
@@ -183,7 +142,7 @@
         android:id="@+id/player_two_non_optimal_score_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/player_two_optimal_score"
+        android:layout_below="@+id/player_two_tries"
         android:layout_toRightOf="@+id/player_two_non_optimal_score"
         android:text="0"
         android:textAppearance="?android:attr/textAppearanceSmall" />

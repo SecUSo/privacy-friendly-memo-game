@@ -1,6 +1,7 @@
 package org.secuso.privacyfriendlymemory.model;
 
 import android.net.Uri;
+import android.util.Log;
 
 import org.secuso.privacyfriendlymemory.common.MemoGamePlayerFactory;
 import org.secuso.privacyfriendlymemory.ui.R;
@@ -26,6 +27,7 @@ public class MemoGame {
 
     private MemoGamePlayer currentPlayer;
     private MemoGameCard selectedCard = null;
+    private int selectedPos ;
     private MemoGameTimer timer;
 
     private MemoGameCard[] temporarySelectedCards = new MemoGameCard[2];
@@ -55,10 +57,9 @@ public class MemoGame {
 
     public void select(int position) {
         MemoGameCard cardAtPosition = deck.get(position);
+        Log.d("DEBUG", "Position = " + String.valueOf(position));
+        Log.d("DEBUG", "MATCHING_ID = " + String.valueOf(cardAtPosition.getMatchingId()));
         // do not count a selection on an already found or selected card
-
-        /// LA FONCTION QUI PERMET DE METTRE À JOUR LES STATS DU JEUX
-
         if (isFound(cardAtPosition) || isSelected(cardAtPosition)) {
             return; //
         }
@@ -68,6 +69,7 @@ public class MemoGame {
                 temporarySelectedCards[0] = null;
                 temporarySelectedCards[1] = null;
                 selectedCard = cardAtPosition;
+                selectedPos = position;
                 selectedCardsCount++;
                 break;
             case 1:
@@ -82,17 +84,19 @@ public class MemoGame {
                 // if not match set cards to false selected
                 if (selectedCard.getMatchingId() != cardAtPosition.getMatchingId()) {
 
-
+                    if(MemoGameDeck.isMatchCardFlipped(selectedCard,selectedPos)){
+                        currentPlayer.incrementNonOptimalScore();
+                    }
 
                     // If the first card choosen has been already Flipped
                     if(selectedCard.isAlreadyFlipped()){
-                        currentPlayer.incrementNonOptimalScore();
+                        //currentPlayer.incrementNonOptimalScore();
                     }else{
                         selectedCard.setAlreadyFlippedTrue();
                     }
                     // If the current card (the second card) has been already Flipped
                     if(cardAtPosition.isAlreadyFlipped()){
-                        currentPlayer.incrementNonOptimalScore();
+                        //currentPlayer.incrementNonOptimalScore();
                     }else{
                         cardAtPosition.setAlreadyFlippedTrue();
                     }
@@ -193,7 +197,7 @@ public class MemoGame {
         if(isMultiplayer()){
             throw new UnsupportedOperationException("Highscore is disabled in multiplayer mode!");
         }
-        return new MemoGameHighscore(memoryDifficulty, timer.getTime(), currentPlayer.getTries(), !isCustomDesign());
+        return new MemoGameHighscore(memoryDifficulty, timer.getTime(), currentPlayer.getTries(),currentPlayer.getNonOptimalScore(),!isCustomDesign());
     }
 
     public List<MemoGamePlayer> getPlayers(){

@@ -1,6 +1,7 @@
 package org.secuso.privacyfriendlymemory.model;
 
 import android.net.Uri;
+import android.util.Log;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -15,7 +16,7 @@ import java.util.Set;
 public class MemoGameDeck {
 
     // mapping between position(k), card(v)
-    private Map<Integer, MemoGameCard> deck   = new HashMap<>();
+    private static Map<Integer, MemoGameCard> deck   = new HashMap<>();
 
     public MemoGameDeck(List<Integer> imagesResIds){
         // generate for each image two cards with the same matching id
@@ -26,6 +27,7 @@ public class MemoGameDeck {
                 MemoGameCard card = new MemoGameCard(matchingId, imageResId, null);
                 cards.add(card);
             }
+            Log.d("DEBUG", "MATCHING_ID = " + String.valueOf(matchingId));
             matchingId++;
         }
 
@@ -64,8 +66,18 @@ public class MemoGameDeck {
     public Map<Integer, MemoGameCard> getDeck(){
         return deck;
     }
-    /*public MemoGameCard getCardInIndex(int index){
-        return deck.get(index-1);
-    }*/
+
+    public static boolean isMatchCardFlipped(MemoGameCard currentCard, int position){
+        for(int i = 0 ; i< deck.size(); i++){
+            // Find the card that matches the current card , and verifie if it's already flipped
+            if(deck.get(i).getMatchingId() == currentCard.getMatchingId() && i != position){
+                return deck.get(i).isAlreadyFlipped();
+            }
+        }
+        // Never returned
+        return false;
+    }
+
+
 
 }
