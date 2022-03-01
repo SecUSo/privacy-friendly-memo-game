@@ -50,9 +50,15 @@ public class MemoGame {
         this.timer = new MemoGameTimer();
     }
 
+
+
+
     public void select(int position) {
         MemoGameCard cardAtPosition = deck.get(position);
         // do not count a selection on an already found or selected card
+
+        /// LA FONCTION QUI PERMET DE METTRE À JOUR LES STATS DU JEUX
+
         if (isFound(cardAtPosition) || isSelected(cardAtPosition)) {
             return; //
         }
@@ -72,12 +78,28 @@ public class MemoGame {
                     if(isFinished()){
                         stopTimer();
                     }
-                }else if(players.size() > 1){
-                    currentPlayer = getNextPlayer();
                 }
-
                 // if not match set cards to false selected
                 if (selectedCard.getMatchingId() != cardAtPosition.getMatchingId()) {
+
+
+
+                    // If the first card choosen has been already Flipped
+                    if(selectedCard.isAlreadyFlipped()){
+                        currentPlayer.incrementNonOptimalScore();
+                    }else{
+                        selectedCard.setAlreadyFlippedTrue();
+                    }
+                    // If the current card (the second card) has been already Flipped
+                    if(cardAtPosition.isAlreadyFlipped()){
+                        currentPlayer.incrementNonOptimalScore();
+                    }else{
+                        cardAtPosition.setAlreadyFlippedTrue();
+                    }
+                    // Change player
+                    if(players.size() > 1){
+                        currentPlayer = getNextPlayer();
+                    }
                     falseSelectedCards[0] = selectedCard.getResImageID();
                     falseSelectedCards[1] = cardAtPosition.getResImageID();
                     falseSelected = true;
@@ -91,6 +113,9 @@ public class MemoGame {
                 break;
         }
     }
+
+
+
 
     public Integer[] getFalseSelectedCards(){
         if(falseSelected){

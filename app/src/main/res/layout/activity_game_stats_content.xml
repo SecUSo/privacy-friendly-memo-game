@@ -159,7 +159,7 @@
 
     <!--  New player two optimal score value view -->
     <TextView
-        android:id="@+id/player_two_non_optimal_score_value"
+        android:id="@+id/player_two_optimal_score_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/player_two_tries"
@@ -180,7 +180,7 @@
 
     <!--  New player two non-optimal score value view -->
     <TextView
-        android:id="@+id/player_two_optimal_score_value"
+        android:id="@+id/player_two_non_optimal_score_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/player_two_optimal_score"

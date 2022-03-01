@@ -127,7 +127,10 @@ public class MemoActivity extends MemoAppCompatDrawerActivity {
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
+
+
                 memory.select(position);
+
                 // if two carsetupGridviewds are false selected and memory is played with a custom card set increment "false selected count" for statistics
                 if (!memory.isCustomDesign()) {
                     Integer[] falseSelectedCards = memory.getFalseSelectedCards();
@@ -140,7 +143,7 @@ public class MemoActivity extends MemoAppCompatDrawerActivity {
                 }
                 // adapter must be notified, that images will be refreshed if selected
                 imageAdapter.notifyDataSetChanged();
-                // update stats (found cards, tries, next player,..)
+                //update stats (found cards, tries, next player,..)
                 // change game state
                 updateStatsView();
 
@@ -177,6 +180,9 @@ public class MemoActivity extends MemoAppCompatDrawerActivity {
         // Add new Textviews for Player 1
         TextView playerOneOptimalScoreView = (TextView) findViewById(R.id.player_one_optimal_score);
         TextView playerOneOptimalScoreValueView = (TextView) findViewById(R.id.player_one_optimal_score_value);
+        // Update the nonOptimaScore of PlayerTwo
+        playerOneOptimalScoreValueView.setText(String.valueOf(playerOne.getNonOptimalScore()));
+
         TextView playerOneNonOptimalScoreView = (TextView) findViewById(R.id.player_one_non_optimal_score);
         TextView playerOneNonOptimalScoreValueView = (TextView) findViewById(R.id.player_one_non_optimal_score_value);
 
@@ -206,6 +212,10 @@ public class MemoActivity extends MemoAppCompatDrawerActivity {
             playerTwoFoundsValueView.setText(playerTwoFoundsValue);
             // init tries value for player two
             playerTwoTriesValueView.setText(String.valueOf(playerTwo.getTries()));
+
+            // Update the nonOptimaScore of PlayerTwo
+            playerTwoNonOptimalScoreValueView.setText(String.valueOf(playerTwo.getNonOptimalScore()));
+
         } else {
             // set all views empty
             playerTwoNameView.setText("");

@@ -14,11 +14,14 @@ public class MemoGamePlayer {
 
     private final String nameSuffix;
     private int tries = 0;
+    private int nonOptimalScore ;
+
 
     private List<MemoGameCard> foundCards = new LinkedList<>();
 
     public MemoGamePlayer(String nameSuffix){
         this.nameSuffix = nameSuffix;
+        this.nonOptimalScore = 0;
     }
 
     public boolean addFoundCard(MemoGameCard card){
@@ -31,6 +34,10 @@ public class MemoGamePlayer {
         }
         return foundCards.size()/2;
     }
+
+    public void incrementNonOptimalScore(){nonOptimalScore++;}
+    public int getNonOptimalScore(){return nonOptimalScore;}
+
 
     public String getNameSuffix(){
         return nameSuffix;

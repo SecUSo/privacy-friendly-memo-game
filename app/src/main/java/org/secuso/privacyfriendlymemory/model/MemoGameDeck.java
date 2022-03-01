@@ -64,6 +64,8 @@ public class MemoGameDeck {
     public Map<Integer, MemoGameCard> getDeck(){
         return deck;
     }
-
+    /*public MemoGameCard getCardInIndex(int index){
+        return deck.get(index-1);
+    }*/
 
 }
