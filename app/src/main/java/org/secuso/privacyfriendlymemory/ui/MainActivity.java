@@ -32,7 +32,6 @@ import org.secuso.privacyfriendlymemory.ui.navigation.HelpActivity;
 import java.util.List;
 import java.util.Set;
 
-// Test commit
 public class MainActivity extends AppCompatDrawerActivity {
 
     private SharedPreferences preferences   = null;

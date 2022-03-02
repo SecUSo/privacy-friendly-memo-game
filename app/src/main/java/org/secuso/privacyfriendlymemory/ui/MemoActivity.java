@@ -120,7 +120,6 @@ public class MemoActivity extends MemoAppCompatDrawerActivity {
         gridview.setNumColumns(layoutProvider.getColumnCount());
         final ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) gridview.getLayoutParams();
         marginLayoutParams.setMargins(layoutProvider.getMarginLeft(), layoutProvider.getMargin()+100, layoutProvider.getMarginRight(), 0);
-        Log.d("debug","layoutProvider.getMargin() = "+layoutProvider.getMargin() );
         gridview.setLayoutParams(marginLayoutParams);
         final MemoImageAdapter imageAdapter = new MemoImageAdapter(this, layoutProvider);
         gridview.setAdapter(imageAdapter);
@@ -128,9 +127,8 @@ public class MemoActivity extends MemoAppCompatDrawerActivity {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
                 memory.select(position);
-                Log.d("DEBUG", "MATCHING_ID = " );
 
-                // if two carsetupGridviewds are false selected and memory is played with a custom card set increment "false selected count" for statistics
+                // if two cards  are false selected and memory is played with a custom card set increment "false selected count" for statistics
                 if (!memory.isCustomDesign()) {
                     Integer[] falseSelectedCards = memory.getFalseSelectedCards();
                     if (falseSelectedCards != null) {
