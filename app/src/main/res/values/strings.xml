@@ -16,6 +16,7 @@
     <string name="menu_help">Help</string>
     <string name="menu_about">About</string>
 
+
     <!-- menu drawer statistics -->
     <string name="carddesign_displayname_first">TuX Deck</string>
     <string name="carddesign_displayname_second">Animal Deck</string>
@@ -69,6 +70,7 @@
     <string name="help_privacyInfo">Privacy Info</string>
     <string name="help_permissions">Permissions</string>
     <string name="help_permissions_summary">Privacy Friendly Memo Game does not use any permissions.</string>
+
 
     <!-- welcome dialog -->
     <string name="welcome_title">Welcome</string>

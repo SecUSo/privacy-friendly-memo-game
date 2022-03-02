@@ -11,6 +11,7 @@
             android:summary="@string/help_duo_player"/>
     </PreferenceCategory>
 
+
     <PreferenceCategory android:title="@string/help_game_difficulty">
 
     <Preference android:title=""

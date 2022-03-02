@@ -90,13 +90,13 @@ public class MemoGame {
 
                     // If the first card choosen has been already Flipped
                     if(selectedCard.isAlreadyFlipped()){
-                        //currentPlayer.incrementNonOptimalScore();
+                        currentPlayer.incrementNonOptimalScore();
                     }else{
                         selectedCard.setAlreadyFlippedTrue();
                     }
                     // If the current card (the second card) has been already Flipped
                     if(cardAtPosition.isAlreadyFlipped()){
-                        //currentPlayer.incrementNonOptimalScore();
+                        currentPlayer.incrementNonOptimalScore();
                     }else{
                         cardAtPosition.setAlreadyFlippedTrue();
                     }
