@@ -32,7 +32,6 @@ import org.secuso.privacyfriendlymemory.ui.navigation.HelpActivity;
 import java.util.List;
 import java.util.Set;
 
-
 public class MainActivity extends AppCompatDrawerActivity {
 
     private SharedPreferences preferences   = null;
@@ -115,7 +114,6 @@ public class MainActivity extends AppCompatDrawerActivity {
                 MemoGameMode memoryMode = MemoGameMode.getValidTypes().get(modeIndex);
                 int difficultyIndex = ((RatingBar) findViewById(R.id.difficultyBar)).getProgress() - 1;
                 MemoGameDifficulty memoryDifficulty = MemoGameDifficulty.getValidDifficulties().get(difficultyIndex < 0 ? 0 : difficultyIndex);
-
                 // send game information to game activity
                 Intent intent = new Intent(this, MemoActivity.class);
                 intent.putExtra(Constants.GAME_MODE, memoryMode);
