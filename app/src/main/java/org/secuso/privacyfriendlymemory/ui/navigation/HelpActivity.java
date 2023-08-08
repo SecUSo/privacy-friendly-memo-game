@@ -11,7 +11,7 @@ import androidx.appcompat.app.ActionBar;
 import android.view.MenuItem;
 
 import org.secuso.privacyfriendlymemory.ui.AppCompatPreferenceActivity;
-import org.secuso.privacyfriendlymemory.ui.R;
+import org.secuso.privacyfriendlymemory.R;
 
 import java.util.List;
 

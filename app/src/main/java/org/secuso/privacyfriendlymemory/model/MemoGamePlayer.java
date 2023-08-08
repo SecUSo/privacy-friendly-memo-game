@@ -1,6 +1,6 @@
 package org.secuso.privacyfriendlymemory.model;
 
-import org.secuso.privacyfriendlymemory.ui.R;
+import org.secuso.privacyfriendlymemory.R;
 
 import java.util.LinkedList;
 import java.util.List;

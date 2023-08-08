@@ -25,7 +25,7 @@ import org.secuso.privacyfriendlymemory.Constants;
 import org.secuso.privacyfriendlymemory.model.CardDesign;
 import org.secuso.privacyfriendlymemory.model.MemoGameDifficulty;
 import org.secuso.privacyfriendlymemory.ui.AppCompatPreferenceActivity;
-import org.secuso.privacyfriendlymemory.ui.R;
+import org.secuso.privacyfriendlymemory.R;
 
 import java.util.HashSet;
 import java.util.LinkedList;

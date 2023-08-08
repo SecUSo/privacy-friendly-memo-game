@@ -30,7 +30,7 @@ import org.secuso.privacyfriendlymemory.common.ResIdAdapter;
 import org.secuso.privacyfriendlymemory.model.CardDesign;
 import org.secuso.privacyfriendlymemory.model.MemoGameDefaultImages;
 import org.secuso.privacyfriendlymemory.model.MemoGameDifficulty;
-import org.secuso.privacyfriendlymemory.ui.R;
+import org.secuso.privacyfriendlymemory.R;
 
 import java.util.ArrayList;
 import java.util.Collections;

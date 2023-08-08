@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import android.view.MenuItem;
 
+import org.secuso.privacyfriendlymemory.R;
 import org.secuso.privacyfriendlymemory.ui.navigation.AboutActivity;
 import org.secuso.privacyfriendlymemory.ui.navigation.DeckChoiceActivity;
 import org.secuso.privacyfriendlymemory.ui.navigation.HelpActivity;

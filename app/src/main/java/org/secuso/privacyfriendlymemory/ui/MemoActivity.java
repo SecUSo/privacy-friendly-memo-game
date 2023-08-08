@@ -20,6 +20,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import org.secuso.privacyfriendlymemory.Constants;
+import org.secuso.privacyfriendlymemory.R;
 import org.secuso.privacyfriendlymemory.common.MemoGameLayoutProvider;
 import org.secuso.privacyfriendlymemory.common.MemoGameStatistics;
 import org.secuso.privacyfriendlymemory.common.ResIdAdapter;
