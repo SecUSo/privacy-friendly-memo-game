@@ -1,7 +1,7 @@
 package org.secuso.privacyfriendlymemory.model;
 
 import android.net.Uri;
-import android.support.annotation.DrawableRes;
+import androidx.annotation.DrawableRes;
 
 /**
  * Created by Hannes on 20.05.2016.
