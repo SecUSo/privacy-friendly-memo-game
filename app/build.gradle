@@ -1,14 +1,15 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 33
 
     defaultConfig {
         applicationId "org.secuso.privacyfriendlymemory"
         minSdkVersion 17
-        targetSdkVersion 28
-        versionCode 6
-        versionName "1.0.5"
+        targetSdkVersion 33
+        versionCode 7
+        versionName "1.1"
     }
     buildTypes {
         release {
@@ -16,6 +17,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
 }
 
 dependencies {
