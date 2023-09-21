@@ -1,6 +1,6 @@
 package org.secuso.privacyfriendlymemory.model;
 
-import org.secuso.privacyfriendlymemory.ui.R;
+import org.secuso.privacyfriendlymemory.R;
 
 /**
  * Created by Hannes on 20.05.2016.
