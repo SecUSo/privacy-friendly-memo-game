@@ -32,6 +32,10 @@ Further development requires Android Studio.
 Mininum SDK: 17
 Target SDK: 33
 
+## Application Data Import & Export
+
+This application does not natively have a data import and export feature. Please install and use the [SECUSO Privacy Friendly Backup](https://github.com/SecUSo/privacy-friendly-backup) to backup and restore this application's data. This feature is required when a user migrates their data to a new phone.
+
 ## License
 
 Privacy Friendly Memo Game is lisenced under the GPLv3. Copyright (C) 2016-2018 Hannes Hofmann, 2019 Christopher Beckmann, Noah Schlegel
