@@ -32,6 +32,10 @@ Further development requires Android Studio.
 Mininum SDK: 17
 Target SDK: 33
 
+## Data Backup
+
+You can use the [Privacy Friendly Backup app](https://github.com/SecUSo/privacy-friendly-backup) to backup and restore this application's data. This can also be used to migrate your data to a new phone.
+
 ## License
 
 Privacy Friendly Memo Game is lisenced under the GPLv3. Copyright (C) 2016-2018 Hannes Hofmann, 2019 Christopher Beckmann, Noah Schlegel
