@@ -47,7 +47,7 @@
     <string name="about_author">Auteur :</string>
     <string name="about_author_contributors">et les contributeurs.</string>
     <string name="about_affiliation">En affiliation avec :</string>
-    <string name="privacy_friendly">Cette application appartient au groupe d\'applications privacy friendly développées par la Technische Universität Darmstadt. Le code source est sous licence GPLv3. Copyright des images : TU Darmstadt et Google Inc.</string>
+    <string name="privacy_friendly">Cette application appartient au groupe d\'applications privacy friendly développées par la Karlsruhe Institute of Technology. Le code source est sous licence GPLv3. Copyright des images : KIT et Google Inc.</string>
     <string name="more_info">Plus d\'informations sur :</string>
     <string name="tux_deck_provided">Deck des images de Tux fourni par :</string>
     <string name="animal_deck_provided">Deck des images d\'animaux fourni par :</string>
