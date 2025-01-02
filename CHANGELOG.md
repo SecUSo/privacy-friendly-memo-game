@@ -1,24 +1,39 @@
 # Changelog
 
-<a name="v1.1"></a>
-## [Memo Game (Privacy Friendly) v1.1](https://github.com/SecUSo/privacy-friendly-memo-game/releases/tag/v1.1) - 26 Sep 2023
+<a id="v1.1.1"></a>
+## [Memo Game (Privacy Friendly) v1.1.1](https://github.com/SecUSo/privacy-friendly-memo-game/releases/tag/v1.1.1) - 2025-01-02
 
 ## What's Changed
-* Refactor Member Ignoring Method smell in MemoActivity class by [@emaiannone](https://github.com/emaiannone) in https://github.com/SecUSo/privacy-friendly-memo-game/pull/30
-* Fixed potential memory leak in the statistics activity by [@hanneshofmann](https://github.com/hanneshofmann) in https://github.com/SecUSo/privacy-friendly-memo-game/pull/32
-* Feature/backup integration by [@coderPaddyS](https://github.com/coderPaddyS) in https://github.com/SecUSo/privacy-friendly-memo-game/pull/38
+* documentation: Added info re: Privacy Friendly Backup by [@jahway603](https://github.com/jahway603) in [#41](https://github.com/SecUSo/privacy-friendly-memo-game/pull/41)
+* Update to SDK 34 by [@coderPaddyS](https://github.com/coderPaddyS) in [#47](https://github.com/SecUSo/privacy-friendly-memo-game/pull/47)
 
 ## New Contributors
-* [@emaiannone](https://github.com/emaiannone) made their first contribution in https://github.com/SecUSo/privacy-friendly-memo-game/pull/30
-* [@coderPaddyS](https://github.com/coderPaddyS) made their first contribution in https://github.com/SecUSo/privacy-friendly-memo-game/pull/38
+* [@jahway603](https://github.com/jahway603) made their first contribution in [#41](https://github.com/SecUSo/privacy-friendly-memo-game/pull/41)
+
+**Full Changelog**: https://github.com/SecUSo/privacy-friendly-memo-game/compare/v1.1...v1.1.1
+
+[Changes][v1.1.1]
+
+
+<a id="v1.1"></a>
+## [Memo Game (Privacy Friendly) v1.1](https://github.com/SecUSo/privacy-friendly-memo-game/releases/tag/v1.1) - 2023-09-26
+
+## What's Changed
+* Refactor Member Ignoring Method smell in MemoActivity class by [@emaiannone](https://github.com/emaiannone) in [#30](https://github.com/SecUSo/privacy-friendly-memo-game/pull/30)
+* Fixed potential memory leak in the statistics activity by [@hanneshofmann](https://github.com/hanneshofmann) in [#32](https://github.com/SecUSo/privacy-friendly-memo-game/pull/32)
+* Feature/backup integration by [@coderPaddyS](https://github.com/coderPaddyS) in [#38](https://github.com/SecUSo/privacy-friendly-memo-game/pull/38)
+
+## New Contributors
+* [@emaiannone](https://github.com/emaiannone) made their first contribution in [#30](https://github.com/SecUSo/privacy-friendly-memo-game/pull/30)
+* [@coderPaddyS](https://github.com/coderPaddyS) made their first contribution in [#38](https://github.com/SecUSo/privacy-friendly-memo-game/pull/38)
 
 **Full Changelog**: https://github.com/SecUSo/privacy-friendly-memo-game/compare/v1.0.5...v1.1
 
 [Changes][v1.1]
 
 
-<a name="v1.0.5"></a>
-## [Memo Game (Privacy Friendly) v1.0.5](https://github.com/SecUSo/privacy-friendly-memo-game/releases/tag/v1.0.5) - 30 Jan 2020
+<a id="v1.0.5"></a>
+## [Memo Game (Privacy Friendly) v1.0.5](https://github.com/SecUSo/privacy-friendly-memo-game/releases/tag/v1.0.5) - 2020-01-30
 
 - Gradle v5.4.1
 - Target SDK Update to 28
@@ -26,24 +41,24 @@
 [Changes][v1.0.5]
 
 
-<a name="v1.0.4"></a>
-## [Memo Game (Privacy Friendly) v1.0.4](https://github.com/SecUSo/privacy-friendly-memo-game/releases/tag/v1.0.4) - 30 Jan 2020
+<a id="v1.0.4"></a>
+## [Memo Game (Privacy Friendly) v1.0.4](https://github.com/SecUSo/privacy-friendly-memo-game/releases/tag/v1.0.4) - 2020-01-30
 
 - Target SDK 26
 
 [Changes][v1.0.4]
 
 
-<a name="v1.0.3"></a>
-## [Memo Game (Privacy Friendly) v1.0.3](https://github.com/SecUSo/privacy-friendly-memo-game/releases/tag/v1.0.3) - 30 Jan 2020
+<a id="v1.0.3"></a>
+## [Memo Game (Privacy Friendly) v1.0.3](https://github.com/SecUSo/privacy-friendly-memo-game/releases/tag/v1.0.3) - 2020-01-30
 
 exchanged 2 images from the sets with more neutral ones
 
 [Changes][v1.0.3]
 
 
-<a name="v1.0.2"></a>
-## [Privacy Friendly Memo Game v1.0.2](https://github.com/SecUSo/privacy-friendly-memo-game/releases/tag/v1.0.2) - 16 Oct 2017
+<a id="v1.0.2"></a>
+## [Privacy Friendly Memo Game v1.0.2](https://github.com/SecUSo/privacy-friendly-memo-game/releases/tag/v1.0.2) - 2017-10-16
 
 - Bug fixing
 - Interface improvements
@@ -51,8 +66,8 @@ exchanged 2 images from the sets with more neutral ones
 [Changes][v1.0.2]
 
 
-<a name="v.1.0.1"></a>
-## [Privacy Friendly Memo Game v.1.0.1](https://github.com/SecUSo/privacy-friendly-memo-game/releases/tag/v.1.0.1) - 25 Nov 2016
+<a id="v.1.0.1"></a>
+## [Privacy Friendly Memo Game v.1.0.1](https://github.com/SecUSo/privacy-friendly-memo-game/releases/tag/v.1.0.1) - 2016-11-25
 
 Privacy Friendly Memo Game is a card game with the goal to find pairs. 
 
@@ -62,6 +77,7 @@ This app is optimized regarding the user’s privacy. It doesn’t use any track
 [Changes][v.1.0.1]
 
 
+[v1.1.1]: https://github.com/SecUSo/privacy-friendly-memo-game/compare/v1.1...v1.1.1
 [v1.1]: https://github.com/SecUSo/privacy-friendly-memo-game/compare/v1.0.5...v1.1
 [v1.0.5]: https://github.com/SecUSo/privacy-friendly-memo-game/compare/v1.0.4...v1.0.5
 [v1.0.4]: https://github.com/SecUSo/privacy-friendly-memo-game/compare/v1.0.3...v1.0.4
@@ -69,4 +85,4 @@ This app is optimized regarding the user’s privacy. It doesn’t use any track
 [v1.0.2]: https://github.com/SecUSo/privacy-friendly-memo-game/compare/v.1.0.1...v1.0.2
 [v.1.0.1]: https://github.com/SecUSo/privacy-friendly-memo-game/tree/v.1.0.1
 
-<!-- Generated by https://github.com/rhysd/changelog-from-release v3.7.1 -->
+<!-- Generated by https://github.com/rhysd/changelog-from-release v3.8.1 -->
