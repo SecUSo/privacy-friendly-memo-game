@@ -2,15 +2,15 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 33
+    compileSdk 34
     namespace "org.secuso.privacyfriendlymemory"
     defaultConfig {
         applicationId "org.secuso.privacyfriendlymemory"
 
         minSdkVersion 17
-        targetSdkVersion 33
-        versionCode 7
-        versionName "1.1"
+        targetSdkVersion 34
+        versionCode 8
+        versionName "1.1.1"
     }
     buildTypes {
         release {
