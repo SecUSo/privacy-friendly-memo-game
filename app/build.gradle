@@ -24,6 +24,10 @@ android {
         targetCompatibility JavaVersion.VERSION_11
     }
 
+    lint {
+        lintConfig = file("lint.xml")
+    }
+
 }
 
 dependencies {
