@@ -14,7 +14,7 @@
      style="float: right; margin-right: 10px;" />
 # Privacy Friendly Memo Game
 
-[<img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="60">](https://f-droid.org/repository/browse/?fdid=org.secuso.privacyfriendlymemory)<a href="https://play.google.com/store/apps/details?id=org.secuso.privacyfriendlymemory"><img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" height="60"></a>
+[<img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="60">](https://f-droid.org/repository/browse/?fdid=org.secuso.privacyfriendlymemory)
 
 Privacy Friendly Memo Game is a card game. The task is to find matching pairs within the cards. The application does not use any permission, which means it can provide its full functionality without the usage of permissions and it does not include advertisement nor tracking mechanisms.
 
