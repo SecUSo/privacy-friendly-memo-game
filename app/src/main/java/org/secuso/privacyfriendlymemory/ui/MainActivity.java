@@ -21,6 +21,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import org.secuso.privacyfriendlymemory.Constants;
+import org.secuso.privacyfriendlymemory.GoodbyeGoogleHelperKt;
 import org.secuso.privacyfriendlymemory.R;
 import org.secuso.privacyfriendlymemory.common.MemoGameStatistics;
 import org.secuso.privacyfriendlymemory.common.ResIdAdapter;
@@ -54,6 +55,7 @@ public class MainActivity extends AppCompatDrawerActivity {
         setupViewPager();
         setupDifficultyBar();
         super.setupNavigationView();
+        GoodbyeGoogleHelperKt.checkGoodbyeGoogle(this, getLayoutInflater());
     }
 
     public void setupViewPager() {
