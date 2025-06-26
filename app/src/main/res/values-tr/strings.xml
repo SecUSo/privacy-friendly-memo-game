@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="button_ok">Tamam</string>
+    <string name="button_help">Yardımı Görüntüle</string>
+    <string name="menu_menu">Ana menü</string>
+    <string name="new_game">Yeni Oyun</string>
+    <string name="difficulty_easy">Kolay</string>
+    <string name="difficulty_moderate">Orta</string>
+    <string name="difficulty_hard">Zor</string>
+    <string name="mode_single_player">Tek oyuncu</string>
+    <string name="mode_duo_player">Çift oyuncu</string>
+    <string name="welcome_title">Hoş geldiniz</string>
+    <string name="quit_yes">Evet</string>
+    <string name="quit_no">Hayır</string>
+</resources>
