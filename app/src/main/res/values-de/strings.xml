@@ -1,10 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Shared -->
     <string name="app_name">Memospiel</string>
     <string name="app_name_long">Privacy Friendly Memospiel</string>
     <string name="button_ok">Okay</string>
     <string name="button_help">Zeige Hilfe</string>
-
     <!-- menu drawer -->
     <string name="menu_menu">Hauptmenü</string>
     <string name="menu_highscore">Highscore</string>
@@ -15,7 +15,6 @@
     <string name="menu_settings">Deckauswahl</string>
     <string name="menu_help">Hilfe</string>
     <string name="menu_about">Über</string>
-
     <!-- menu drawer statistics -->
     <string name="carddesign_displayname_first">TuX Deck</string>
     <string name="carddesign_displayname_second">Tier Deck</string>
@@ -23,7 +22,6 @@
     <string name="false_selected">Falsch ausgewählt:</string>
     <!-- menu drawer highscore -->
     <string name="reset_highscore">Zurücksetzen</string>
-
     <!-- menu drawer deck choice -->
     <string name="custom_deck_options">Eigenes Kartendeck</string>
     <string name="set_custom_deck">Bilder für eigenes Kartendeck festlegen</string>
@@ -32,18 +30,13 @@
     <string name="custom_deck_not_enough_images">Eigenes Kartendeck konnte nicht erstellt werden. Bitte wählen Sie mindestens 32 Bilder.</string>
     <string name="set_custom_deck_hint">Bitte wählen Sie mindestens 32 Bilder auf Ihrer Galerie für Ihr eigenes Deck.</string>
     <string name="set_custom_deck_hint_ok">Okay</string>
-
-
     <!-- main activity -->
     <string name="new_game">Neues Spiel</string>
-
     <string name="difficulty_easy">Leicht</string>
     <string name="difficulty_moderate">Normal</string>
     <string name="difficulty_hard">Schwer</string>
-
     <string name="mode_single_player">1 Spieler</string>
     <string name="mode_duo_player">2 Spieler</string>
-
     <!-- about activity -->
     <string name="about_author">Autor:</string>
     <string name="about_author_contributors">und Mitwirkende.</string>
@@ -52,23 +45,17 @@
     <string name="more_info">Mehr Informationen unter::</string>
     <string name="tux_deck_provided">TuX Deck Bilder bereitgestellt von:</string>
     <string name="animal_deck_provided">Tier Deck Bilder bereitgestellt von:</string>
-
     <!-- help activity -->
     <string name="help_game_mode">Spielmodus</string>
     <string name="help_single_player">Modus für einen Spieler</string>
     <string name="help_duo_player">Modus für zwei Spieler</string>
-
     <string name="help_game_difficulty">Spielschwierigkeit</string>
     <string name="help_game_difficulty_summary">Anzahl der Spielkarten abhängig der gewählten Schwierigkeit.</string>
-
     <string name="help_custom_deck">Sie können unter Deckauswahl eigene Kartenbilder aus Ihrer Galerie auswählen.</string>
-
     <string name="help_highscore">Der Highscore berechnet sich aus der benötigten Anzahl an Versuchen, der Zeit und der Spielschwierigkeit.</string>
-
     <string name="help_privacyInfo">Datenschutz Informationen</string>
     <string name="help_permissions">Berechtigungen</string>
     <string name="help_permissions_summary">Privacy Friendly Memospiel verwendet keinerlei Berechtigungen.</string>
-
     <!-- welcome dialog -->
     <string name="welcome_title">Willkommen</string>
     <string name="field_select_description">Wische oder drücke auf die Pfeile auf der linken und rechten Seite um den Spielmodus zu ändern.</string>
@@ -76,7 +63,6 @@
     <string name="difficulty_description">Drücke oder wische über die Sterne um den Schwierigkeitsgrad zu ändern.</string>
     <string name="difficulty_description_headline">2. Schwierigkeit:</string>
     <string name="play">Lass uns das Memospiel spielen.</string>
-
     <!-- win dialoag -->
     <string name="win_text">Glückwunsch!</string>
     <string name="win_text_duo">Glückwunsch</string>
@@ -86,8 +72,7 @@
     <string name="win_score">Score:</string>
     <string name="win_highscore">Highscore:</string>
     <string name="win_button_text">Fortsetzen</string>
-    <string name="win_show_game">Zeige Spielfeld</string>
-
+    <string name="win_show_game">Spielfeld anzeigen</string>
     <!-- memo game activity -->
     <string name="player_name_prefix">Spieler</string>
     <string name="stats_found_cards">Pärchen: </string>
@@ -96,4 +81,3 @@
     <string name="quit_yes">Ja</string>
     <string name="quit_no">Nein</string>
 </resources>
-
