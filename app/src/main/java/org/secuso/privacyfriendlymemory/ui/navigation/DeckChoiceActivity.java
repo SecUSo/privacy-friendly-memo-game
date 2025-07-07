@@ -1,6 +1,7 @@
 package org.secuso.privacyfriendlymemory.ui.navigation;
 
 
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.content.ClipData;
 import android.content.Context;
@@ -135,6 +136,7 @@ public class DeckChoiceActivity extends AppCompatPreferenceActivity {
             return true;
         }
 
+        @SuppressLint("WrongConstant")
         @Override
         public void onActivityResult(int requestCode, int resultCode, Intent data) {
             try {
