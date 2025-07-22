@@ -1,5 +1,18 @@
 # Changelog
 
+<a id="v1.1.3"></a>
+## [Memo Game (Privacy Friendly) v1.1.3](https://github.com/SecUSo/privacy-friendly-memo-game/releases/tag/v1.1.3) - 2025-07-22
+
+## What's Changed
+* Updates changelog and adds CI workflow by [@coderPaddyS](https://github.com/coderPaddyS) in [#54](https://github.com/SecUSo/privacy-friendly-memo-game/pull/54)
+* Change versionCode to differentiate from last Google Play version. by [@coderPaddyS](https://github.com/coderPaddyS) in [#55](https://github.com/SecUSo/privacy-friendly-memo-game/pull/55)
+
+
+**Full Changelog**: https://github.com/SecUSo/privacy-friendly-memo-game/compare/v1.1.2...v1.1.3
+
+[Changes][v1.1.3]
+
+
 <a id="v1.1.1"></a>
 ## [Memo Game (Privacy Friendly) v1.1.1](https://github.com/SecUSo/privacy-friendly-memo-game/releases/tag/v1.1.1) - 2025-01-02
 
@@ -77,6 +90,7 @@ This app is optimized regarding the user’s privacy. It doesn’t use any track
 [Changes][v.1.0.1]
 
 
+[v1.1.3]: https://github.com/SecUSo/privacy-friendly-memo-game/compare/v1.1.1...v1.1.3
 [v1.1.1]: https://github.com/SecUSo/privacy-friendly-memo-game/compare/v1.1...v1.1.1
 [v1.1]: https://github.com/SecUSo/privacy-friendly-memo-game/compare/v1.0.5...v1.1
 [v1.0.5]: https://github.com/SecUSo/privacy-friendly-memo-game/compare/v1.0.4...v1.0.5
