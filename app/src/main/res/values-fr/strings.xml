@@ -39,10 +39,10 @@
     <string name="mode_duo_player">Deux joueurs</string>
     <!-- about activity -->
     <string name="about_author">Auteur :</string>
-    <string name="about_author_contributors">et contributeurs/-trices.</string>
+    <string name="about_author_contributors">et les autres contributeurs.</string>
     <string name="about_affiliation">En affiliation avec :</string>
-    <string name="privacy_friendly">Cette application appartient au groupe des Apps Respectueuses de la Vie Privée développées par le Karlsruhe Institute of Technology. Son code source est distribué sous licence GPLv3. Les droits d\'auteurs des images sont attribués à KIT et Google Inc.</string>
-    <string name="more_info">Plus d\'informations peuvent être consultées depuis :</string>
+    <string name="privacy_friendly">Cette application appartient au groupe des Applications Respectueuses de la Vie Privée développées par l\'institut de technologie de Karlsruhe. Le code source est licencié sous la GPLv3. Les images sont protégées par le droit d\'auteur de KIT et Google Inc.</string>
+    <string name="more_info">Des informations complémentaires sont disponibles sur :</string>
     <string name="tux_deck_provided">Deck des images de Tux fourni par :</string>
     <string name="animal_deck_provided">Deck des images d\'animaux fourni par :</string>
     <!-- help activity -->
