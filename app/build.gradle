@@ -42,9 +42,9 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     coreLibraryDesugaring libs.desugar.jdk
     implementation libs.multidex
-    testImplementation 'junit:junit:4.12'
-    implementation 'androidx.appcompat:appcompat:1.0.0'
-    implementation 'com.google.android.material:material:1.0.0'
+    testImplementation libs.junit
+    implementation libs.ax.appcompat
+    implementation libs.material
 
     // pfa-core library
     implementation project(path: ':model')
@@ -52,11 +52,10 @@ dependencies {
 
     // Backup
     implementation project(path: ':backup-api')
-    def work_version = "2.4.0"
-    implementation "androidx.work:work-runtime:$work_version"
-    implementation "androidx.work:work-runtime-ktx:$work_version"
-    androidTestImplementation "androidx.work:work-testing:$work_version"
-    implementation 'androidx.sqlite:sqlite-ktx:2.3.1'
+    implementation libs.ax.work.runtime
+    implementation libs.ax.work.runtime.ktx
+    androidTestImplementation libs.ax.work.testing
+    implementation libs.ax.sqlite.ktx
 
     constraints {
         implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.0") {
