@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.preference.PreferenceManager;
 
 import org.secuso.privacyfriendlymemory.Constants;
+import org.secuso.privacyfriendlymemory.common.PreferenceSetUtil;
 import org.secuso.privacyfriendlymemory.ui.MemoActivity;
 
 import java.util.LinkedHashSet;
@@ -22,7 +23,7 @@ public class MemoGameCustomImages {
         Context context = MemoActivity.getAppContext();
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         Set<Uri> uris = new LinkedHashSet<>();
-        for (String uriString : preferences.getStringSet(Constants.CUSTOM_CARDS_URIS, new LinkedHashSet<String>())) {
+        for (String uriString : PreferenceSetUtil.getStringSet(preferences, Constants.CUSTOM_CARDS_URIS, new LinkedHashSet<String>())) {
             uris.add(Uri.parse(uriString));
         }
 

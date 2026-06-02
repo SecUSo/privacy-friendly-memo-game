@@ -24,6 +24,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import org.secuso.privacyfriendlymemory.Constants;
 import org.secuso.privacyfriendlymemory.R;
 import org.secuso.privacyfriendlymemory.common.MemoGameStatistics;
+import org.secuso.privacyfriendlymemory.common.PreferenceSetUtil;
 import org.secuso.privacyfriendlymemory.common.ResIdAdapter;
 import org.secuso.privacyfriendlymemory.model.CardDesign;
 import org.secuso.privacyfriendlymemory.model.MemoGameDefaultImages;
@@ -140,8 +141,8 @@ public class MainActivity extends AppCompatDrawerActivity {
         List<String> resourceNamesDeckTwo = ResIdAdapter.getResourceName(resIdsDeckTwo, this);
         Set<String> statisticsDeckOne = MemoGameStatistics.createInitStatistics(resourceNamesDeckOne);
         Set<String> staticticsDeckTwo =  MemoGameStatistics.createInitStatistics(resourceNamesDeckTwo);
-        preferences.edit().putStringSet(Constants.STATISTICS_DECK_ONE, statisticsDeckOne).commit();
-        preferences.edit().putStringSet(Constants.STATISTICS_DECK_TWO, staticticsDeckTwo).commit();
+        PreferenceSetUtil.putStringSet(preferences, Constants.STATISTICS_DECK_ONE, statisticsDeckOne);
+        PreferenceSetUtil.putStringSet(preferences, Constants.STATISTICS_DECK_TWO, staticticsDeckTwo);
     }
 
     private void setAppStarted() {

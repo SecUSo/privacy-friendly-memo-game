@@ -26,6 +26,7 @@ import android.widget.TextView;
 
 import org.secuso.privacyfriendlymemory.Constants;
 import org.secuso.privacyfriendlymemory.common.MemoGameStatistics;
+import org.secuso.privacyfriendlymemory.common.PreferenceSetUtil;
 import org.secuso.privacyfriendlymemory.common.ResIdAdapter;
 import org.secuso.privacyfriendlymemory.model.CardDesign;
 import org.secuso.privacyfriendlymemory.model.MemoGameDefaultImages;
@@ -105,8 +106,8 @@ public class StatisticsActivity extends AppCompatActivity {
                 List<String> resourceNamesDeckTwo = ResIdAdapter.getResourceName(resIdsDeckTwo, this);
                 Set<String> statisticsDeckOne = MemoGameStatistics.createInitStatistics(resourceNamesDeckOne);
                 Set<String> staticticsDeckTwo = MemoGameStatistics.createInitStatistics(resourceNamesDeckTwo);
-                preferences.edit().putStringSet(Constants.STATISTICS_DECK_ONE, statisticsDeckOne).commit();
-                preferences.edit().putStringSet(Constants.STATISTICS_DECK_TWO, staticticsDeckTwo).commit();
+                PreferenceSetUtil.putStringSet(preferences, Constants.STATISTICS_DECK_ONE, statisticsDeckOne);
+                PreferenceSetUtil.putStringSet(preferences, Constants.STATISTICS_DECK_TWO, staticticsDeckTwo);
                 mSectionsPagerAdapter.refresh(getApplicationContext());
                 return true;
         }
@@ -204,7 +205,7 @@ public class StatisticsActivity extends AppCompatActivity {
                     statisticsConstants = Constants.STATISTICS_DECK_TWO;
                     break;
             }
-            Set<String> statisticsSet = PreferenceManager.getDefaultSharedPreferences(statisticsActivity).getStringSet(statisticsConstants, new HashSet<String>());
+            Set<String> statisticsSet = PreferenceSetUtil.getStringSet(PreferenceManager.getDefaultSharedPreferences(statisticsActivity), statisticsConstants, new HashSet<String>());
             return new MemoGameStatistics(statisticsSet);
         }
     }

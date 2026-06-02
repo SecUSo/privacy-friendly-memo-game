@@ -17,21 +17,42 @@
 package org.secuso.privacyfriendlymemory
 
 import android.app.Application
-import android.app.NotificationChannel
-import android.app.NotificationManager
-import android.os.Build
+import android.preference.PreferenceManager
 import android.util.Log
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.work.Configuration
+import org.json.JSONArray
 import org.secuso.privacyfriendlymemory.backup.BackupCreator
 import org.secuso.privacyfriendlymemory.backup.BackupRestorer
 import org.secuso.privacyfriendlybackup.api.pfa.BackupManager
 
 class PFMemory : Application(), Configuration.Provider {
     override fun onCreate() {
+        migrateStringSetsToJson()
         BackupManager.backupCreator = BackupCreator()
         BackupManager.backupRestorer = BackupRestorer()
         super.onCreate()
+    }
+
+    /**
+     * The statistics and custom-card preferences used to be stored as Set<String>, which the
+     * PFA-Core backup system cannot serialize. They are now stored as JSON strings (see
+     * PreferenceSetUtil). Convert any leftover Set<String> values from an older version once.
+     */
+    private fun migrateStringSetsToJson() {
+        val preferences = PreferenceManager.getDefaultSharedPreferences(this)
+        val keys = listOf(
+            Constants.STATISTICS_DECK_ONE,
+            Constants.STATISTICS_DECK_TWO,
+            Constants.CUSTOM_CARDS_URIS
+        )
+        for (key in keys) {
+            val value = preferences.all[key]
+            if (value is Set<*>) {
+                val array = JSONArray()
+                value.forEach { array.put(it.toString()) }
+                preferences.edit().remove(key).putString(key, array.toString()).apply()
+            }
+        }
     }
 
     override val workManagerConfiguration: Configuration

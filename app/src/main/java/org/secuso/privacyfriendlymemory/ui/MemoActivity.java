@@ -23,6 +23,7 @@ import org.secuso.privacyfriendlymemory.Constants;
 import org.secuso.privacyfriendlymemory.R;
 import org.secuso.privacyfriendlymemory.common.MemoGameLayoutProvider;
 import org.secuso.privacyfriendlymemory.common.MemoGameStatistics;
+import org.secuso.privacyfriendlymemory.common.PreferenceSetUtil;
 import org.secuso.privacyfriendlymemory.common.ResIdAdapter;
 import org.secuso.privacyfriendlymemory.model.CardDesign;
 import org.secuso.privacyfriendlymemory.model.MemoGame;
@@ -135,7 +136,7 @@ public class MemoActivity extends MemoAppCompatDrawerActivity {
                         List<String> resourceNames = ResIdAdapter.getResourceName(Arrays.asList(falseSelectedCards), getApplicationContext());
                         statistics.incrementCount(resourceNames);
                         String staticsConstants = memory.getCardDesign() == CardDesign.FIRST ? Constants.STATISTICS_DECK_ONE : Constants.STATISTICS_DECK_TWO;
-                        preferences.edit().putStringSet(staticsConstants, statistics.getStatisticsSet()).commit();
+                        PreferenceSetUtil.putStringSet(preferences, staticsConstants, statistics.getStatisticsSet());
                     }
                 }
                 // adapter must be notified, that images will be refreshed if selected
@@ -313,7 +314,7 @@ public class MemoActivity extends MemoAppCompatDrawerActivity {
                     statisticsConstants = Constants.STATISTICS_DECK_TWO;
                     break;
             }
-            Set<String> statisticsSet = preferences.getStringSet(statisticsConstants, new HashSet<String>());
+            Set<String> statisticsSet = PreferenceSetUtil.getStringSet(preferences, statisticsConstants, new HashSet<String>());
             statistics = new MemoGameStatistics(statisticsSet);
         }
     }

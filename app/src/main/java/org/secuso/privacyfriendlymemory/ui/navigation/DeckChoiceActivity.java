@@ -23,6 +23,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import org.secuso.privacyfriendlymemory.Constants;
+import org.secuso.privacyfriendlymemory.common.PreferenceSetUtil;
 import org.secuso.privacyfriendlymemory.model.CardDesign;
 import org.secuso.privacyfriendlymemory.model.MemoGameDifficulty;
 import org.secuso.privacyfriendlymemory.ui.AppCompatPreferenceActivity;
@@ -159,7 +160,7 @@ public class DeckChoiceActivity extends AppCompatPreferenceActivity {
             // check if enough images are picked
             int neededImageSize = MemoGameDifficulty.Hard.getDeckSize() / 2;
             if (customImageUris.size() >= neededImageSize) {
-                sharedPreferences.edit().putStringSet(Constants.CUSTOM_CARDS_URIS, customImageUris).commit();
+                PreferenceSetUtil.putStringSet(sharedPreferences, Constants.CUSTOM_CARDS_URIS, customImageUris);
                 thirdBox.setEnabled(true);
                 customImageUris.clear();
             }else{
@@ -208,7 +209,7 @@ public class DeckChoiceActivity extends AppCompatPreferenceActivity {
             resetCustomDeckPreference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
-                    sharedPreferences.edit().putStringSet(Constants.CUSTOM_CARDS_URIS, new HashSet<String>()).commit();
+                    PreferenceSetUtil.putStringSet(sharedPreferences, Constants.CUSTOM_CARDS_URIS, new HashSet<String>());
                     customImageUris.clear();
                     Toast.makeText(getActivity(),getResources().getString(R.string.custom_deck_deleted) , Toast.LENGTH_SHORT).show();
                     // refresh selection after custom images are deleted in case of the custom deck was selected
@@ -236,7 +237,7 @@ public class DeckChoiceActivity extends AppCompatPreferenceActivity {
 
         private void setupSelection() {
             CardDesign selectedDesign = CardDesign.get(sharedPreferences.getInt(Constants.SELECTED_CARD_DESIGN, 1));
-            Set<String> selectedCustomImages = sharedPreferences.getStringSet(Constants.CUSTOM_CARDS_URIS, new HashSet<String>());
+            Set<String> selectedCustomImages = PreferenceSetUtil.getStringSet(sharedPreferences, Constants.CUSTOM_CARDS_URIS, new HashSet<String>());
             if (selectedCustomImages.isEmpty()) {
                 thirdBox.setEnabled(false);
             }
