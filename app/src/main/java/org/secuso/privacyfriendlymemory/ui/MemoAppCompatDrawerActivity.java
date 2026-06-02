@@ -7,7 +7,7 @@ import com.google.android.material.navigation.NavigationView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AlertDialog;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import android.view.MenuItem;
@@ -94,7 +94,7 @@ public abstract class MemoAppCompatDrawerActivity extends AppCompatActivity impl
             drawer.closeDrawer(GravityCompat.START);
         } else {
             // show dialog, if user want to exit game
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this);
 
             builder.setMessage(getResources().getString(R.string.quit_game_text));
             builder.setNegativeButton(getResources().getString(R.string.quit_no), new DialogInterface.OnClickListener() {

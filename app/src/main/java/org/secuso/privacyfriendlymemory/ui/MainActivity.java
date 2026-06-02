@@ -1,7 +1,6 @@
 package org.secuso.privacyfriendlymemory.ui;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
@@ -19,6 +18,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import org.secuso.privacyfriendlymemory.Constants;
 import org.secuso.privacyfriendlymemory.R;
@@ -247,7 +248,7 @@ public class MainActivity extends AppCompatDrawerActivity {
         public Dialog onCreateDialog(Bundle savedInstanceState) {
 
             LayoutInflater i = getActivity().getLayoutInflater();
-            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(getActivity());
 
             builder.setView(i.inflate(R.layout.dialog_welcome, null));
             builder.setIcon(R.mipmap.ic_drawer);

@@ -17,7 +17,7 @@ import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AlertDialog;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -179,7 +179,7 @@ public class DeckChoiceActivity extends AppCompatPreferenceActivity {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
                     // let user pick multiple custom images
-                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                    MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(getActivity());
 
                     builder.setMessage(getResources().getString(R.string.set_custom_deck_hint));
                     builder.setPositiveButton(getResources().getString(R.string.set_custom_deck_hint_ok), new DialogInterface.OnClickListener() {
