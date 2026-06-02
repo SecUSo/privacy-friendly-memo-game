@@ -16,20 +16,27 @@
  */
 package org.secuso.privacyfriendlymemory
 
-import android.app.Application
+import android.app.Activity
 import android.preference.PreferenceManager
 import android.util.Log
 import androidx.work.Configuration
 import org.json.JSONArray
-import org.secuso.privacyfriendlymemory.backup.BackupCreator
-import org.secuso.privacyfriendlymemory.backup.BackupRestorer
-import org.secuso.privacyfriendlybackup.api.pfa.BackupManager
+import org.secuso.pfacore.ui.PFApplication
+import org.secuso.pfacore.ui.PFData
+import org.secuso.privacyfriendlymemory.ui.MainActivity
 
-class PFMemory : Application(), Configuration.Provider {
+class PFMemory : PFApplication() {
+
+    override val name: String
+        get() = getString(R.string.app_name)
+
+    override val data: PFData
+        get() = PFApplicationData.instance(this).data
+
+    override val mainActivity: Class<out Activity> = MainActivity::class.java
+
     override fun onCreate() {
         migrateStringSetsToJson()
-        BackupManager.backupCreator = BackupCreator()
-        BackupManager.backupRestorer = BackupRestorer()
         super.onCreate()
     }
 
