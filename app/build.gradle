@@ -1,5 +1,7 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
+plugins {
+    alias libs.plugins.android.app
+    alias libs.plugins.kotlin.android
+}
 
 android {
     compileSdk 34
@@ -11,6 +13,7 @@ android {
         targetSdkVersion 34
         versionCode 100
         versionName "1.1.3"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -20,8 +23,13 @@ android {
     }
 
     compileOptions {
+        coreLibraryDesugaringEnabled true
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_11.toString()
     }
 
     lint {
@@ -32,9 +40,15 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    coreLibraryDesugaring libs.desugar.jdk
+    implementation libs.multidex
     testImplementation 'junit:junit:4.12'
     implementation 'androidx.appcompat:appcompat:1.0.0'
     implementation 'com.google.android.material:material:1.0.0'
+
+    // pfa-core library
+    implementation project(path: ':model')
+    implementation project(path: ':ui-view')
 
     // Backup
     implementation project(path: ':backup-api')

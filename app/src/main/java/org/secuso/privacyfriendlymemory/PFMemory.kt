@@ -34,7 +34,6 @@ class PFMemory : Application(), Configuration.Provider {
         super.onCreate()
     }
 
-    override fun getWorkManagerConfiguration(): Configuration {
-        return Configuration.Builder().setMinimumLoggingLevel(Log.INFO).build()
-    }
+    override val workManagerConfiguration: Configuration
+        get() = Configuration.Builder().setMinimumLoggingLevel(Log.INFO).build()
 }
