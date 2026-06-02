@@ -1,5 +1,6 @@
 package org.secuso.privacyfriendlymemory.ui;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -86,6 +87,9 @@ public abstract class MemoAppCompatDrawerActivity extends AppCompatActivity impl
         return true;
     }
 
+    // Back is intentionally intercepted to show the "quit game?" dialog instead of
+    // delegating to the default behaviour, so super.onBackPressed() is not called here.
+    @SuppressLint("MissingSuperCall")
     @Override
     public void onBackPressed()
     {
