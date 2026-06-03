@@ -38,6 +38,11 @@ class PFMemory : PFApplication() {
     override fun onCreate() {
         migrateStringSetsToJson()
         super.onCreate()
+        // Build the application data eagerly on the main thread. PFApplicationData wires up
+        // LiveData transformations (e.g. the theme), and LiveData.setValue may only run on the
+        // main thread. The backup runs on a background thread, so building it lazily there would
+        // crash; building it here makes the singleton ready before the backup worker uses it.
+        PFApplicationData.instance(this)
     }
 
     /**
