@@ -45,6 +45,7 @@
     <string name="more_info">Mehr Informationen unter::</string>
     <string name="tux_deck_provided">TuX Deck Bilder bereitgestellt von:</string>
     <string name="animal_deck_provided">Tier Deck Bilder bereitgestellt von:</string>
+    <string name="help_image_credits">Bildquellen</string>
     <!-- help activity -->
     <string name="help_game_mode">Spielmodus</string>
     <string name="help_single_player">Modus für einen Spieler</string>

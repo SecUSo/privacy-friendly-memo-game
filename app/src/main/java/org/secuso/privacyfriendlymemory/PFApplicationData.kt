@@ -109,6 +109,17 @@ class PFApplicationData private constructor(context: Context) {
             title { resource(R.string.help_permissions) }
             description { resource(R.string.help_permissions_summary) }
         }
+        // The deck-image license attributions used to live on the old About screen. The core
+        // About only shows name/version/authors/repo, so keep the credits here instead of dropping them.
+        item {
+            title { resource(R.string.help_image_credits) }
+            description {
+                literal(
+                    context.getString(R.string.tux_deck_provided) + "\nwww.androidsoft.org/tux-memory.html\n\n" +
+                        context.getString(R.string.animal_deck_provided) + "\nwww.openclipart.org"
+                )
+            }
+        }
     }
 
     val data: PFData = PFData(
