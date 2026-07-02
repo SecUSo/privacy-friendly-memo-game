@@ -8,6 +8,7 @@ import org.secuso.pfacore.model.about.About
 import org.secuso.pfacore.model.preferences.Preferable
 import org.secuso.pfacore.model.preferences.settings.ISettingData
 import org.secuso.pfacore.ui.PFData
+import org.secuso.pfacore.ui.help.Help
 import org.secuso.pfacore.ui.preferences.appPreferences
 import org.secuso.pfacore.ui.preferences.settings.appearance
 import org.secuso.pfacore.ui.preferences.settings.settingDeviceInformationOnErrorReport
@@ -87,9 +88,33 @@ class PFApplicationData private constructor(context: Context) {
         }
     }
 
+    private val help = Help.build(context) {
+        item {
+            title { resource(R.string.help_game_mode) }
+            description { literal(context.getString(R.string.help_single_player) + "\n" + context.getString(R.string.help_duo_player)) }
+        }
+        item {
+            title { resource(R.string.help_game_difficulty) }
+            description { resource(R.string.help_game_difficulty_summary) }
+        }
+        item {
+            title { resource(R.string.custom_deck_options) }
+            description { resource(R.string.help_custom_deck) }
+        }
+        item {
+            title { resource(R.string.menu_highscore) }
+            description { resource(R.string.help_highscore) }
+        }
+        item {
+            title { resource(R.string.help_permissions) }
+            description { resource(R.string.help_permissions_summary) }
+        }
+    }
+
     val data: PFData = PFData(
         preferences = preferences,
         about = about,
+        help = help,
         tutorial = tutorial,
         theme = theme.state.map { Theme.valueOf(it) },
         firstLaunch = firstAppStart,
