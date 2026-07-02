@@ -1,5 +1,6 @@
 package org.secuso.privacyfriendlymemory.ui;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
@@ -8,6 +9,7 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import android.view.Gravity;
 import android.view.View;
@@ -39,7 +41,7 @@ import java.util.Set;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class MemoActivity extends MemoAppCompatDrawerActivity {
+public class MemoActivity extends AppCompatActivity {
 
     private static Context context;
     private SharedPreferences preferences = null;
@@ -49,12 +51,18 @@ public class MemoActivity extends MemoAppCompatDrawerActivity {
     private GridView  gridview;
     private Timer timerViewUpdater;
 
+    // Back is intercepted to confirm quitting the running game before leaving.
+    @SuppressLint("MissingSuperCall")
+    @Override
+    public void onBackPressed() {
+        Dialogs.confirmQuitGame(this, this::finish);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         setContentView(R.layout.activity_game);
-        super.setupNavigationView();
         setupPreferences();
         // make context available for shared preferences
         MemoActivity.context = getApplicationContext();

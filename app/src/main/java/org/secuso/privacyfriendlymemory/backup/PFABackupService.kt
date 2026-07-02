@@ -1,4 +1,4 @@
-package org.secuso.privacyfriendly2048.backup
+package org.secuso.privacyfriendlymemory.backup
 
 import org.secuso.privacyfriendlybackup.api.pfa.PFAAuthService
 

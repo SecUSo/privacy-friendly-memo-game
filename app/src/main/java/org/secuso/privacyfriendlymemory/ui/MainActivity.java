@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -21,6 +22,7 @@ import android.widget.TextView;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
+import org.secuso.pfacore.model.DrawerElement;
 import org.secuso.privacyfriendlymemory.Constants;
 import org.secuso.privacyfriendlymemory.R;
 import org.secuso.privacyfriendlymemory.common.MemoGameStatistics;
@@ -30,13 +32,13 @@ import org.secuso.privacyfriendlymemory.model.CardDesign;
 import org.secuso.privacyfriendlymemory.model.MemoGameDefaultImages;
 import org.secuso.privacyfriendlymemory.model.MemoGameDifficulty;
 import org.secuso.privacyfriendlymemory.model.MemoGameMode;
-import org.secuso.privacyfriendlymemory.ui.navigation.HelpActivity;
+import org.secuso.pfacore.ui.activities.HelpActivity;
 
 import java.util.List;
 import java.util.Set;
 
 
-public class MainActivity extends AppCompatDrawerActivity {
+public class MainActivity extends BaseActivity {
 
     private SharedPreferences preferences   = null;
     private ViewPager viewPager             = null;
@@ -49,13 +51,23 @@ public class MainActivity extends AppCompatDrawerActivity {
         if (isFirstAppStart()) {
             showWelcomeDialog();
             setAppStarted();
-            initStatistics();
          }
 
-        setContentView(R.layout.activity_main);
+        // The first launch flag is owned by the PFA-Core splash and tutorial now, so it is
+        // already consumed before we get here. Seed the per deck statistics once by checking
+        // whether they exist instead of relying on that flag.
+        if (PreferenceSetUtil.getStringSet(preferences, Constants.STATISTICS_DECK_ONE, java.util.Collections.<String>emptySet()).isEmpty()) {
+            initStatistics();
+        }
+
+        setContentView(R.layout.activity_main_content);
         setupViewPager();
         setupDifficultyBar();
-        super.setupNavigationView();
+    }
+
+    @Override
+    public boolean isActiveDrawerElement(@NonNull DrawerElement element) {
+        return element.getName().equals(getString(R.string.menu_menu));
     }
 
     public void setupViewPager() {
@@ -258,10 +270,7 @@ public class MainActivity extends AppCompatDrawerActivity {
             builder.setNegativeButton(getActivity().getString(R.string.button_help), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    Intent intent = new Intent(getActivity(), HelpActivity.class);
-                    intent.putExtra(HelpActivity.EXTRA_SHOW_FRAGMENT, HelpActivity.HelpFragment.class.getName());
-                    intent.putExtra(HelpActivity.EXTRA_NO_HEADERS, true);
-                    startActivity(intent);
+                    startActivity(new Intent(getActivity(), HelpActivity.class));
                 }
             });
             return builder.create();
