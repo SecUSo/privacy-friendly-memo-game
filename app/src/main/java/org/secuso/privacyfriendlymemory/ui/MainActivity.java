@@ -1,9 +1,5 @@
 package org.secuso.privacyfriendlymemory.ui;
 
-import android.app.Activity;
-import android.app.Dialog;
-import android.app.DialogFragment;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -20,8 +16,6 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-
 import org.secuso.pfacore.model.DrawerElement;
 import org.secuso.privacyfriendlymemory.Constants;
 import org.secuso.privacyfriendlymemory.R;
@@ -32,7 +26,6 @@ import org.secuso.privacyfriendlymemory.model.CardDesign;
 import org.secuso.privacyfriendlymemory.model.MemoGameDefaultImages;
 import org.secuso.privacyfriendlymemory.model.MemoGameDifficulty;
 import org.secuso.privacyfriendlymemory.model.MemoGameMode;
-import org.secuso.pfacore.ui.activities.HelpActivity;
 
 import java.util.List;
 import java.util.Set;
@@ -47,11 +40,6 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setupPreferences();
-
-        if (isFirstAppStart()) {
-            showWelcomeDialog();
-            setAppStarted();
-         }
 
         // The first launch flag is owned by the PFA-Core splash and tutorial now, so it is
         // already consumed before we get here. Seed the per deck statistics once by checking
@@ -157,20 +145,8 @@ public class MainActivity extends BaseActivity {
         PreferenceSetUtil.putStringSet(preferences, Constants.STATISTICS_DECK_TWO, staticticsDeckTwo);
     }
 
-    private void setAppStarted() {
-        preferences.edit().putBoolean(Constants.FIRST_APP_START, false).commit();
-    }
-
-    private void showWelcomeDialog() {
-        new WelcomeDialog().show(getFragmentManager(), WelcomeDialog.class.getSimpleName());
-    }
-
     private void setupPreferences() {
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
-    }
-
-    private boolean isFirstAppStart() {
-        return preferences.getBoolean(Constants.FIRST_APP_START, true);
     }
 
 
@@ -246,34 +222,6 @@ public class MainActivity extends BaseActivity {
             TextView textView = (TextView) rootView.findViewById(R.id.section_label);
             textView.setText(getString(memoryMode.getStringResID()));
             return rootView;
-        }
-    }
-
-    public static class WelcomeDialog extends DialogFragment {
-
-
-        @Override
-        public void onAttach(Activity activity) {
-            super.onAttach(activity);
-        }
-
-        @Override
-        public Dialog onCreateDialog(Bundle savedInstanceState) {
-
-            LayoutInflater i = getActivity().getLayoutInflater();
-            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(getActivity());
-
-            builder.setView(i.inflate(R.layout.dialog_welcome, null));
-            builder.setIcon(R.mipmap.ic_drawer);
-            builder.setTitle(getActivity().getString(R.string.welcome_title));
-            builder.setPositiveButton(getActivity().getString(R.string.button_ok), null);
-            builder.setNegativeButton(getActivity().getString(R.string.button_help), new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    startActivity(new Intent(getActivity(), HelpActivity.class));
-                }
-            });
-            return builder.create();
         }
     }
 
