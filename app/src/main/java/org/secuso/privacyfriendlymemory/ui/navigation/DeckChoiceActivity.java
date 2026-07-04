@@ -5,7 +5,6 @@ import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.content.ClipData;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
@@ -17,7 +16,6 @@ import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import androidx.appcompat.app.ActionBar;
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -27,6 +25,7 @@ import org.secuso.privacyfriendlymemory.common.PreferenceSetUtil;
 import org.secuso.privacyfriendlymemory.model.CardDesign;
 import org.secuso.privacyfriendlymemory.model.MemoGameDifficulty;
 import org.secuso.privacyfriendlymemory.ui.AppCompatPreferenceActivity;
+import org.secuso.privacyfriendlymemory.ui.Dialogs;
 import org.secuso.privacyfriendlymemory.R;
 
 import java.util.HashSet;
@@ -180,28 +179,21 @@ public class DeckChoiceActivity extends AppCompatPreferenceActivity {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
                     // let user pick multiple custom images
-                    MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(getActivity());
+                    Dialogs.confirm(getActivity(), getResources().getString(R.string.set_custom_deck_hint), () -> {
+                        Intent intent = new Intent();
 
-                    builder.setMessage(getResources().getString(R.string.set_custom_deck_hint));
-                    builder.setPositiveButton(getResources().getString(R.string.set_custom_deck_hint_ok), new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-
-                            Intent intent = new Intent();
-
-                            if (android.os.Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
-                                intent.setAction(Intent.ACTION_GET_CONTENT);
-                            } else {
-                                intent.setAction(Intent.ACTION_OPEN_DOCUMENT);
-                                intent.addCategory(Intent.CATEGORY_OPENABLE);
-                            }
-
-                            intent.setType("image/*");
-                            intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
-
-                            startActivityForResult(Intent.createChooser(intent, ""), PICK_IMAGE_MULTIPLE);
+                        if (android.os.Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
+                            intent.setAction(Intent.ACTION_GET_CONTENT);
+                        } else {
+                            intent.setAction(Intent.ACTION_OPEN_DOCUMENT);
+                            intent.addCategory(Intent.CATEGORY_OPENABLE);
                         }
+
+                        intent.setType("image/*");
+                        intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+
+                        startActivityForResult(Intent.createChooser(intent, ""), PICK_IMAGE_MULTIPLE);
                     });
-                    builder.show();
                     return true;
                 }
             });

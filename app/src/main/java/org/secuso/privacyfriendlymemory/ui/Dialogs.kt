@@ -27,4 +27,20 @@ object Dialogs {
             handleDismiss = false
         }.show()
     }
+
+    /**
+     * Shows [message] with an accept and a cancel button. [onConfirm] runs when the user accepts;
+     * cancelling or dismissing does nothing.
+     */
+    @JvmStatic
+    fun confirm(context: Context, message: String, onConfirm: Runnable) {
+        AbortElseDialog.build(context) {
+            title = { "" }
+            content = { message }
+            acceptLabel = context.getString(android.R.string.ok)
+            abortLabel = context.getString(android.R.string.cancel)
+            onElse = { onConfirm.run() }
+            handleDismiss = false
+        }.show()
+    }
 }
