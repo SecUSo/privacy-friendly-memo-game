@@ -3,18 +3,17 @@ package org.secuso.privacyfriendlymemory.ui.navigation;
 
 import android.annotation.TargetApi;
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
-import android.preference.PreferenceManager;
 import androidx.appcompat.app.ActionBar;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import org.secuso.privacyfriendlymemory.Constants;
+import org.secuso.privacyfriendlymemory.PFApplicationData;
 import org.secuso.privacyfriendlymemory.ui.AppCompatPreferenceActivity;
 import org.secuso.privacyfriendlymemory.R;
 
@@ -52,19 +51,19 @@ public class HighscoreActivity extends AppCompatPreferenceActivity {
                 finish();
                 return true;
             case R.id.menu_highscore_reset:
-                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+                PFApplicationData data = PFApplicationData.instance(this);
                 // reset score, tries and time for each mode
-                preferences.edit().putInt(Constants.HIGHSCORE_EASY, 0).commit();
-                preferences.edit().putInt(Constants.HIGHSCORE_EASY_TRIES, 0).commit();
-                preferences.edit().putInt(Constants.HIGHSCORE_EASY_TIME, 0).commit();
+                data.getHighscoreEasy().setValue(0);
+                data.getHighscoreEasyTries().setValue(0);
+                data.getHighscoreEasyTime().setValue(0);
 
-                preferences.edit().putInt(Constants.HIGHSCORE_MODERATE, 0).commit();
-                preferences.edit().putInt(Constants.HIGHSCORE_MODERATE_TRIES, 0).commit();
-                preferences.edit().putInt(Constants.HIGHSCORE_MODERATE_TIME, 0).commit();
+                data.getHighscoreModerate().setValue(0);
+                data.getHighscoreModerateTries().setValue(0);
+                data.getHighscoreModerateTime().setValue(0);
 
-                preferences.edit().putInt(Constants.HIGHSCORE_HARD, 0).commit();
-                preferences.edit().putInt(Constants.HIGHSCORE_HARD_TRIES, 0).commit();
-                preferences.edit().putInt(Constants.HIGHSCORE_HARD_TIME, 0).commit();
+                data.getHighscoreHard().setValue(0);
+                data.getHighscoreHardTries().setValue(0);
+                data.getHighscoreHardTime().setValue(0);
                 getFragmentRefreshListener().onRefresh();
                 return true;
         }
@@ -145,18 +144,18 @@ public class HighscoreActivity extends AppCompatPreferenceActivity {
 
         private void setHighscoreToUI(){
             // get highscores from preferences
-            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext());
-            int highscoreEasy = preferences.getInt(Constants.HIGHSCORE_EASY, 0);
-            int highscoreEasyTries = preferences.getInt(Constants.HIGHSCORE_EASY_TRIES, 0);
-            int highscoreEasyTime = preferences.getInt(Constants.HIGHSCORE_EASY_TIME, 0);
+            PFApplicationData data = PFApplicationData.instance(getActivity().getApplicationContext());
+            int highscoreEasy = data.getHighscoreEasy().getValue();
+            int highscoreEasyTries = data.getHighscoreEasyTries().getValue();
+            int highscoreEasyTime = data.getHighscoreEasyTime().getValue();
 
-            int highscoreModerate = preferences.getInt(Constants.HIGHSCORE_MODERATE, 0);
-            int highscoreModerateTries = preferences.getInt(Constants.HIGHSCORE_MODERATE_TRIES, 0);
-            int highscoreModerateTime = preferences.getInt(Constants.HIGHSCORE_MODERATE_TIME, 0);
+            int highscoreModerate = data.getHighscoreModerate().getValue();
+            int highscoreModerateTries = data.getHighscoreModerateTries().getValue();
+            int highscoreModerateTime = data.getHighscoreModerateTime().getValue();
 
-            int highscoreHard = preferences.getInt(Constants.HIGHSCORE_HARD, 0);
-            int highscoreHardTries = preferences.getInt(Constants.HIGHSCORE_HARD_TRIES, 0);
-            int highscoreHardTime = preferences.getInt(Constants.HIGHSCORE_HARD_TIME, 0);
+            int highscoreHard = data.getHighscoreHard().getValue();
+            int highscoreHardTries = data.getHighscoreHardTries().getValue();
+            int highscoreHardTime = data.getHighscoreHardTime().getValue();
 
             // set highscore in views
             setScoreInPreference("highscore_easy", highscoreEasy, highscoreEasyTries, highscoreEasyTime);

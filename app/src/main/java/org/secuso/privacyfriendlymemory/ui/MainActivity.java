@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 import org.secuso.pfacore.model.DrawerElement;
 import org.secuso.privacyfriendlymemory.Constants;
+import org.secuso.privacyfriendlymemory.PFApplicationData;
 import org.secuso.privacyfriendlymemory.R;
 import org.secuso.privacyfriendlymemory.common.MemoGameStatistics;
 import org.secuso.privacyfriendlymemory.common.PreferenceSetUtil;
@@ -123,7 +124,7 @@ public class MainActivity extends BaseActivity {
                 Intent intent = new Intent(this, MemoActivity.class);
                 intent.putExtra(Constants.GAME_MODE, memoryMode);
                 intent.putExtra(Constants.GAME_DIFFICULTY, memoryDifficulty);
-                int selectedCardDesign = preferences.getInt(Constants.SELECTED_CARD_DESIGN, 1);
+                int selectedCardDesign = PFApplicationData.instance(this).getSelectedCardDesign().getValue();
                 CardDesign cardDesign =  CardDesign.get(selectedCardDesign);
                 intent.putExtra(Constants.CARD_DESIGN, cardDesign);
                 startActivity(intent);

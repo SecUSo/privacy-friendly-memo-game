@@ -21,7 +21,9 @@ import android.widget.GridView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import org.secuso.pfacore.model.preferences.Preferable;
 import org.secuso.privacyfriendlymemory.Constants;
+import org.secuso.privacyfriendlymemory.PFApplicationData;
 import org.secuso.privacyfriendlymemory.R;
 import org.secuso.privacyfriendlymemory.common.MemoGameLayoutProvider;
 import org.secuso.privacyfriendlymemory.common.MemoGameStatistics;
@@ -234,32 +236,33 @@ public class MemoActivity extends AppCompatActivity {
             int actualScore = highscore.getScore();
             int actualTries = highscore.getTries();
             int actualTime = highscore.getTime();
-            MemoGameDifficulty difficulty = memory.getDifficulty();
-            String highscoreConstants = "";
-            String highscoreTriesConstants = "";
-            String highscoreTimeConstants = "";
-            switch (difficulty) {
+            PFApplicationData data = PFApplicationData.instance(this);
+            Preferable<Integer> scorePref;
+            Preferable<Integer> triesPref;
+            Preferable<Integer> timePref;
+            switch (memory.getDifficulty()) {
                 case Easy:
-                    highscoreConstants = Constants.HIGHSCORE_EASY;
-                    highscoreTriesConstants = Constants.HIGHSCORE_EASY_TRIES;
-                    highscoreTimeConstants = Constants.HIGHSCORE_EASY_TIME;
+                    scorePref = data.getHighscoreEasy();
+                    triesPref = data.getHighscoreEasyTries();
+                    timePref = data.getHighscoreEasyTime();
                     break;
                 case Moderate:
-                    highscoreConstants = Constants.HIGHSCORE_MODERATE;
-                    highscoreTriesConstants = Constants.HIGHSCORE_MODERATE_TRIES;
-                    highscoreTimeConstants = Constants.HIGHSCORE_MODERATE_TIME;
+                    scorePref = data.getHighscoreModerate();
+                    triesPref = data.getHighscoreModerateTries();
+                    timePref = data.getHighscoreModerateTime();
                     break;
                 case Hard:
-                    highscoreConstants = Constants.HIGHSCORE_HARD;
-                    highscoreTriesConstants = Constants.HIGHSCORE_HARD_TRIES;
-                    highscoreTimeConstants = Constants.HIGHSCORE_HARD_TIME;
+                    scorePref = data.getHighscoreHard();
+                    triesPref = data.getHighscoreHardTries();
+                    timePref = data.getHighscoreHardTime();
                     break;
+                default:
+                    return;
             }
-            int currentScore = preferences.getInt(highscoreConstants, 0);
-            if (actualScore > currentScore) {
-                preferences.edit().putInt(highscoreConstants, actualScore).commit();
-                preferences.edit().putInt(highscoreTriesConstants, actualTries).commit();
-                preferences.edit().putInt(highscoreTimeConstants, actualTime).commit();
+            if (actualScore > scorePref.getValue()) {
+                scorePref.setValue(actualScore);
+                triesPref.setValue(actualTries);
+                timePref.setValue(actualTime);
             }
         }
     }
@@ -377,13 +380,14 @@ public class MemoActivity extends AppCompatActivity {
         }
 
         private int getSavedHighscore() {
+            PFApplicationData data = PFApplicationData.instance(getContext());
             switch(memory.getDifficulty()) {
                 case Easy:
-                    return preferences.getInt(Constants.HIGHSCORE_EASY, 0);
+                    return data.getHighscoreEasy().getValue();
                 case Moderate:
-                    return preferences.getInt(Constants.HIGHSCORE_MODERATE, 0);
+                    return data.getHighscoreModerate().getValue();
                 case Hard:
-                    return preferences.getInt(Constants.HIGHSCORE_HARD, 0);
+                    return data.getHighscoreHard().getValue();
             }
             return 0;
         }

@@ -30,6 +30,26 @@ class PFApplicationData private constructor(context: Context) {
         private set
     lateinit var includeDeviceDataInReport: Preferable<Boolean>
         private set
+    lateinit var selectedCardDesign: Preferable<Int>
+        private set
+    lateinit var highscoreEasy: Preferable<Int>
+        private set
+    lateinit var highscoreEasyTries: Preferable<Int>
+        private set
+    lateinit var highscoreEasyTime: Preferable<Int>
+        private set
+    lateinit var highscoreModerate: Preferable<Int>
+        private set
+    lateinit var highscoreModerateTries: Preferable<Int>
+        private set
+    lateinit var highscoreModerateTime: Preferable<Int>
+        private set
+    lateinit var highscoreHard: Preferable<Int>
+        private set
+    lateinit var highscoreHardTries: Preferable<Int>
+        private set
+    lateinit var highscoreHardTime: Preferable<Int>
+        private set
 
     private val preferences = appPreferences(context) {
         preferences {
@@ -39,18 +59,18 @@ class PFApplicationData private constructor(context: Context) {
             preference { key = "deck1_key"; default = true; backup = true }
             preference { key = "deck2_key"; default = false; backup = true }
             preference { key = "custom_deck_key"; default = false; backup = true }
-            preference { key = Constants.SELECTED_CARD_DESIGN; default = 1; backup = true }
+            selectedCardDesign = preference { key = Constants.SELECTED_CARD_DESIGN; default = 1; backup = true }
 
             // Highscores
-            preference { key = Constants.HIGHSCORE_EASY; default = 0; backup = true }
-            preference { key = Constants.HIGHSCORE_EASY_TRIES; default = 0; backup = true }
-            preference { key = Constants.HIGHSCORE_EASY_TIME; default = 0; backup = true }
-            preference { key = Constants.HIGHSCORE_MODERATE; default = 0; backup = true }
-            preference { key = Constants.HIGHSCORE_MODERATE_TRIES; default = 0; backup = true }
-            preference { key = Constants.HIGHSCORE_MODERATE_TIME; default = 0; backup = true }
-            preference { key = Constants.HIGHSCORE_HARD; default = 0; backup = true }
-            preference { key = Constants.HIGHSCORE_HARD_TRIES; default = 0; backup = true }
-            preference { key = Constants.HIGHSCORE_HARD_TIME; default = 0; backup = true }
+            highscoreEasy = preference { key = Constants.HIGHSCORE_EASY; default = 0; backup = true }
+            highscoreEasyTries = preference { key = Constants.HIGHSCORE_EASY_TRIES; default = 0; backup = true }
+            highscoreEasyTime = preference { key = Constants.HIGHSCORE_EASY_TIME; default = 0; backup = true }
+            highscoreModerate = preference { key = Constants.HIGHSCORE_MODERATE; default = 0; backup = true }
+            highscoreModerateTries = preference { key = Constants.HIGHSCORE_MODERATE_TRIES; default = 0; backup = true }
+            highscoreModerateTime = preference { key = Constants.HIGHSCORE_MODERATE_TIME; default = 0; backup = true }
+            highscoreHard = preference { key = Constants.HIGHSCORE_HARD; default = 0; backup = true }
+            highscoreHardTries = preference { key = Constants.HIGHSCORE_HARD_TRIES; default = 0; backup = true }
+            highscoreHardTime = preference { key = Constants.HIGHSCORE_HARD_TIME; default = 0; backup = true }
 
             // Statistics (stored as JSON strings, see PreferenceSetUtil)
             preference { key = Constants.STATISTICS_DECK_ONE; default = ""; backup = true }
@@ -134,6 +154,7 @@ class PFApplicationData private constructor(context: Context) {
 
     companion object {
         private var _instance: PFApplicationData? = null
+        @JvmStatic
         fun instance(context: Context): PFApplicationData {
             if (_instance == null) {
                 _instance = PFApplicationData(context.applicationContext)
