@@ -37,6 +37,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import org.secuso.privacyfriendlymemory.Constants;
+import org.secuso.privacyfriendlymemory.PFApplicationData;
 import org.secuso.privacyfriendlymemory.common.PreferenceSetUtil;
 import org.secuso.privacyfriendlymemory.model.CardDesign;
 import org.secuso.privacyfriendlymemory.model.MemoGameDifficulty;
@@ -244,7 +245,7 @@ public class DeckChoiceActivity extends AppCompatPreferenceActivity {
         }
 
         private void setupSelection() {
-            CardDesign selectedDesign = CardDesign.get(sharedPreferences.getInt(Constants.SELECTED_CARD_DESIGN, 1));
+            CardDesign selectedDesign = CardDesign.get(PFApplicationData.instance(getActivity()).getSelectedCardDesign().getValue());
             Set<String> selectedCustomImages = PreferenceSetUtil.getStringSet(sharedPreferences, Constants.CUSTOM_CARDS_URIS, new HashSet<String>());
             if (selectedCustomImages.isEmpty()) {
                 thirdBox.setEnabled(false);
@@ -288,7 +289,7 @@ public class DeckChoiceActivity extends AppCompatPreferenceActivity {
                     cardDesignValue = 3;
                     break;
             }
-            sharedPreferences.edit().putInt(Constants.SELECTED_CARD_DESIGN, cardDesignValue).commit();
+            PFApplicationData.instance(getActivity()).getSelectedCardDesign().setValue(cardDesignValue);
         }
     }
 }
