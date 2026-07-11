@@ -48,6 +48,11 @@ import java.util.List;
 import java.util.Set;
 
 
+/**
+ * The start screen with the game mode and the difficulty. After the migration it extend now
+ * BaseActivity, so it become the PFA-Core drawer. It read also the card design from
+ * PFApplicationData, insted of the old PreferenceManager like before.
+ */
 public class MainActivity extends BaseActivity {
 
     private SharedPreferences preferences   = null;

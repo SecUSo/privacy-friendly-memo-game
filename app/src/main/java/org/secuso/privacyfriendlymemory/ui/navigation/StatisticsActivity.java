@@ -59,6 +59,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * Show how much times every card was selected wrong. The card images are loaded from there name
+ * with getIdentifier, so we did not delete them by the cleanup.
+ */
 public class StatisticsActivity extends AppCompatActivity {
 
     private static StatisticsActivity statisticsActivity;

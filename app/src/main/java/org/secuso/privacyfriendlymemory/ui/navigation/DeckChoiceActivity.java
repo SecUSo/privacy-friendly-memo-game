@@ -50,6 +50,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * The deck choice screen, were the user choose a card deck or make a own custom deck. The hint
+ * dialog for the custom deck use now the PFA-Core dialog, in place of the google material dialog.
+ */
 public class DeckChoiceActivity extends AppCompatPreferenceActivity {
 
 

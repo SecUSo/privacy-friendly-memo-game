@@ -59,6 +59,11 @@ import java.util.Set;
 import java.util.Timer;
 import java.util.TimerTask;
 
+/**
+ * The screen were the game is played. It stayed a normal activity without drawer, because the
+ * game have his own toolbar with the timer and the score. The back button ask the user if he want
+ * to quit, over the PFA-Core dialog. The highscores becomes saved through PFApplicationData.
+ */
 public class MemoActivity extends AppCompatActivity {
 
     private static Context context;

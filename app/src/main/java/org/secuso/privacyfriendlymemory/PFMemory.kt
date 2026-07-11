@@ -25,6 +25,11 @@ import org.secuso.pfacore.ui.PFApplication
 import org.secuso.pfacore.ui.PFData
 import org.secuso.privacyfriendlymemory.ui.MainActivity
 
+/**
+ * The application class from the memo game. It extend the PFA-Core PFApplication, so the library
+ * can know our app datas, the main activity and the backup config. We make also here a small one
+ * time migration, that change the old Set values in the preferences to json strings.
+ */
 class PFMemory : PFApplication() {
 
     override val name: String

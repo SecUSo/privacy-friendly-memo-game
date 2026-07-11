@@ -35,6 +35,11 @@ import org.secuso.privacyfriendlymemory.R;
 
 import java.util.List;
 
+/**
+ * Show the best scores for every difficulty and let the user to reset them. After the migration
+ * it read and write the highscores over the PFApplicationData variables, and not more the raw
+ * preferences.
+ */
 public class HighscoreActivity extends AppCompatPreferenceActivity {
 
     private FragmentRefreshListener fragmentRefreshListener;

@@ -18,4 +18,8 @@ package org.secuso.privacyfriendlymemory.backup
 
 import org.secuso.privacyfriendlybackup.api.pfa.PFAAuthService
 
+/**
+ * Backup service from the memo game. It extend only the PFA-Core PFAAuthService, so the backup app
+ * can reach to us. It have no own logic inside.
+ */
 class PFABackupService : PFAAuthService()
