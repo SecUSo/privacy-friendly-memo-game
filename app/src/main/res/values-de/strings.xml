@@ -62,7 +62,7 @@
     <string name="field_select_description_headline">1. Spielmodus:</string>
     <string name="difficulty_description">Drücke oder wische über die Sterne um den Schwierigkeitsgrad zu ändern.</string>
     <string name="difficulty_description_headline">2. Schwierigkeit:</string>
-    <string name="play">Lass uns das Memospiel spielen.</string>
+    <string name="play">Lass uns das Memospiel spielen!</string>
     <!-- win dialoag -->
     <string name="win_text">Glückwunsch!</string>
     <string name="win_text_duo">Glückwunsch</string>
