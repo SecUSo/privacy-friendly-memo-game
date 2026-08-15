@@ -42,7 +42,7 @@
     <string name="about_author_contributors">et contributeurs.</string>
     <string name="about_affiliation">En affiliation avec :</string>
     <string name="privacy_friendly">Cette application appartient au groupe des Applications Respectueuses de la Vie Privée développées par l\'institut de technologie de Karlsruhe. Le code source est licencié sous la GPLv3. Les images sont protégées par le droit d\'auteur de KIT et Google Inc.</string>
-    <string name="more_info">Plus d\'informations :</string>
+    <string name="more_info">Pour plus d\'informations :</string>
     <string name="tux_deck_provided">Deck des images de Tux fourni par :</string>
     <string name="animal_deck_provided">Deck des images d\'animaux fourni par :</string>
     <!-- help activity -->
@@ -54,7 +54,7 @@
     <string name="help_custom_deck">Vous pouvez sélectionner les images de votre propre galerie pour les cartes dans les paramètres de choix du deck.</string>
     <string name="help_highscore">Le meilleur score est calculé via le nombre d\'essais, le temps et la difficulté du jeu.</string>
     <string name="help_privacyInfo">Infos Confidentialité</string>
-    <string name="help_permissions">Permissions</string>
+    <string name="help_permissions">Autorisations</string>
     <string name="help_permissions_summary">Jeu de Mémoire Privacy Friendly n\'utilise aucune permission.</string>
     <!-- welcome dialog -->
     <string name="welcome_title">Bienvenue</string>
